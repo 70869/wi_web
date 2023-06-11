@@ -5,9 +5,14 @@ import youtubeIcon from './images/youtube.svg'; // Replace with your own YouTube
 function Header() {
   return (
     <header>
-      <div class="flex justify-between items-center py-3 px-32 text-zinc-300 relative z-auto">
+      <div class="flex flex-row justify-between items-center py-3 px-32 text-zinc-300 relative z-auto">
         <div class="flex">
           <h1 class="text-green-300 text-lg font-semibold cursor-pointer hover:text-green-400">(wired-in)</h1>
+        </div>
+        <div class="inline-flex items-center text-center">
+          <a class="text-zinc-300 py-1 mx-2 cursor-pointer hover:text-zinc-400" href="/">about</a>
+          <a class="text-zinc-300 py-1 mx-2 cursor-pointer hover:text-zinc-400" href="/">servers</a>
+          <a class="text-zinc-300 py-1 mx-2 cursor-pointer hover:text-zinc-400" href="/">team</a>
         </div>
         <div class="inline-flex items-center text-center">
           <div class="flex">

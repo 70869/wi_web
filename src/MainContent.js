@@ -11,7 +11,7 @@ function MainContent() {
       <main className="flex-1 flex justify-center items-center">
         <div className="bg-white bg-opacity-30 p-7 rounded-lg flex flex-col items-center">
           <img src={logo} alt="(wired-in) logo" className="max-w-[75%]" />
-          <p className="text-white text-xl font-semibold">Coming This Summer</p>
+          <p className="text-white text-lg font-semibold">Coming This Summer</p>
         </div>
       </main>
       <Footer />

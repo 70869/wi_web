@@ -4,27 +4,21 @@ import youtubeIcon from './images/youtube.svg'; // Replace with your own YouTube
 
 function Header() {
   return (
-    <header style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      backgroundColor: 'rgba(5, 31, 61, 0.13)',
-      padding: '.75rem 32rem',
-      color: 'white',
-      position: 'relative', // Added this line
-      zIndex: 1, // Added this line
-    }}>
-      <h1 style={{
-        fontSize: '1.25rem',
-        fontWeight: '600',
-      }}>(wired-in)</h1>
-      <div>
-        <a href="https://discord.gg/y6kb6a9CcG" target="_blank" rel="noreferrer">
-          <img src={discordIcon} alt="Discord" style={{ width: '24px', marginRight: '12px' }} />
-        </a>
-        <a href="https://youtube.com/" target="_blank" rel="noreferrer">
-          <img src={youtubeIcon} alt="YouTube" style={{ width: '24px',  }} /> { /*why is this one so weird lol*/ }
-        </a>
+    <header>
+      <div class="flex justify-between items-center py-3 px-32 text-zinc-300 relative z-auto">
+        <div class="flex">
+          <h1 class="text-green-300 text-lg font-semibold cursor-pointer hover:text-green-400">(wired-in)</h1>
+        </div>
+        <div class="inline-flex items-center text-center">
+          <div class="flex">
+            <a class="mx-auto w-6 mr-3 py-1 cursor-pointer" href="https://discord.gg/y6kb6a9CcG" target="_blank" rel="noreferrer">
+              <img src={discordIcon} alt="Discord" />
+            </a>
+            <a class="mx-auto w-6 mr-3 py-1 cursor-pointer" href="https://youtube.com/" target="_blank" rel="noreferrer">
+              <img src={youtubeIcon} alt="YouTube" />
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   );

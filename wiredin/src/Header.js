@@ -8,10 +8,11 @@ function Header() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: 'rgba(0, 0, 0, 0.041)',
-      backdropFilter: 'blur(40px)',
+      backgroundColor: 'rgba(5, 31, 61, 0.13)',
       padding: '10px 100px',
-      color: 'white'
+      color: 'white',
+      position: 'relative', // Added this line
+      zIndex: 1, // Added this line
     }}>
       <h1>(wired-in)</h1>
       <div>
@@ -27,4 +28,3 @@ function Header() {
 }
 
 export default Header;
-

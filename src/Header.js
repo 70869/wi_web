@@ -13,12 +13,12 @@ function Header() {
                         </div>
                     </div>
                     <div class="inline-flex items-center text-center cusror-pointer transition-all text-zinc-200">
-                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="/">about</a>
-                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="/">servers</a>
-                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="/">team</a>
+                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#about">about</a>
+                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#server">servers</a>
+                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#team">team</a>
                     </div>
                     <div class="inline-flex items-center text-center">
-                        <div class="flex"> {/** maybe put this in the footer ? */}
+                        <div class="flex">
                             <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-zinc-300" href="https://discord.gg/y6kb6a9CcG" target="_blank" rel="noreferrer">
                                 <img src={discordIcon} alt="Discord" />
                             </a>

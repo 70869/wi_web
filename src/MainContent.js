@@ -9,7 +9,7 @@ function ServerStatus() {
     const [status, setStatus] = useState(null);
 
     useEffect(() => {
-        axios.get('https://api.mcsrvstat.us/2/')
+        axios.get('https://api.mcsrvstat.us/2/mc.wiredin.gg')
             .then(response => {
                 setStatus(response.data);
             })

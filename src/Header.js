@@ -21,35 +21,27 @@ function Header() {
         fetchData();
     }, []);
 
-    return (
+return (
         <header>
-            <div class="flex flex-row items-center justify-center w-full transition-all" style={{ backgroundColor: "rgba(23, 23, 23, 0.3" }}>
+            <div class="flex flex-row items-center justify-center w-full transition-all shadow-lg" style={{ backgroundColor: "rgba(27, 27, 27, 0.425)", backdropFilter: "blur(10px)", position: "sticky", top: 0, zIndex: 10 }}>
                 <div class="flex flex-row justify-between items-center w-full py-1 px-4 max-w lg:max-w-7xl">
                     <div class="flex">
                         <div class="flex items-center py-3 cursor-pointer hover:opacity-80 text-zinc-300 transition-all">
-                            <p class="text-green-300 text-lg font-bold">(wired-in)</p>
+                            <p class="text-white text-lg font-bold">(wired-in)</p>
                         </div>
                     </div>
                     <div class="inline-flex items-center text-center cusror-pointer transition-all text-zinc-200">
-                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#about">about</a>
-                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#server">servers</a>
-                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#team">team</a>
+                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#about">About</a>
+                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#server">Servers</a>
+                        <a class="py-1 mx-4 hover:opacity-80 text-zinc-300" href="#team">Team</a>
                     </div>
                     <div class="inline-flex items-center text-center">
                         <div class="flex">
-                        <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-zinc-300" href="https://youtube.com/" target="_blank" rel="noreferrer">
+                        <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-white" href="https://youtube.com/" target="_blank" rel="noreferrer">
                                 <img src={youtubeIcon} alt="YouTube" />
                             </a>
                             <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-zinc-300" href="https://discord.gg/wiredin" target="_blank" rel="noreferrer">
                                 <img src={discordIcon} alt="Discord" /> 
-                                <span style={{
-                                    color: '#FFD700',
-                                    textShadow: '0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700'
-                                 }}>
-                                    {memberCount}
-                               </span>
-
-
                             </a>
                         </div>
                     </div>

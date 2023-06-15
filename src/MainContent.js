@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import bg from './images/bgblur.png'
-import Header from './Header';
+import Header2 from './Header2';
 import picture from "./images/logo.png";
 import Footer from "./Footer";
 import axios from 'axios';
@@ -31,12 +31,6 @@ function ServerStatus() {
         fontSize: '1.5rem', // or whatever font size you prefer
     };
 
-    const iconStyle = {
-        height: '1em', // or whatever size fits best
-        width: '1em', // keep it the same as height to maintain aspect ratio
-        marginRight: '0.5em' // some space between the icon and the text
-    };
-
     if (status === null || status.players === undefined) {
         return <div style={loadingStyle}>Loading...</div>;
     }
@@ -49,11 +43,9 @@ function ServerStatus() {
                 borderRadius: '10px',
                 backdropFilter: 'blur(20px)'
             }}>
-            <div class="text-xl font-bold" style={{ color: '#00FF88', display: 'flex', alignItems: 'center' }}>
-                <img src={mcIcon} alt="MC Icon" style={iconStyle} />
-                mc.wiredin.gg
-            </div>
-            <div>{status.players.online} players online</div>
+            <img src={mcIcon} alt="MC Icon" class="w-8 h-8" />
+            <p class="text-base md:text-xl font-bold text-customGreen">mc.wiredin.gg</p>
+            <p class="text-sm md:text-base text-zinc-200">{status.players.online} players online</p>
         </div>
     );
 }
@@ -67,13 +59,13 @@ function MainContent() {
                 <div class="absolute top-0 left-0 h-full w-full bg-center bg-no-repeat bg-cover z-[-1]"
                     style={{ backgroundImage: "url(" + bg + ")" }}
                 />
-                <Header />
-                <div class="flex flex-col items-center justify-center flex-1 ml-32 mt-64 xl:flex-row xl:space-x-24 xl:items-start xl:justify-start">
+                <Header2 />
+                <div class="flex flex-col items-center justify-center flex-1 md:ml-32 md:mt-64 md:flex-row md:space-x-24 md:items-start md:justify-start">
                     <div class="overflow-hidden bg-transparent">
-                        <div class="relative max-w-xl px-8 mx-auto sm:px-6 lg:max-w-7xl items-center">
+                        <div class="relative max-w-xl px-8 mx-auto sm:px-6 md:max-w-7xl items-center">
                             <div class="animate-fadein">
-                                <h1 class="animate-fadein max-w-xl mx-auto text-start text-7xl font-bold tracking-tight text-gray-300 leading-normal">(wired-in)</h1>
-                                <p class="animate-fadein max-w-xl text-start text-gray-300 text-itext-lg mb-4 tracking-wide">The next step for game servers and file hosting.</p>
+                                <h1 class="max-w-xl mx-auto text-start text-4xl md:text-7xl font-bold tracking-tight text-gray-300 leading-normal">(wired-in)</h1>
+                                <p class="max-w-xl text-start text-gray-300 text-itext-lg mb-4 tracking-wide">The next step for game servers and file hosting.</p>
                                 <ServerStatus />
                             </div>
                         </div>
@@ -81,19 +73,21 @@ function MainContent() {
                 </div>
             </div>
             <div class="relative">
-                <div class="flex flex-col w-full items-center bg-white dark:bg-black">
-                    <div id="about" class="container mx-auto px-32 py-32" >
-                        <div class="parallax flex flex-row justify-center items-center">
-                            <img class="mx-auto max-w-[35%] object-cover" src={picture} alt="placeholder" />
-                            <div class="flex flex-col mx-auto bg-white bg-opacity-25 rounded-lg backdrop-blur-lg p-4 md:p-6 lg:p-8 shadow-glow">
-                                <h2 class="max-w-xl text-5xl font-light tracking-tight text-center leading-tight">
-                                    <h2 class="max-w-xl text-5xl font-light tracking-tight text-center leading-tight">
-                                        <span class="text-white">About </span>
-                                        <span class="text-customGreen">(</span>
-                                        <span class="text-white">wired-in</span>
-                                        <span class="text-customGreen">)</span>
+                <div class="flex flex-col md:w-full md:items-center bg-black">
+                    <div id="about" class="container mx-auto md:px-32 py-32">
+                        <div class="flex justify-center items-center">
+                            <div class="hidden md:block">
+                                <img class="mx-auto object-cover" src={picture} alt="placeholder" />
+                            </div>
+                            <div class="flex flex-col mx-auto md:bg-zinc-800 rounded-lg p-4 md:p-8">
+                                <div class="max-w-xl text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight">
+                                    <h2 class="inline-flex">
+                                        <p class="text-white mr-2">About</p>
+                                        <p class="text-customGreen">(</p>
+                                        <p class="text-white">wired-in</p>
+                                        <p class="text-customGreen">)</p>
                                     </h2>
-                                </h2>
+                                </div>
                                 <p class="max-w-xl text-start mt-6 text-xl leading-6 text-white">
                                     (wired-in) is a community-centered brand designed with gamers in mind. We are dedicated to providing top-tier, high-performance game servers, hosting popular titles like Minecraft, Counter-Strike, and many more. We are driven by our passion for gaming and the desire to create an unparalleled multiplayer experience.
                                     <br /><br />
@@ -108,10 +102,10 @@ function MainContent() {
                             </div>
                         </div>
                     </div>
-                    <div id="server" class="container mx-auto px-32 py-32" >
-                        <div class="flex flex-row justify-center items-center">
-                            <div class="flex flex-col mx-auto">
-                                <h2 class="max-w-2xl text-5xl font-light tracking-tight text-center text-zinc-800 dark:text-zinc-200 leading-tight">Game Servers</h2>
+                    <div id="server" class="container mx-auto md:px-32 py-32">
+                        <div class="flex justify-center items-center">
+                            <div class="flex flex-col md:mx-auto">
+                                <h2 class="max-w-xl text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">Game Servers</h2>
                                 <section class="relative py-12 min-h-screen">
                                     <div class="absolute inset-0">
                                         <div class="h-1/3 sm:h-2/3"></div>
@@ -143,16 +137,13 @@ function MainContent() {
                                         </div>
                                     </div>
                                 </section>
-
-
                             </div>
-
                         </div>
                     </div>
-                    <div id="team" class="container mx-auto px-32 py-32" >
-                        <div class="flex flex-row justify-center items-center">
-                            <div class="flex flex-col mx-auto">
-                                <h2 class="max-w-xl text-5xl font-light tracking-tight text-center text-zinc-800 dark:text-zinc-200 leading-tight">The team</h2>
+                    <div id="team" class="container mx-auto md:px-32 py-32" >
+                        <div class="flex justify-center items-center">
+                            <div class="flex flex-col md:mx-auto">
+                                <h2 class="max-w-xl text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">The Team</h2>
                             </div>
                         </div>
                     </div>

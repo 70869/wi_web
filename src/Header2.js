@@ -32,7 +32,7 @@ function Header2() {
                         </li>
                     </ul>
                 </nav>
-                <div class="inline-flex items-center text-center">
+                <div class="md:inline-flex items-center text-center hidden md:visible">
                     <div class="flex">
                         <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-white" href="https://youtube.com/" target="_blank" rel="noreferrer">
                             <img src={youtubeIcon} alt="YouTube" />
@@ -43,27 +43,6 @@ function Header2() {
                     </div>
                 </div>
             </div>
-
-            <nav class="md:hidden">
-                <ul class="flex items-center justify-start">
-                    <li>
-                        <a class="block mx-4 no-underline py-2 text-zinc-300" href="#about">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a class="mx-4 block no-underline text-zinc-300" href="#server">
-                            Servers
-                        </a>
-                    </li>
-                    <li>
-                        <a class="mx-4 block no-underline text-zinc-300" href="#team">
-                            Team
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
         </header>
     );
 }

@@ -45,7 +45,7 @@ function ServerStatus() {
             }}>
             <img src={mcIcon} alt="MC Icon" class="w-8 h-8" />
             <p class="text-base md:text-xl font-bold text-customGreen">mc.wiredin.gg</p>
-            <p class="text-sm md:text-base text-zinc-200">{status.players.online} players online</p>
+            <p class="text-sm md:text-base text-zinc-300">{status.players.online} players online</p>
         </div>
     );
 }
@@ -64,7 +64,7 @@ function MainContent() {
                     <div class="overflow-hidden bg-transparent">
                         <div class="relative max-w-xl px-8 mx-auto sm:px-6 md:max-w-7xl items-center">
                             <div class="animate-fadein">
-                                <h1 class="max-w-xl mx-auto text-start text-4xl md:text-7xl font-bold tracking-tight text-gray-300 leading-normal">(wired-in)</h1>
+                                <h1 class="max-w-xl mx-auto text-start text-4xl md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal">(wired-in)</h1>
                                 <p class="max-w-xl text-start text-gray-300 text-itext-lg mb-4 tracking-wide">The next step for game servers and file hosting.</p>
                                 <ServerStatus />
                             </div>
@@ -80,7 +80,7 @@ function MainContent() {
                                 <img class="mx-auto object-cover" src={picture} alt="placeholder" />
                             </div>
                             <div class="flex flex-col mx-auto md:bg-zinc-800 rounded-lg p-4 md:p-8">
-                                <div class="max-w-xl text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight">
+                                <div class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight">
                                     <h2 class="inline-flex">
                                         <p class="text-white mr-2">About</p>
                                         <p class="text-customGreen">(</p>
@@ -104,35 +104,35 @@ function MainContent() {
                     </div>
                     <div id="server" class="container mx-auto md:px-32 py-32">
                         <div class="flex justify-center items-center">
-                            <div class="flex flex-col md:mx-auto">
-                                <h2 class="max-w-xl text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">Game Servers</h2>
-                                <section class="relative py-12 min-h-screen">
+                            <div class="flex flex-col p-4 md:p-8">
+                                <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">Game Servers</h2>
+                                <section class="relative mt-6 min-h-screen">
                                     <div class="absolute inset-0">
                                         <div class="h-1/3 sm:h-2/3"></div>
                                     </div>
                                     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                                        <div class="relative shadow-xl sm:rounded-lg sm:overflow-hidden">
-                                            <div class="px-4 py-5 sm:px-6 bg-opacity-25 backdrop-blur-lg">
+                                        <div class="relative sm:overflow-hidden">
+                                            <div class="px-4 py-5 sm:px-6">
                                                 <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Join the Test Environment</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-gray-300">We've set up a "Test Environment" where you can jump in, play, and give us your feedback. It's a bit like being a game tester, but without the long hours and the boss looking over your shoulder.</p>
+                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">We've set up a "Test Environment" where you can jump in, play, and give us your feedback. It's a bit like being a game tester, but without the long hours and the boss looking over your shoulder.</p>
                                             </div>
-                                            <div class="px-4 py-5 sm:px-6  bg-opacity-25 backdrop-blur-lg">
+                                            <div class="px-4 py-5 sm:px-6">
                                                 <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Minecraft Test Server</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-gray-300">Our Minecraft Test Server is a wild and wonderful place where creativity meets combat. We've got three modes for you to choose from:</p>
-                                                <ul class="list-disc pl-5 mt-4 text-gray-300">
+                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">Our Minecraft Test Server is a wild and wonderful place where creativity meets combat. We've got three modes for you to choose from:</p>
+                                                <ul class="list-disc pl-5 mt-4 text-zinc-300">
                                                     <li>Creative: Unleash your imagination and build to your heart's content.</li>
                                                     <li>PvP: Test your combat skills against other players. May the best player win!</li>
                                                     <li>Survival Multiplayer: Can you survive in a world where danger lurks around every corner?</li>
                                                 </ul>
-                                                <p class="mt-4 max-w-3xl text-lg text-gray-300">And the best part? There are no rules! Well, except for one: no cheating. We're all here to have fun, after all.</p>
+                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">And the best part? There are no rules! Well, except for one: no cheating. We're all here to have fun, after all.</p>
                                             </div>
-                                            <div class="px-4 py-5 sm:px-6 bg-opacity-25 backdrop-blur-lg">
+                                            <div class="px-4 py-5 sm:px-6">
                                                 <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Special Status for Test Environment Users</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-gray-300">As a thank you for helping us shape the future of (wired-in), all Test Environment users will receive a special "Minecraft Tester" role on our Discord server and forums. It's our way of saying thanks for being part of our journey.</p>
+                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">As a thank you for helping us shape the future of (wired-in), all Test Environment users will receive a special "Minecraft Tester" role on our Discord server and forums. It's our way of saying thanks for being part of our journey.</p>
                                             </div>
-                                            <div class="px-4 py-5 sm:px-6  bg-opacity-25 backdrop-blur-lg">
+                                            <div class="px-4 py-5 sm:px-6">
                                                 <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Join the Test Environment Today!</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-gray-300">So what are you waiting for? Join the Test Environment today and help us create the best gaming experience on the web!</p>
+                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">So what are you waiting for? Join the Test Environment today and help us create the best gaming experience on the web!</p>
                                             </div>
                                         </div>
                                     </div>
@@ -142,8 +142,28 @@ function MainContent() {
                     </div>
                     <div id="team" class="container mx-auto md:px-32 py-32" >
                         <div class="flex justify-center items-center">
-                            <div class="flex flex-col md:mx-auto">
-                                <h2 class="max-w-xl text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">The Team</h2>
+                            <div class="flex flex-col p-4 md:p-8">
+                                <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">The Team</h2>
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="flex bg-zinc-800 py-8 px-8 md:py-16 md:px-16 max-w-sm mx-3 my-6 rounded-xl space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+                                        <img class="block mx-auto h-24 md:h-32 rounded-full sm:mx-0 sm:shrink-0" src="https://cdn.discordapp.com/avatars/1004937727172673578/7f65cff1bdb57c1b837cfd4082b0beb6.png?size=512&width=0&height=0" alt="etebong"></img>
+                                        <div class="text-center space-y-2 sm:text-left">
+                                            <div class="space-y-0.5">
+                                                <p class="text-lg md:text-2xl text-zinc-200 font-semibold">etebong</p>
+                                                <p class=" text-zinc-400 font-medium md:text-lg">some guy</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex bg-zinc-800 py-8 px-8 md:py-16 md:px-16 max-w-sm mx-3 my-6 rounded-xl space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+                                        <img class="block mx-auto h-24 md:h-32 rounded-full sm:mx-0 sm:shrink-0" src="https://cdn.discordapp.com/avatars/1004937727172673578/7f65cff1bdb57c1b837cfd4082b0beb6.png?size=512&width=0&height=0" alt="etebong"></img>
+                                        <div class="text-center space-y-2 sm:text-left">
+                                            <div class="space-y-0.5">
+                                                <p class="text-lg md:text-2xl text-zinc-200 font-semibold">etebong</p>
+                                                <p class=" text-zinc-400 font-medium md:text-lg">some guy</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

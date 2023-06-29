@@ -158,8 +158,8 @@ function MainContent() {
                                         <img class="block mx-auto h-24 md:h-32 rounded-full sm:mx-0 sm:shrink-0" src="https://cdn.discordapp.com/avatars/1004937727172673578/7f65cff1bdb57c1b837cfd4082b0beb6.png?size=512&width=0&height=0" alt="etebong"></img>
                                         <div class="text-center space-y-2 sm:text-left">
                                             <div class="space-y-0.5">
-                                                <p class="text-lg md:text-2xl text-zinc-200 font-semibold">etebong</p>
-                                                <p class=" text-zinc-400 font-medium md:text-lg">some guy</p>
+                                                <p class="text-lg md:text-2xl text-zinc-200 font-semibold">shie</p>
+                                                <p class=" text-zinc-400 font-medium md:text-lg">some cool guy</p>
                                             </div>
                                         </div>
                                     </div>

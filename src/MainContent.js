@@ -1,71 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import bg from './images/bgblur.png'
-import Header2 from './Header2';
+import React from 'react';
+import Background from './images/bgblur.png'
+import Header from './Header';
+import CardTest from './ServerMinecraft';
+import CardTest2 from './ServerCS2';
 import picture from "./images/logo.png";
 import Footer from "./Footer";
-import axios from 'axios';
-import mcIcon from './images/mcicon.svg';
-
-function ServerStatus() {
-    const [status, setStatus] = useState(null);
-
-    useEffect(() => {
-        axios.get('https://api.mcsrvstat.us/2/mc.wiredin.gg')
-            .then(response => {
-                setStatus(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error!', error);
-            });
-    }, []);
-
-    const loadingStyle = {
-        backgroundColor: 'rgba(0, 0, 0, 0.171)',
-        color: 'white',
-        borderRadius: '10px',
-        backdropFilter: 'blur(5px)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '50px', // or whatever height you prefer
-        fontSize: '1.5rem', // or whatever font size you prefer
-    };
-
-    if (status === null || status.players === undefined) {
-        return <div style={loadingStyle}>Loading...</div>;
-    }
-
-    return (
-        <div class="flex justify-between items-center w-full p-4 mt-6"
-            style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.308)',
-                color: 'white',
-                borderRadius: '10px',
-                backdropFilter: 'blur(20px)'
-            }}>
-            <img src={mcIcon} alt="MC Icon" class="w-8 h-8" />
-            <p class="text-base md:text-xl font-bold text-customGreen">mc.wiredin.gg</p>
-            <p class="text-sm md:text-base text-zinc-300">{status.players.online} players online</p>
-        </div>
-    );
-}
-
-
+import ServerStatus from "./ServerStatus";
 
 function MainContent() {
     return (
         <div>
             <div class="flex flex-col relative min-h-screen">
                 <div class="absolute top-0 left-0 h-full w-full bg-center bg-no-repeat bg-cover z-[-1]"
-                    style={{ backgroundImage: "url(" + bg + ")" }}
+                    style={{ backgroundImage: "url(" + Background + ")" }}
                 />
-                <Header2 />
+                <Header />
                 <div class="flex flex-col items-center justify-center flex-1 md:ml-32 md:mt-64 md:flex-row md:space-x-24 md:items-start md:justify-start">
                     <div class="overflow-hidden bg-transparent">
                         <div class="relative max-w-xl px-8 mx-auto sm:px-6 md:max-w-7xl items-center">
                             <div class="animate-fadein">
-                                <h1 class="max-w-xl mx-auto text-start text-4xl md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal">(wired-in)</h1>
-                                <p class="max-w-xl text-start text-gray-300 text-itext-lg mb-4 tracking-wide">The next step for game servers and file hosting.</p>
+                                <h1 class="max-w-xl mx-auto text-center text-4xl md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal">(wired-in)</h1>
+                                <p class="max-w-xl text-start text-gray-300 text-itext-lg my-2 tracking-wide">The next step for game servers and file hosting.</p>
                                 <ServerStatus />
                             </div>
                         </div>
@@ -73,7 +28,7 @@ function MainContent() {
                 </div>
             </div>
             <div class="relative">
-                <div class="flex flex-col md:w-full md:items-center bg-black">
+                <div class="flex flex-col md:w-full md:items-center bg-gradient-to-b from-black to-emerald-800">
                     <div id="about" class="container mx-auto md:px-32 py-32">
                         <div class="flex justify-center items-center">
                             <div class="hidden md:block">
@@ -82,8 +37,8 @@ function MainContent() {
                             <div class="flex flex-col mx-auto md:bg-zinc-800 rounded-lg p-4 md:p-8">
                                 <div class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight">
                                     <h2 class="inline-flex">
-                                        <p class="text-white mr-2">About</p>
-                                        <p class="text-customGreen">(</p>
+                                        <p class="text-white">About</p>
+                                        <p class="text-customGreen">&nbsp;(</p>
                                         <p class="text-white">wired-in</p>
                                         <p class="text-customGreen">)</p>
                                     </h2>
@@ -105,38 +60,12 @@ function MainContent() {
                     <div id="server" class="container mx-auto md:px-32 py-32">
                         <div class="flex justify-center items-center">
                             <div class="flex flex-col p-4 md:p-8">
-                                <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">Game Servers</h2>
-                                <section class="relative mt-6 min-h-screen">
-                                    <div class="absolute inset-0">
-                                        <div class="h-1/3 sm:h-2/3"></div>
-                                    </div>
-                                    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                                        <div class="relative sm:overflow-hidden">
-                                            <div class="px-4 py-5 sm:px-6">
-                                                <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Join the Test Environment</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">We've set up a "Test Environment" where you can jump in, play, and give us your feedback. It's a bit like being a game tester, but without the long hours and the boss looking over your shoulder.</p>
-                                            </div>
-                                            <div class="px-4 py-5 sm:px-6">
-                                                <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Minecraft Test Server</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">Our Minecraft Test Server is a wild and wonderful place where creativity meets combat. We've got three modes for you to choose from:</p>
-                                                <ul class="list-disc pl-5 mt-4 text-zinc-300">
-                                                    <li>Creative: Unleash your imagination and build to your heart's content.</li>
-                                                    <li>PvP: Test your combat skills against other players. May the best player win!</li>
-                                                    <li>Survival Multiplayer: Can you survive in a world where danger lurks around every corner?</li>
-                                                </ul>
-                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">And the best part? There are no rules! Well, except for one: no cheating. We're all here to have fun, after all.</p>
-                                            </div>
-                                            <div class="px-4 py-5 sm:px-6">
-                                                <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Special Status for Test Environment Users</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">As a thank you for helping us shape the future of (wired-in), all Test Environment users will receive a special "Minecraft Tester" role on our Discord server and forums. It's our way of saying thanks for being part of our journey.</p>
-                                            </div>
-                                            <div class="px-4 py-5 sm:px-6">
-                                                <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Join the Test Environment Today!</h2>
-                                                <p class="mt-4 max-w-3xl text-lg text-zinc-300">So what are you waiting for? Join the Test Environment today and help us create the best gaming experience on the web!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                                <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">Our Servers</h2>
+                                <div class="flex flex-col md:flex-row pt-8">
+                                    <CardTest />
+                                    <div class="py-4"></div>
+                                    <CardTest2 />
+                                </div>
                             </div>
                         </div>
                     </div>

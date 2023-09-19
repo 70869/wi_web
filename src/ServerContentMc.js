@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MinecraftLogl from './random-files/MinecraftLogl.png'
-import Rectangle from './random-files/Rectangle.png'
+import Rectangle from './random-files/rect.png'
 
 function ServerStatusSmall() {
     const [status, setStatus] = useState(null);
@@ -25,10 +25,10 @@ function ServerStatusSmall() {
     )
 }
 
-function CardTest() {
+function SMineCraft() {
     return (
         <div class="flex flex-col">
-            <div class="md:hidden w-80 bg-zinc-800 p-6 rounded-xl shadow-lg">
+            <div class="md:hidden w-80 p-6 rounded-xl shadow-lg" style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)" }}>
                 <div class="flex items-center justify-between">
                     <div class="flex">
                         <img class="block mr-2 w-12 h-12" src={MinecraftLogl} alt="mc"></img>
@@ -54,7 +54,7 @@ function CardTest() {
 
             </div>
 
-            <div class="hidden md:block w[33.5rem] h[37rem] max-w-[33.5rem] bg-zinc-800 p-6 rounded-xl shadow-lg mx-2">
+            <div class="hidden md:block w[33.5rem] h[37rem] max-w-[33.5rem] p-6 rounded-xl shadow-lg mx-2" style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)" }}>
                 <div class="flex items-center justify-between">
                     <div class="flex">
                         <img class="block mr-2 w-12 h-12" src={MinecraftLogl} alt="mc"></img>
@@ -69,7 +69,7 @@ function CardTest() {
                     </div>
                 </div>
                 <div class="flex flex-col pt-4 pb-4">
-                    <div class="outline outline-1 rounded-xl outline-white">
+                    <div class="outline outline-1 rounded-xl outline-white ">
                         <img class="rounded-xl" src={Rectangle} alt="rectangle"></img>
                     </div>
                 </div>
@@ -92,4 +92,4 @@ function CardTest() {
     );
 }
 
-export default CardTest;
+export default SMineCraft;

@@ -1,6 +1,6 @@
 # (wired-in) web
 
-This project was bootstrapped with [Create React App] and will b
+This project was bootstrapped with [Create React App] and will be will converted to vite and bun because nodejs is ass
 
 ## Available Scripts
 

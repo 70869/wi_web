@@ -7,5 +7,5 @@ This project was bootstrapped with [Create React App] and will be will converted
 In the project directory, you can run:
 ### `npm start`
 ### `npm test`
-### `npm run build'
+### `npm run build `
 ### `npm run eject`

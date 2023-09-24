@@ -6,7 +6,7 @@ function ServerStatus() {
     const [status, setStatus] = useState(null);
 
     useEffect(() => {
-        axios.get('https://api.mcsrvstat.us/2/mc.wiredin.gg')
+        axios.get('https://api.mcsrvstat.us/2/mc.hypixel.net')
             .then(response => {
                 setStatus(response.data);
             })

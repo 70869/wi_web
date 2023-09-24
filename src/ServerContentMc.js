@@ -84,7 +84,7 @@ function SMineCraft() {
                     limits in your designated plot, collaborating with fellow builders and artists.</p>
                 <p class="inline-flex text-left text-yellow-300">Unlock Ranks and get more with</p>
                 <p class="inline-flex text-green-400 my-0.5">&nbsp;(turbo)</p>
-                <p class="flex text-left text-zinc-300">Progress through our ranks system and gain exclusive privileges. Turbo
+                <p class="flex text-left text-zinc-300">Turbo
                     users enjoy the added benefits of flashy trails, adorable pets. and more
                     plots to express themselves.</p>
             </div>

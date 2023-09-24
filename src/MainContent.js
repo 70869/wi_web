@@ -19,8 +19,8 @@ function MainContent() {
                     <div class="overflow-hidden bg-transparent">
                         <div class="relative max-w-xl px-8 mx-auto sm:px-6 md:max-w-7xl items-center">
                             <div class="animate-fadein">
-                                <h1 class="max-w-xl mx-auto text-center text-4xl md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal">(wired-in)</h1>
-                                <p class="max-w-xl text-start text-gray-300 text-itext-lg my-2 tracking-wide">The next step for game servers and file hosting.</p>
+                                <h1 class="max-w-xl mx-auto text-left text-5xl my-4 md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal">(wired-in)</h1>
+                                <p class="max-w-xl text-start text-gray-300 text-itext-lg my-3 tracking-wide">The next step for game servers and file hosting.</p>
                                 <ServerStatus />
                             </div>
                         </div>
@@ -34,12 +34,12 @@ function MainContent() {
                             <div class="hidden md:block">
                                 <img class="mx-auto object-cover" src={Picture} alt="placeholder" />
                             </div>
-                            <div class="flex flex-col mx-auto md:bg-zinc-800 rounded-lg p-4 md:p-8">
+                            <div class="flex flex-col mx-auto rounded-xl shadow-lg p-4 md:p-8" style={{ backgroundColor: "rgba(27, 27, 27, 0.65)", backdropFilter: "blur(10px)"}} >
                                 <div class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight">
                                     <h2 class="inline-flex">
                                         <p class="text-white">About</p>
                                         <p class="text-customGreen">&nbsp;(</p>
-                                        <p class="text-white">wired-in</p>
+                                        <p class="text-white">Us</p>
                                         <p class="text-customGreen">)</p>
                                     </h2>
                                 </div>

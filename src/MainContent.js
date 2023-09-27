@@ -19,8 +19,8 @@ function MainContent() {
                     <div class="overflow-hidden bg-transparent">
                         <div class="relative max-w-xl px-8 mx-auto sm:px-6 md:max-w-7xl items-center">
                             <div class="animate-fadein">
-                                <h1 class="max-w-xl mx-auto text-left text-5xl my-4 md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal">(wired-in)</h1>
-                                <p class="max-w-xl text-start text-gray-300 text-itext-lg my-3 tracking-wide">The next step for game servers and file hosting.</p>
+                                <h1 class="max-w-xl mx-auto text-left text-5xl my-4 md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal text-shadow-md">(wired-in)</h1>
+                                <p class="max-w-xl text-start text-gray-300 text-itext-lg my-3 tracking-wide text-shadow-md">The next step for game servers and file hosting.</p>
                                 <ServerStatus />
                             </div>
                         </div>

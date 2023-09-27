@@ -20,7 +20,7 @@ function ServerStatus() {
         color: 'white',
         borderRadius: '10px',
         backdropFilter: 'blur(5px)',
-        display: 'flex',
+        display: '',
         justifyContent: 'center',
         alignItems: 'center',
         height: '50px', // or whatever height you prefer
@@ -28,22 +28,29 @@ function ServerStatus() {
     };
 
     if (status === null || status.players === undefined) {
-        return <div style={loadingStyle}>Loading...</div>;
+        return <div style={loadingStyle}>Server Offline</div>;
     }
 
     return (
-        <div class="inline-flex justify-between items-center w-full p-4"
-            style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.308)',
-                color: 'white',
-                borderRadius: '10px',
-                backdropFilter: 'blur(20px)'
-            }}>
-            <img src={mcIcon} alt="MC Icon" class="w-10 h-10" />
-            <p class="text-lg font-bold text-customGreen">mc.wiredin.gg</p>
-            <p class="mt-1 text-sm text-zinc-300">{status.players.online} players online </p>
+        <div style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.308)',
+            color: 'white',
+            borderRadius: '10px',
+            backdropFilter: 'blur(20px)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '1rem'
+        }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={mcIcon} alt="MC Icon" style={{ width: '2.5rem', height: '2.5rem' }} />
+                <p style={{ marginLeft: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold', }}>mc.wiredin.gg</p>
+            </div>
+            <p style={{ fontSize: '0.875rem', color: 'var(--zinc-300)', marginLeft: 'auto' }}>{status.players.online} Players Online</p>
         </div>
+        
     );
+    
 }
 
 export default ServerStatus;

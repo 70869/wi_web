@@ -12,7 +12,7 @@ function Team() {
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245240680648734/msn-icon-17660.png" alt="etebong"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
-                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Bong</p>
+                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">etebong</p>
                                         <p class="text-zinc-400 font-medium text-base md:text-lg">Founder</p>
                                     </div>
                                 </div>
@@ -31,8 +31,8 @@ function Team() {
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245121910558771/423423.png" alt="gavin"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
-                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Gavin</p>
-                                        <p class="text-zinc-400 font-medium text-base md:text-lg">Developer</p>
+                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">gavin</p>
+                                        <p class="text-zinc-400 font-medium text-base md:text-lg">Web Developer</p>
                                     </div>
                                 </div>
                             </div>
@@ -49,8 +49,8 @@ function Team() {
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245121608564813/999.png" alt="bobby jones"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
-                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">BlueMercy521</p>
-                                        <p class="text-zinc-400 font-medium text-base md:text-lg">xxx</p>
+                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">BlueMercy</p>
+                                        <p class="text-zinc-400 font-medium text-base md:text-lg">3D Artist</p>
                                     </div>
                                 </div>
                             </div>

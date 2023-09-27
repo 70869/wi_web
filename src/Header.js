@@ -34,10 +34,10 @@ function Header() {
                 </nav>
                 <div class="md:inline-flex items-center text-center hidden md:visible">
                     <div class="flex">
-                        <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-white" href="https://youtube.com/" target="_blank" rel="noreferrer">
+                        <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-white" href="https://youtube.com/@wiredin" target="_blank" rel="noreferrer">
                             <img src={youtubeIcon} alt="YouTube" />
                         </a>
-                        <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-zinc-300" href="https://discord.gg/wiredin" target="_blank" rel="noreferrer">
+                        <a class="w-6 mx-4 py-1 cursor-pointer hover:opacity-80 text-zinc-300" href="https://discord.gg/y6kb6a9CcG" target="_blank" rel="noreferrer">
                             <img src={discordIcon} alt="Discord" />
                         </a>
                     </div>

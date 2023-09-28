@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Background from './images/bgblur.png'
+import Background from './images/bg.png'
 import Picture from "./images/logo.png";
 import ServerStatus from "./ServerStatus";
 import Team from "./TeamContent";
@@ -29,7 +29,7 @@ function MainContent() {
                 </div>
             </div>
             <div class="relative">
-                <div class="flex flex-col md:w-full md:items-center bg-gradient-to-b from-black to-emerald-800">
+                <div class="flex flex-col md:w-full md:items-center bg-gradient-to-b from-black to-emerald-600">
                     <div id="about" class="container mx-auto md:px-32 py-32">
                         <div class="flex justify-center items-center">
                             <div class="hidden md:block">

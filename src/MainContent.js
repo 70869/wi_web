@@ -49,11 +49,11 @@ function MainContent() {
                                     <br /><br />
                                     But we're more than just game servers. Recognizing the need for secure, private storage solutions, we are proud to offer an exclusive, invite-only file hosting service. With end-to-end encryption, we're ensuring a secure space for all your important files.
                                     <br /><br />
-                                    Our mission is to bridge the gap between gaming and security, enhancing your digital experience. We're set to launch in the Fall of 2023, and we can't wait for you to join our community.
+                                    Our mission is to bridge the gap between gaming and security, enhancing your digital experience. We're set to launch this Fall, and we can't wait for you to join our community.
                                     <br /><br />
                                     We operate on a tiered subscription model, which gives you the freedom to choose the level of service that suits your needs. Each tier offers different perks and advantages, from server access to increased storage space.
                                     <br /><br />
-                                    At (wired-in), we're more than a brand - we're a community. Join us and become a part of our journey.
+                                    At (wired-in), we're more than just servers - we're a community. Join us and become a part of our journey.
                                 </p>
                             </div>
                         </div>

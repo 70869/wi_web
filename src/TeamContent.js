@@ -28,7 +28,7 @@ function Team() {
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 3 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245121910558771/423423.png" alt="gavin"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245181750694058/234.png?ex=651616a8&is=6514c528&hm=1f8e75cafb226425c804c466d5ab79c7477b9d50452b47d3dffb2b758d3db2ce&=" alt="gavin"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">gavin</p>
@@ -37,7 +37,7 @@ function Team() {
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 4 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245123667972106/white.png" alt="soda"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245239455920228/99_colors.png?ex=651616b6&is=6514c536&hm=f253a2098ed69fd061ec7d17f5d3feffce4b65b184bead097f4a60d82216b8d0&=" alt="soda"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">soda</p>

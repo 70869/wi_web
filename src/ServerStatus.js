@@ -46,7 +46,7 @@ function ServerStatus() {
                 <img src={mcIcon} alt="MC Icon" style={{ width: '2.5rem', height: '2.5rem' }} />
                 <p style={{ marginLeft: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold', }}>mc.wiredin.gg</p>
             </div>
-            <p style={{ fontSize: '0.875rem', color: 'var(--zinc-300)', marginLeft: 'auto' }}>{status.players.online} Players Online</p>
+            <p style={{ fontSize: '0.875rem', color: 'var(--zinc-300)', marginLeft: 'auto' }}>{status.players.online} Online</p>
         </div>
         
     );

@@ -1,8 +1,7 @@
 # (wired-in) web
 
-This project was bootstrapped with [Create React App] and will be will converted to vite and bun because nodejs is ass
-
-## Available Scripts
+🔌are you (wired-in) yet?
+https://wiredin.gg
 
 In the project directory, you can run:
 ### `npm start`

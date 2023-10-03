@@ -12,24 +12,16 @@ function ServerStatus() {
             })
             .catch(error => {
                 console.error('There was an error!', error);
+                setStatus({ players: { online: 0 } });
             });
     }, []);
 
-    const loadingStyle = {
-        backgroundColor: 'rgba(0, 0, 0, 0.171)',
-        color: 'white',
-        borderRadius: '10px',
-        backdropFilter: 'blur(5px)',
-        display: '',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '50px', // or whatever height you prefer
-        fontSize: '1.5rem', // or whatever font size you prefer
-    };
+    // Check if status is null or players.online is undefined
+    const isOffline = status === null || status.players === undefined || status.players.online === undefined;
 
-    if (status === null || status.players === undefined) {
-        return <div style={loadingStyle}>Server Offline</div>;
-    }
+    // Determine the status text and its color based on the server's online status
+    const statusText = isOffline ? 'Offline' : `${status.players.online} Online`;
+    const statusTextColor = isOffline ? 'text-red-500' : 'text-green-500';
 
     return (
         <div style={{
@@ -44,11 +36,14 @@ function ServerStatus() {
         }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <img src={mcIcon} alt="MC Icon" style={{ width: '2.5rem', height: '2.5rem' }} />
-                <p style={{ marginLeft: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold', }}>mc.wiredin.gg</p>
+                <p style={{ marginLeft: '0.5rem', fontSize: '1.25rem', fontWeight: 'bold' }}>mc.wiredin.gg</p>
             </div>
-            <p style={{ fontSize: '0.875rem', color: 'var(--zinc-300)', marginLeft: 'auto' }}>{status.players.online} Online</p>
+            <p style={{
+                fontSize: '0.875rem',
+                color: statusText === 'Offline' ? 'text-red-500' : 'text-green-500',
+                marginLeft: 'auto'
+            }}>{statusText}</p>
         </div>
-        
     );
     
 }

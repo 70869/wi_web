@@ -9,16 +9,18 @@ function Team() {
                     <div class="flex flex-col md:flex-row py-4 md:py-8">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 1 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245240680648734/msn-icon-17660.png" alt="etebong"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/1004937727172673578/cd32387915c2a2826eb5374315c44d4f.png?size=2048&width=0&height=256" alt="etebong"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
-                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">etebong</p>
+                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Bong</p>
                                         <p class="text-zinc-400 font-medium text-base md:text-lg">Founder</p>
+
+
                                     </div>
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 2 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/162811806543249408/8c3390b5ccc926b39e123c0415884d91.png" alt="xxalem"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/162811806543249408/2b10ac882c5ccb2fc8f10485902dbd49.png?size=2048&width=0&height=256" alt="xxalem"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">xxalem</p>
@@ -28,34 +30,35 @@ function Team() {
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 3 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245181750694058/234.png?ex=651616a8&is=6514c528&hm=1f8e75cafb226425c804c466d5ab79c7477b9d50452b47d3dffb2b758d3db2ce&=" alt="gavin"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/229400859287617536/9103e9453957a7011af58a9bf8a695bd.png?size=2048&width=0&height=256" alt="gavin"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
-                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">gavin</p>
+                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Gavin</p>
                                         <p class="text-zinc-400 font-medium text-base md:text-lg">Web Developer</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 4 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245239455920228/99_colors.png?ex=651616b6&is=6514c536&hm=f253a2098ed69fd061ec7d17f5d3feffce4b65b184bead097f4a60d82216b8d0&=" alt="soda"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/257689851216789514/a_3e117317b87a141111c4b398ff674ca3.gif?size=2048&width=0&height=256" alt="soda"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">soda</p>
-                                        <p class="text-zinc-400 font-medium text-base md:text-lg">Community Lead</p>
+                                        <p class="text-zinc-400 font-medium text-base md:text-lg">Admin</p>
+                                        
                                     </div>
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 5 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245121608564813/999.png" alt="bobby jones"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/359199438759002112/f46ce7173faad7ef47d1e7201f810600.png?size=2048&width=0&height=256" alt="bobby jones"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
-                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">BlueMercy</p>
+                                        <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Lyde</p>
                                         <p class="text-zinc-400 font-medium text-base md:text-lg">3D Artist</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 6 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1117244918243536956/1117245183017369640/o08.png" alt="grace"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/126742625221869568/7a4441f0f9e0d5dbc39a6ebe523092fd.png?size=2048&width=0&height=256" alt="grace"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">shie</p>

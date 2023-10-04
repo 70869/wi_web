@@ -67,6 +67,7 @@ function MainContent() {
                                 <h1 class="max-w-xl mx-auto text-start text-4xl md:text-7xl font-bold tracking-tight text-zinc-300 leading-normal">(wired-in)</h1>
                                 <p class="max-w-xl text-start text-gray-300 text-itext-lg mb-4 tracking-wide">The next step for game servers and file hosting.</p>
                                 <ServerStatus />
+                                
                             </div>
                         </div>
                     </div>

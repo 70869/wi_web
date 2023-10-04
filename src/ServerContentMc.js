@@ -17,7 +17,7 @@ function ServerStatusSmall() {
     }, []);
 
     if (status === null || status.players === undefined) {
-        return <p class="text-zinc-400">Loading...</p>;
+        return <p class="text-zinc-400">Offline</p>;
     }
 
     return (

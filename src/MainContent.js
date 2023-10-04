@@ -3,6 +3,7 @@ import Header from './Header';
 import Background from './images/bg.png'
 import Picture from "./images/logo.png";
 import ServerStatus from "./ServerStatus";
+import CS2status from "./CS2status";
 import Team from "./TeamContent";
 import Footer from "./Footer";
 import ServerContent from './ServerContent';
@@ -20,8 +21,15 @@ function MainContent() {
                         <div class="relative max-w-xl px-8 mx-auto sm:px-6 md:max-w-7xl items-center">
                             <div class="animate-fadein">
                                 <h1 class="max-w-xl mx-auto text-left text-5xl my-4 md:text-7xl font-bold tracking-tight text-zinc-100 leading-normal text-shadow-md">(wired-in)</h1>
-                                <p class="max-w-xl text-2xl text-start text-gray-300 text-itext-lg my-3 tracking-wide text-shadow-md">Experience Hosting Like Never Before.</p>
-                                <ServerStatus />
+                                <p class="max-w-xl text-xl text-start text-gray-300 text-itext-lg my-3 tracking-wide text-shadow-md">Experience Hosting Like Never Before.</p>
+                                </div>
+
+                                    <div class= "animate-fadein my-2" > 
+                                    <ServerStatus />
+                                    </div>
+
+                                    <div class="animate-fadein  my-1"> 
+                                    <CS2status apiKey="B1743EF5E55BA2C323B1A7D0045E3370" serverIP="cs.wiredin.gg" appId="730" />
                             </div>
                             
                         </div>
@@ -49,11 +57,11 @@ function MainContent() {
                                     <br /><br />
                                     But we're more than just game servers. Recognizing the need for secure, private storage solutions, we are proud to offer an exclusive, invite-only file hosting service. With end-to-end encryption, we're ensuring a secure space for all your important files.
                                     <br /><br />
-                                    Our mission is to bridge the gap between gaming and security, enhancing your digital experience. We're set to launch this Fall, and we can't wait for you to join our community.
+                                    Our mission is to bridge the gap between gaming and security, enhancing your digital experience.
                                     <br /><br />
                                     We operate on a tiered subscription model, which gives you the freedom to choose the level of service that suits your needs. Each tier offers different perks and advantages, from server access to increased storage space.
                                     <br /><br />
-                                    At (wired-in), we're more than just servers - we're a community. Join us and become a part of our journey.
+                                     (wired-in), we're more than just servers - we're a community.
                                 </p>
                             </div>
                         </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import cs2logl from './random-files/cs2.png'
 import nuke from './random-files/nuke.png'
+import CS2small from './CS2small';
+
 
 function SCounterStrike2() {
     return (
@@ -32,8 +34,8 @@ function SCounterStrike2() {
                         </div>
                     </div>
                     <div class="inline-flex flex-col items-end text-right">
-                        <p class="text-zinc-600">[coming soon]</p>
-                        <p></p>
+                    <CS2small apiKey="B1743EF5E55BA2C323B1A7D0045E3370" serverIP="cs.wiredin.gg" appId="730" />
+                        <p class="text-green-400 text-sm">[TST ENV]</p>
                     </div>
                 </div>
                 <div class="flex flex-col pt-4">
@@ -41,6 +43,7 @@ function SCounterStrike2() {
                         <img class="rounded-xl" src={nuke} alt="map"></img>
                     </div>
                 </div>
+                
             </div>
         </div>
     );

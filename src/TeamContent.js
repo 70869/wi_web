@@ -9,7 +9,7 @@ function Team() {
                     <div class="flex flex-col md:flex-row py-4 md:py-8">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 1 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/1004937727172673578/cd32387915c2a2826eb5374315c44d4f.png?size=2048&width=0&height=256" alt="etebong"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://yt3.googleusercontent.com/eZMLDlW6iJ2TkGvSnltmYZHo5_HYbiEtSlofEeoTOljpZGAbxSm5uR7T-EKjtP1gd-5RwpyciG8=s176-c-k-c0x00ffffff-no-rj" alt="etebong"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Bong</p>
@@ -20,7 +20,7 @@ function Team() {
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 2 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/162811806543249408/2b10ac882c5ccb2fc8f10485902dbd49.png?size=2048&width=0&height=256" alt="xxalem"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/134183756?v=4" alt="xxalem"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">xxalem</p>
@@ -30,7 +30,7 @@ function Team() {
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 3 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/229400859287617536/9103e9453957a7011af58a9bf8a695bd.png?size=2048&width=0&height=256" alt="gavin"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/50128259?v=4" alt="gavin"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Gavin</p>
@@ -58,7 +58,7 @@ function Team() {
                                 </div>
                             </div>
                             <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 6 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
-                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/126742625221869568/7a4441f0f9e0d5dbc39a6ebe523092fd.png?size=2048&width=0&height=256" alt="grace"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/44524196?v=4" alt="grace"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">shie</p>

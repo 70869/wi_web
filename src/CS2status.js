@@ -28,7 +28,7 @@ function CS2status({ apiKey, serverIP, appId }) {
                 <img src={cs2Icon} alt="CS2 Icon" className="w-10 h-10" />
                 <p className="ml-2 text-xl font-bold">{serverIP}</p>
             </div>
-            <p className={`text-sm ${statusText === 'Offline' ? 'text-zinc-500' : 'text-customGreen'}`}>{statusText}</p>
+            <p className="text-md font-bold text-customGreen" > in development </p>
         </div>
     );
 }

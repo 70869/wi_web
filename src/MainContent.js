@@ -29,7 +29,7 @@ function MainContent() {
                                     </div>
 
                                     <div class="animate-fadein  my-1"> 
-                                    <CS2status apiKey="B1743EF5E55BA2C323B1A7D0045E3370" serverIP="TSTENV" appId="730" />
+                                    <CS2status />
                             </div>
                             
                         </div>

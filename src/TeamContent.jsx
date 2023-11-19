@@ -2,10 +2,10 @@ import React from "react";
 
 function Team() {
     return (
-        <div id="team" class="container mx-auto py-32">
+        <div id="team" class="container mx-auto py-20 mb-40">
             <div class="flex justify-center items-center">
                 <div class="flex flex-col">
-                    <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">The Team</h2>
+                    <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white z-0">The Team</h2>
                     <div class="flex flex-col md:flex-row py-4 md:py-8">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm" /** 1 */>

@@ -24,7 +24,7 @@ function ServerStatus() {
 
 
     return (
-        <div class="bg-opacity-30 bg-black text-white rounded-2xl backdrop-blur-md p-4 flex justify-between items-center">
+        <div class="bg-zinc-900 bg-opacity-75 backdrop-blur-sm text-white rounded-2xl p-4 flex justify-between items-center">
             <div class="flex items-center">
                 <img src={mcIcon} alt="MC Icon" class="w-10 h-10" />
                 <p class="ml-2 text-xl font-bold">mc.wiredin.gg</p>

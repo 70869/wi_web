@@ -2,13 +2,13 @@ import React from "react";
 
 function Team() {
     return (
-        <div id="team" class="container mx-auto py-32">
+        <div id="team" class="container mx-auto py-20 mb-40">
             <div class="flex justify-center items-center">
                 <div class="flex flex-col">
-                    <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white">The Team</h2>
+                    <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-center leading-tight text-white z-0">The Team</h2>
                     <div class="flex flex-col md:flex-row py-4 md:py-8">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 1 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm" /** 1 */>
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://yt3.googleusercontent.com/eZMLDlW6iJ2TkGvSnltmYZHo5_HYbiEtSlofEeoTOljpZGAbxSm5uR7T-EKjtP1gd-5RwpyciG8=s176-c-k-c0x00ffffff-no-rj" alt="etebong"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
@@ -19,7 +19,7 @@ function Team() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 2 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm">
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/134183756?v=4" alt="xxalem"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
@@ -29,7 +29,7 @@ function Team() {
 
                                 </div>
                             </div>
-                            <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 3 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm" /** 3 */>
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/50128259?v=4" alt="gavin"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
@@ -38,7 +38,7 @@ function Team() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 4 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm">
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/257689851216789514/a_3e117317b87a141111c4b398ff674ca3.gif?size=2048&width=0&height=256" alt="soda"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
@@ -48,7 +48,7 @@ function Team() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 5 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm">
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://cdn.discordapp.com/avatars/359199438759002112/f46ce7173faad7ef47d1e7201f810600.png?size=2048&width=0&height=256" alt="bobby jones"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
@@ -57,7 +57,7 @@ function Team() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex bg-zinc-800 p-8 rounded-xl shadow-lg" /** 6 */ style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)"}}>
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm">
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/44524196?v=4" alt="grace"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">

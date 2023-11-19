@@ -28,7 +28,7 @@ function ServerStatusSmall() {
 function SMineCraft() {
     return (
         <div class="flex flex-col">
-            <div class="md:hidden w-80 p-6 rounded-xl shadow-lg" style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)" }}>
+            <div class="md:hidden w-80 p-6 rounded-xl shadow-lg bg-zinc-900 bg-opacity-75 backdrop-blur-sm">
                 <div class="flex items-center justify-between">
                     <div class="flex">
                         <img class="block mr-2 w-12 h-12" src={MinecraftLogl} alt="mc"></img>
@@ -54,7 +54,7 @@ function SMineCraft() {
 
             </div>
 
-            <div class="hidden md:block w[33.5rem] h[37rem] max-w-[33.5rem] p-6 rounded-xl shadow-lg mx-2" style={{ backgroundColor: "rgba(27, 27, 27, 0.66)", backdropFilter: "blur(10px)" }}>
+            <div class="hidden md:block w[33.5rem] h[37rem] max-w-[33.5rem] p-6 rounded-xl shadow-lg mx-2 bg-zinc-900 bg-opacity-75 backdrop-blur-sm">
                 <div class="flex items-center justify-between">
                     <div class="flex">
                         <img class="block mr-2 w-12 h-12" src={MinecraftLogl} alt="mc"></img>

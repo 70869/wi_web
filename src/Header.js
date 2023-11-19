@@ -4,8 +4,8 @@ import youtubeIcon from './images/youtube.svg';
 
 function Header() {
     return (
-        <header class="md:flex md:flex-row md:items-center md:justify-center md:w-full p-4 pb-0 shadow-lg md:pb-4" style={{ backgroundColor: "rgba(27, 27, 27, 0.425)", backdropFilter: "blur(10px)", position: "sticky", top: 0, zIndex: 10 }}>
-            <div class="flex md:flex-row items-center justify-between mb-4 md:w-full lg:max-w-7xl md:mb-0">
+        <header class="bg-zinc-900 flex flex-row md:items-center md:justify-center w-full p-2 shadow-lg sticky top-0 z-10 bg-opacity-40 backdrop-blur-sm">
+            <div class="flex flex-row items-center justify-between w-full lg:max-w-7xl my-2">
                 <div class="flex">
                     <h1 class="md:flex md:items-center leading-none text-2xl text-white">
                         <p class="no-underline text-lg font-bold">

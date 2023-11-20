@@ -4,6 +4,7 @@ const FadeInSection = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
 
+  // Use useCallback to memoize the observer creation function, i'm cracked for crying out loud.
   const createObserver = useCallback(() => {
     return new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -15,10 +16,16 @@ const FadeInSection = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    
     const observer = createObserver();
     observer.observe(domRef.current);
 
-    return () => observer.unobserve(domRef.current);
+    // Store domRef.current in a variable before cleanup
+    const currentRef = domRef.current;
+
+    return () => {
+      observer.unobserve(currentRef);
+    };
   }, [createObserver]);
 
   return (

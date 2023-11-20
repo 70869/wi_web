@@ -5,7 +5,7 @@ import youtubeIcon from './images/youtube.svg';
 function Header() {
   return (
     <nav className="bg-zinc-900 flex flex-row md:items-center md:justify-center w-full p-2 shadow-lg sticky top-0 z-20 bg-opacity-40 backdrop-blur-sm">
-      <div className="flex flex-row items-center justify-between w-full lg:max-w-7xl my-2">
+      <div className="flex flex-row items-center justify-between w-full lg:max-w-7xl my-4">
         <h1 className="md:flex md:items-center leading-none text-2xl text-white">
           <a href="/" className="no-underline text-lg font-bold">
             (wired-in)
@@ -14,17 +14,17 @@ function Header() {
 
         <ul className="hidden md:flex items-center text-center cursor-pointer space-x-8 transition-all">
           <li>
-            <a href="#about" className="hover:opacity-80 text-zinc-300 font-bold">
-              About
+            <a href="#about" className="hover:opacity-80 text-zinc-300 font-light">
+              Motive
             </a>
           </li>
           <li>
-            <a href="#server" className="hover:opacity-80 text-zinc-300 font-bold">
+            <a href="#server" className="hover:opacity-80 text-zinc-300 font-light">
               Servers
             </a>
           </li>
           <li>
-            <a href="#team" className="hover:opacity-80 text-zinc-300 font-bold">
+            <a href="#team" className="hover:opacity-80 text-zinc-300 font-light">
               Team
             </a>
           </li>

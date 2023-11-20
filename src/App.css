@@ -1,3 +1,8 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 .App {
     text-align: center;
 }
@@ -38,3 +43,35 @@
     }
 }
 
+.text-custom-green {
+    color: #00ff88;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Add this class to your component */
+  .animate-bounce {
+    animation: bounce 0.8s ease-in-out;
+  }
+  
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+  }
+  
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }

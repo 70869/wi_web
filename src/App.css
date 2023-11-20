@@ -75,3 +75,45 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .hitable {
+    cursor: pointer;
+    transition: background-color 0.2s ease-out, transform 0.1s linear;
+  }
+  
+  .hitable.hit {
+    background-color: rgba(255, 0, 0, 0.5);
+    transform: translateX(-2px);
+    animation: shake 0.1s ease-in-out infinite;
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+  }
+  
+  .hitable {
+    cursor: pointer;
+    transition: background-color 0.2s ease-out, transform 0.1s linear;
+    border-radius: 15px; /* Adjust the border-radius according to your design */
+  }
+  
+  .hitable.hit {
+    background-color: rgba(255, 0, 0, 0.5);
+    transform: translateX(-2px);
+    animation: shake 0.1s ease-in-out infinite;
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+  }
+  

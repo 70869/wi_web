@@ -15,7 +15,7 @@ function Header() {
         <ul className="hidden md:flex items-center text-center cursor-pointer space-x-8 transition-all">
           <li>
             <a href="#about" className="hover:opacity-80 text-zinc-300 font-light">
-              Motive
+              Vision
             </a>
           </li>
           <li>

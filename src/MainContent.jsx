@@ -28,9 +28,9 @@ function MainContent() {
         <div className="relative flex items-center justify-center h-screen">
           <div className="max-w-2xl mt-19 mb-20 items-center animate-fadein px-9 text-center relative z-10">
             <h1 className="text-8xl font-extrabold leading-tight mb-6 text-gradient">
-              <span className="text-custom-green">[</span>
+              <span className="text-green-400">[</span>
               <span className="text-white">wi</span>
-              <span className="text-custom-green">]</span> 2024
+              <span className="text-green-400">]</span> 2024
             </h1>
 
             <p className="text-xl mb-9 text-zinc-400">

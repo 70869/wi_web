@@ -7,15 +7,13 @@ function Team() {
                 <div class="flex flex-col">
                     <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-center leading-tight text-white z-0">let us cook.</h2>
                     <div class="flex flex-col md:flex-row py-4 md:py-8">
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm" /** 1 */>
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://media.discordapp.net/attachments/1161217316344844329/1176062666981249074/external-content.duckduckgo.png?ex=656d80b5&is=655b0bb5&hm=a47c4aabbd1533d9028d9f004a4697424827cc4ab3c3bdf7f52a5bfa80f3ac9a&=&width=230&height=230" alt="etebong"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Bong</p>
                                         <p class="text-zinc-400 font-medium text-base md:text-lg">Founder</p>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -26,7 +24,6 @@ function Team() {
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">xxalem</p>
                                         <p class="text-zinc-400 font-medium text-base md:text-lg">Creative Director</p>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm" /** 3 */>
@@ -62,7 +59,7 @@ function Team() {
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">shie</p>
-                                        <p class="text-zinc-400 font-medium text-base md:text-lg break-words">Lead Developer</p>
+                                        <p class="text-zinc-400 font-medium text-base md:text-lg">Lead Developer</p>
                                     </div>
                                 </div>
                             </div>

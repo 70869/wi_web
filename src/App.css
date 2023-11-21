@@ -42,10 +42,6 @@
         transform: rotate(360deg);
     }
 }
-
-.text-custom-green {
-    color: #00ff88;
-  }
   
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {

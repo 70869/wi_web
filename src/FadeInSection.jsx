@@ -16,7 +16,7 @@ const FadeInSection = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    
+
     const observer = createObserver();
     observer.observe(domRef.current);
 

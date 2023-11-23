@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import MinecraftLogl from './random-files/MinecraftLogl.png';
-import Rectangle from './random-files/rect.png';
+import MinecrafIcon from './images/minecraft_icon.png';
+import Banner from './images/minecraft_banner.png';
 
 function ServerStatusSmall() {
     const [status, setStatus] = useState(null);
@@ -31,14 +31,14 @@ function SMineCraft() {
             <div className="md:hidden w-80 p-6 rounded-xl shadow-lg bg-zinc-900 bg-opacity-75 backdrop-blur-sm">
                 <div className="flex items-center justify-between">
                     <div className="flex">
-                        <img className="block mr-2 w-12 h-12" src={MinecraftLogl} alt="mc"></img>
+                        <img className="block mr-2 w-12 h-12" src={MinecrafIcon} alt="mc"></img>
                         <div>
                             <p className="text-lg text-zinc-200">Minecraft</p>
                             <p className="text-zinc-400">mc.wiredin.gg</p>
                         </div>
                     </div>
                 </div>
-                <div className=" my-4">
+                <div className="my-4">
                     <p className="text-sm text-yellow-300 my-0.5">Anarchy Style Survival</p>
                     <p className="text-sm text-yellow-300 my-0.5">Creative World with Plots</p>
                     <p className="text-sm text-yellow-300 my-0.5">Various PVP Modes</p>
@@ -46,9 +46,9 @@ function SMineCraft() {
                     <p className="inline-flex text-sm text-yellow-300">Experience more with</p>
                     <p className="inline-flex text-sm text-green-400">&nbsp;(turbo)</p>
                 </div>
-                <div className="flex flex-col pt-2 pb-2">
+                <div className="flex flex-col pb-2">
                     <div className="outline outline-1 rounded-xl outline-white">
-                        <img className="rounded-xl" src={Rectangle} alt="rectangle"></img>
+                        <img className="rounded-xl" src={Banner} alt="rectangle"></img>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ function SMineCraft() {
             <div className="hidden md:block w-fit h-fit max-w-[33.5rem] p-6 rounded-xl shadow-lg mx-2 bg-zinc-900 bg-opacity-75 backdrop-blur-sm">
                 <div className="flex items-center justify-between">
                     <div className="flex">
-                        <img className="block mr-2 w-12 h-12" src={MinecraftLogl} alt="mc"></img>
+                        <img className="block mr-2 w-12 h-12" src={MinecrafIcon} alt="mc"></img>
                         <div>
                             <p className="text-lg text-zinc-200">Minecraft</p>
                             <p className="text-zinc-400">mc.wiredin.gg</p>
@@ -69,7 +69,7 @@ function SMineCraft() {
                 </div>
                 <div className="flex flex-col pt-4 pb-4">
                     <div className="outline outline-1 rounded-xl outline-white ">
-                        <img className="rounded-xl" src={Rectangle} alt="rectangle"></img>
+                        <img className="rounded-xl" src={Banner} alt="rectangle"></img>
                     </div>
                 </div>
                 <p className="flex text-left text-yellow-300 my-0.5">Anarchy Survival Multiplayer:</p>

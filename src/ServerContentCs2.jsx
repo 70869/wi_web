@@ -1,6 +1,6 @@
 import React from 'react';
-import cs2logl from './random-files/cs2.png'
-import nuke from './random-files/nuke.png'
+import cs2icon from './images/cs2.png'
+import nuke from './images/nuke.png'
 import CS2small from './CS2small';
 
 
@@ -10,11 +10,10 @@ function SCounterStrike2() {
             <div class="md:hidden w-80 p-6 rounded-xl shadow-lg bg-zinc-900 bg-opacity-75 backdrop-blur-sm">
                 <div class="flex items-center justify-between">
                     <div class="flex">
-                        <img class="block mr-2 w-12 h-12" src={cs2logl} alt="cs2"></img>
+                        <img class="block mr-2 w-12 h-12" src={cs2icon} alt="cs2"></img>
                         <div>
                             <p class="text-lg text-zinc-200">Counter-Strike 2 </p>
                             <p class="text-zinc-400">cs.wiredin.gg</p>
-                            <p class="text-zinc-400">[coming soon]</p>
                         </div>
                     </div>
                 </div>
@@ -27,14 +26,14 @@ function SCounterStrike2() {
             <div class="hidden md:block w-fit h-fit max-w-[33.5rem] p-6 rounded-xl shadow-lg mx-2 bg-zinc-900 bg-opacity-75 backdrop-blur-sm">
                 <div class="flex items-center justify-between">
                     <div class="flex">
-                        <img class="block mr-2 w-12 h-12" src={cs2logl} alt="cs2"></img>
+                        <img class="block mr-2 w-12 h-12" src={cs2icon} alt="cs2"></img>
                         <div>
                             <p class="text-lg text-zinc-200">Counter-Strike 2</p>
                             <p class="text-zinc-400">cs.wiredin.gg</p>
                         </div>
                     </div>
                     <div class="inline-flex flex-col items-end text-right">
-                    <CS2small apiKey="B1743EF5E55BA2C323B1A7D0045E3370" serverIP="cs.wiredin.gg" appId="730" />
+                        <CS2small apiKey="B1743EF5E55BA2C323B1A7D0045E3370" serverIP="cs.wiredin.gg" appId="730" />
                         <p class="text-green-400 text-sm">[TST ENV]</p>
                     </div>
                 </div>
@@ -43,7 +42,7 @@ function SCounterStrike2() {
                         <img class="rounded-xl" src={nuke} alt="map"></img>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     );

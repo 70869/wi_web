@@ -13,7 +13,7 @@ function Team() {
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Bong</p>
-                                        <p class="text-zinc-400 font-medium text-base md:text-lg">Founder</p>
+                                        <p class="text-zinc-400 font-medium text-base md:text-sm">Founder</p>
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@ function Team() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm">
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-70 backdrop-blur-sm">
                                 <img class="block mr-4 h-24 w-24 rounded-" alt="new admin"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
@@ -45,7 +45,7 @@ function Team() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm">
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-70 backdrop-blur-sm">
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="
                                     f46ce7173faad7ef47d1e7201f810600.png?size=2048&width=0&height=256" alt="bobby jones"></img>
                                 <div class="text-center space-y-2">
@@ -55,7 +55,7 @@ function Team() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm">
+                            <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-70 backdrop-blur-sm">
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/44524196?v=4" alt="grace"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">

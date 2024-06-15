@@ -34,7 +34,7 @@ function MainContent() {
             </h1>
 
             <p className="text-xl mb-9 text-zinc-400">
-              Join (wired-in) - a community-centered brand designed for passionate gamers. Explore top-tier game servers, exclusive file hosting services, and a vibrant community.
+              we are (wired-in) - a community designed for passionate gamers and storage enthhusiasts. Explore top-tier game servers, exclusive file hosting services, and a vibrant community.
             </p>
             <ServerStatus />
           </div>
@@ -54,7 +54,7 @@ function MainContent() {
                 <br /><br />
                 We strive to bridge the gap between gaming and security, enhancing your digital experience. Our tiered subscription model offers flexibility, providing different perks and advantages to meet your unique needs.
                 <br /><br />
-                Join (wired-in), where we're more than just servers - we're a thriving community.
+                (wired-in), where we're more than just servers - we're a growing community.
               </p>
             </div>
             <div className={`relative z-10`}>

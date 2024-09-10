@@ -34,7 +34,7 @@ function MainContent() {
             </h1>
 
             <p className="text-xl mb-9 text-zinc-400">
-              we are (wired-in) - a community designed for passionate gamers and storage enthhusiasts. Explore top-tier game servers, exclusive file hosting services, and a vibrant community.
+              We are (wired-in) - a community designed for passionate gamers and storage enthhusiasts. Explore top-tier game servers, exclusive file hosting services, and a vibrant community.
             </p>
             <ServerStatus />
           </div>

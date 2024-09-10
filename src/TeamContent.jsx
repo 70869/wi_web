@@ -13,7 +13,7 @@ function Team() {
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">Bong</p>
-                                        <p class="text-zinc-400 font-medium text-base md:text-sm">Founder</p>
+                                        <p class="text-zinc-400 font-medium text-base md:text-lg">Founder</p>
                                     </div>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@ function Team() {
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">xxalem</p>
                                         <p class="text-zinc-400 font-medium text-base md:text-lg">Creative Director</p>
                                     </div>
-                              movies  </div>
+                                    </div>
                             </div>
                             <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-75 backdrop-blur-sm" /** 3 */>
                                 <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/50128259?v=4" alt="gavin"></img>
@@ -36,7 +36,7 @@ function Team() {
                                 </div>
                             </div>
                             <div class="transition ease-in-out delay-75 hover:trasnlate-y-1 hover:scale-110 duration-300 flex bg-zinc-900 p-8 rounded-xl shadow-lg bg-opacity-70 backdrop-blur-sm">
-                                <img class="block mr-4 h-24 w-24 rounded-" src="https://avatars.githubusercontent.com/u/7321764?v=4" alt="new admin"></img>
+                                <img class="block mr-4 h-24 w-24 rounded-full" src="https://avatars.githubusercontent.com/u/7321764?v=4" alt="new admin"></img>
                                 <div class="text-center space-y-2">
                                     <div class="space-y-0.5 text-left">
                                         <p class="text-lg md:text-2xl text-zinc-200 font-semibold">soda</p>

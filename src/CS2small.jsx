@@ -17,7 +17,7 @@ function CS2small({ apiKey, serverIP, appId }) {
     }, [appId]);
 
     if (status === null || status.players === undefined) {
-        return <p className="text-zinc-400">Offline</p>;
+        return <p className="text-zinc-500">Offline</p>;
     }
 
     const { online } = status.players;

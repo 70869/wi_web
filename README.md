@@ -100,6 +100,7 @@ wired-in/
 - CS2 server information
 - Server statistics
 - Performance metrics
+- API support in progress s
 
 ### Team Section
 - Team member profiles
@@ -200,7 +201,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - **Discord**: Join our community at [discord.gg/wiredin](https://discord.gg/wiredin)
 - **Email**: contact@wiredin.com
-- **Steam Group**: [LoveTaps Community](https://steamcommunity.com/groups/lovetaps)
+- **Steam Group**: [lovetaps](https://steamcommunity.com/groups/lovetaps)
 
 ## 🙏 Acknowledgments
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import mcIcon from './images/mcicon.svg';
-import hitSound from './sounds/hitSound.mp3'; // Replace with the actual path to your sound file
+import mcIcon from '/assets/images/mcicon.svg';
+import hitSound from '../../assets/sounds/hitSound.mp3'; 
 
 function ServerStatus() {
   const [status, setStatus] = useState(null);
@@ -50,3 +50,4 @@ function ServerStatus() {
 }
 
 export default ServerStatus;
+ 

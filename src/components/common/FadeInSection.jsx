@@ -20,7 +20,7 @@ const FadeInSection = ({ children }) => {
     const observer = createObserver();
     observer.observe(domRef.current);
 
-    // Store domRef.current in a variable before cleanup
+    // Store domRef.current in a variable create this 
     const currentRef = domRef.current;
 
     return () => {

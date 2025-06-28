@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { FaDiscord, FaSteam, FaEnvelope } from 'react-icons/fa';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -32,21 +33,21 @@ const ContactSection = () => {
 
   const contactMethods = [
     {
-      icon: '💬',
+      icon: FaDiscord,
       title: 'Discord',
       description: 'Join our community',
       link: 'https://discord.gg/wiredin',
-      color: 'from-indigo-500 to-purple-600'
+      color: 'from-blue-500 to-purple-600'
     },
     {
-      icon: '🎮',
+      icon: FaSteam,
       title: 'Steam Group',
-      description: 'LoveTaps Community',
+      description: 'lovetaps',
       link: 'https://steamcommunity.com/groups/lovetaps',
-      color: 'from-blue-500 to-cyan-600'
+      color: 'from-red-500 to-red-600'
     },
     {
-      icon: '📧',
+      icon: FaEnvelope,
       title: 'Email',
       description: 'contact@wiredin.com',
       link: 'mailto:contact@wiredin.com',
@@ -170,34 +171,37 @@ const ContactSection = () => {
               </div>
 
               <div className="space-y-6">
-                {contactMethods.map((method, index) => (
-                  <a
-                    key={index}
-                    href={method.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card card-interactive hover-lift group block"
-                  >
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                        {method.icon}
+                {contactMethods.map((method, index) => {
+                  const IconComponent = method.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={method.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="card card-interactive hover-lift group block"
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className="text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-text-primary mb-1">
+                            {method.title}
+                          </h4>
+                          <p className="text-text-secondary">
+                            {method.description}
+                          </p>
+                        </div>
+                        <div className="text-text-tertiary group-hover:text-brand-primary transition-colors duration-300">
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-text-primary mb-1">
-                          {method.title}
-                        </h4>
-                        <p className="text-text-secondary">
-                          {method.description}
-                        </p>
-                      </div>
-                      <div className="text-text-tertiary group-hover:text-brand-primary transition-colors duration-300">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </div>
-                  </a>
-                ))}
+                    </a>
+                  );
+                })}
               </div>
 
               {/* Quick Stats */}

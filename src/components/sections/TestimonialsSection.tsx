@@ -14,11 +14,11 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      name: 'NubisX',
-      role: 'CS2 Enthusiast',
-      avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
-      content: 'As a competitive CS2 player, I appreciate the low latency and excellent server performance. The tournament support and custom maps make every game exciting. Highly recommended!',
-      rating: 5
+      name: 'syns',
+      role: 'lovetaps Founder',
+      avatar: 'https://cdn.discordapp.com/avatars/298731742104387595/c4b53cdb0e7379fe6a4f21bf633dce00.webp?size=1024',
+     content: 'yuh',
+      rating: 0
     },
     {
       name: 'inm8ates',

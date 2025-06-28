@@ -34,16 +34,20 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen overflow-hidden" ref={heroRef}>
       <Header />
       
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-surface-primary to-background">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
-        </div>
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <img
+          src="/assets/images/bgofficecs2.png"
+          alt="Office CS2 Background"
+          className="w-full h-full object-cover object-center brightness-75 blur-sm select-none pointer-events-none"
+          draggable="false"
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 z-10">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, var(--brand-primary) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
@@ -51,7 +55,7 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
+      <div className="relative z-20 flex items-center justify-center min-h-screen px-6">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Title */}
           <div className="animate-fade-in mb-8">
@@ -101,7 +105,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group">
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 cursor-pointer group z-30">
         <div className="flex flex-col items-center space-y-2">
           <span className="text-text-secondary text-sm font-medium tracking-wider group-hover:text-brand-primary transition-colors duration-300 animate-breathing">
             SCROLL DOWN
@@ -123,6 +127,9 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Fade Overlay - Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent z-20"></div>
     </section>
   );
 };

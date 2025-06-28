@@ -51,6 +51,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Custom scrollbar */
@@ -404,10 +406,16 @@ body {
 
 /* Section spacing */
 .section-padding {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 @media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 480px) {
   .section-padding {
     padding: 60px 0;
   }
@@ -461,4 +469,51 @@ body {
 
 .hitable.hit .bg-zinc-900 {
   background-color: rgba(0, 255, 136, 0.1) !important;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Optimize animations for performance */
+.animate-fade-in,
+.animate-slide-in-left,
+.animate-slide-in-right,
+.animate-slide-in-up {
+  will-change: transform, opacity;
+}
+
+/* Optimize hover effects */
+.card,
+.btn-primary,
+.btn-secondary {
+  will-change: transform;
+}
+
+/* Reduce paint operations for background elements */
+.absolute.inset-0 {
+  will-change: opacity;
+}
+
+/* Optimize gradient animations */
+.gradient-text-animated {
+  will-change: background-position;
 }

@@ -29,6 +29,9 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="section-padding relative overflow-hidden">
+      {/* Fade-in Overlay - Top */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background via-background/80 to-transparent z-5"></div>
+      
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/3 right-0 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
@@ -100,18 +103,21 @@ const AboutSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card group animate-fade-in"
+              className="group relative bg-surface-secondary rounded-2xl p-6 border border-border-primary/50 hover:border-brand-primary/30 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-brand-primary/10 hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="text-4xl mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-text-primary mb-3 transition-colors duration-300 ease-out group-hover:text-brand-primary">
+                  {feature.title}
+                </h3>
+                <p className="text-text-secondary leading-relaxed transition-colors duration-300 ease-out group-hover:text-text-primary/80">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-text-primary mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-text-secondary leading-relaxed">
-                {feature.description}
-              </p>
             </div>
           ))}
         </div>
@@ -119,17 +125,17 @@ const AboutSection = () => {
         {/* Stats Section */}
         <div className="mt-20 animate-fade-in">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-5xl font-bold gradient-text mb-4">2+</div>
-              <div className="text-text-secondary text-lg">Years of Excellence</div>
+            <div className="text-center group">
+              <div className="text-5xl font-bold gradient-text mb-4 transition-transform duration-300 ease-out group-hover:scale-110">2+</div>
+              <div className="text-text-secondary text-lg transition-colors duration-300 ease-out group-hover:text-text-primary">Years of Excellence</div>
             </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold gradient-text mb-4">10+</div>
-              <div className="text-text-secondary text-lg">Game Servers</div>
+            <div className="text-center group">
+              <div className="text-5xl font-bold gradient-text mb-4 transition-transform duration-300 ease-out group-hover:scale-110">10+</div>
+              <div className="text-text-secondary text-lg transition-colors duration-300 ease-out group-hover:text-text-primary">Game Servers</div>
             </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold gradient-text mb-4">100%</div>
-              <div className="text-text-secondary text-lg">Community Driven</div>
+            <div className="text-center group">
+              <div className="text-5xl font-bold gradient-text mb-4 transition-transform duration-300 ease-out group-hover:scale-110">100%</div>
+              <div className="text-text-secondary text-lg transition-colors duration-300 ease-out group-hover:text-text-primary">Community Driven</div>
             </div>
           </div>
         </div>

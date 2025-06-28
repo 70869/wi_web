@@ -20,7 +20,7 @@ export default function NotFound() {
           </h2>
           <p className="text-xl text-text-secondary leading-relaxed">
             Oops! It looks like you've ventured into uncharted territory. 
-            Stay back lil bruh.
+            Please, stay back lil bruh.
           </p>
         </div>
 

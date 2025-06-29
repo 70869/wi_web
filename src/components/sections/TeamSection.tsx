@@ -22,14 +22,14 @@ const TeamSection = () => {
       name: 'Bong',
       role: 'Founder',
       avatar: 'https://avatars.githubusercontent.com/u/32320771?v=4',
-      description: 'Visionary leader and community architect',
+      description: 'I hope yall see the vision',
       social: { github: 'https://github.com/etebong' }
     },
     {
       name: 'shie',
       role: 'Lead Developer',
       avatar: 'https://avatars.githubusercontent.com/u/44524196?v=4',
-      description: 'Backend architect and system engineer and probably in vrchat rn.',
+      description: 'Probably in vrchat rn.',
       social: { github: 'https://github.com/shie100' }
     },
     {

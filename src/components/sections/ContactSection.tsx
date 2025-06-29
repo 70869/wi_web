@@ -131,15 +131,15 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
           {/* Contact Form */}
-          <div className="animate-slide-in-left">
-            <div className="relative rounded-3xl p-8 overflow-hidden">
+          <div className="animate-slide-in-left h-full">
+            <div className="relative rounded-3xl py-10 px-8 min-h-[450px] h-full overflow-hidden">
               {/* Enhanced glassmorphic background */}
               <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-text-primary mb-6">Send us a message</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-text-secondary mb-2 font-medium">
@@ -203,14 +203,14 @@ const ContactSection = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200 resize-none"
+                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200 resize-none mb-0 flex-grow"
                       placeholder="Tell us about your inquiry..."
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full btn-primary text-lg py-4 ${isSubmitting ? 'loading' : ''}`}
+                    className={`w-full btn-primary text-lg py-4 mt-6 ${isSubmitting ? 'loading' : ''}`}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
@@ -220,7 +220,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Methods */}
-          <div className="animate-slide-in-right">
+          <div className="animate-slide-in-right h-full">
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-text-primary mb-6">Connect with us</h3>
@@ -242,11 +242,11 @@ const ContactSection = () => {
                         href={method.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="card hover-lift group block"
+                        className="card hover-lift group block rounded-3xl py-4 px-6 h-full"
                       >
                         <div className="flex items-center space-x-4">
-                          <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                            <IconComponent className="text-white" />
+                          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
+                            <IconComponent className="text-white text-5xl" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-1">
@@ -301,11 +301,11 @@ const ContactSection = () => {
                       href={method.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="card hover-lift group block"
+                      className="card hover-lift group block rounded-3xl py-4 px-6 h-full"
                     >
                       <div className="flex items-center space-x-4">
-                        <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="text-white" />
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className="text-white text-5xl" />
                         </div>
                         <div className="flex-1">
                           <h4 className="text-lg font-bold text-text-primary mb-1">

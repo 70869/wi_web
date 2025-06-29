@@ -203,7 +203,7 @@ const ServersSection = () => {
                       <div>
                         <h4 className="font-semibold text-text-primary text-sm">Join & Play</h4>
                         <p className="text-text-secondary text-xs">
-                          Click "Join Server" and start exploring!
+                          Click &quot;Join Server&quot; and start exploring!
                         </p>
                       </div>
                     </div>

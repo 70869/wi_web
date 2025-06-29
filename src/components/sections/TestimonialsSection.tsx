@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Testimonial {
   name: string;
@@ -15,6 +16,10 @@ const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
+  const [mouseStartX, setMouseStartX] = useState<number | null>(null);
+  const [mouseEndX, setMouseEndX] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [swipeDirection, setSwipeDirection] = useState<'left' | 'right' | null>(null);
 
   const testimonials: Testimonial[] = [
     {
@@ -56,10 +61,12 @@ const TestimonialsSection = () => {
   }, [testimonials.length]);
 
   const nextTestimonial = () => {
+    setSwipeDirection('left');
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
+    setSwipeDirection('right');
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
@@ -87,6 +94,33 @@ const TestimonialsSection = () => {
     setTouchEndX(null);
   };
 
+  // Mouse swipe handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setMouseStartX(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    setMouseEndX(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging && mouseStartX !== null && mouseEndX !== null) {
+      const distance = mouseStartX - mouseEndX;
+      if (distance > 50) {
+        // Swiped left
+        nextTestimonial();
+      } else if (distance < -50) {
+        // Swiped right
+        prevTestimonial();
+      }
+    }
+    setIsDragging(false);
+    setMouseStartX(null);
+    setMouseEndX(null);
+  };
+
   return (
     <section className="section-padding relative overflow-hidden">
       {/* Background Elements */}
@@ -112,57 +146,80 @@ const TestimonialsSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Testimonial Card */}
-            <div
-              className="relative rounded-3xl p-8 md:p-12 animate-fade-in overflow-hidden"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
-              {/* Enhanced glassmorphic background */}
-              <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
-              <div className="relative z-10">
-                <div className="text-center">
-                  {/* Rating */}
-                  <div className="flex justify-center space-x-1 mb-6">
-                    {testimonials[currentTestimonial].rating > 0 &&
-                      [...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className="w-6 h-6 text-brand-primary"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                  </div>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={currentTestimonial}
+                className="relative rounded-3xl p-8 md:p-12 overflow-hidden"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+                style={{ cursor: isDragging ? 'grabbing' : 'grab', userSelect: 'none' }}
+                initial={{
+                  opacity: 0,
+                  x: swipeDirection === 'left' ? 100 : swipeDirection === 'right' ? -100 : 0
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  transition: { type: 'spring', stiffness: 400, damping: 30 }
+                }}
+                exit={{
+                  opacity: 0,
+                  x: swipeDirection === 'left' ? -100 : swipeDirection === 'right' ? 100 : 0,
+                  transition: { duration: 0.25 }
+                }}
+                onAnimationComplete={() => setSwipeDirection(null)}
+              >
+                {/* Enhanced glassmorphic background */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
+                <div className="relative z-10">
+                  <div className="text-center">
+                    {/* Rating */}
+                    <div className="flex justify-center space-x-1 mb-6">
+                      {testimonials[currentTestimonial].rating > 0 &&
+                        [...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className="w-6 h-6 text-brand-primary"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                    </div>
 
-                  {/* Quote */}
-                  <blockquote className="text-xl md:text-2xl text-text-primary mb-8 leading-relaxed italic">
-                    &quot;{testimonials[currentTestimonial].content}&quot;
-                  </blockquote>
+                    {/* Quote */}
+                    <blockquote className="text-xl md:text-2xl text-text-primary mb-8 leading-relaxed italic">
+                      &quot;{testimonials[currentTestimonial].content}&quot;
+                    </blockquote>
 
-                  {/* Author */}
-                  <div className="flex items-center justify-center space-x-4">
-                    <Image
-                      src={testimonials[currentTestimonial].avatar}
-                      alt={testimonials[currentTestimonial].name}
-                      width={64}
-                      height={64}
-                      className="w-16 h-16 rounded-full border-2 border-brand-primary"
-                    />
-                    <div className="text-left">
-                      <div className="text-lg font-bold text-text-primary">
-                        {testimonials[currentTestimonial].name}
-                      </div>
-                      <div className="text-text-secondary">
-                        {testimonials[currentTestimonial].role}
+                    {/* Author */}
+                    <div className="flex items-center justify-center space-x-4">
+                      <Image
+                        src={testimonials[currentTestimonial].avatar}
+                        alt={testimonials[currentTestimonial].name}
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 rounded-full border-2 border-brand-primary"
+                      />
+                      <div className="text-left">
+                        <div className="text-lg font-bold text-text-primary">
+                          {testimonials[currentTestimonial].name}
+                        </div>
+                        <div className="text-text-secondary">
+                          {testimonials[currentTestimonial].role}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Navigation Buttons - removed for swipe controls */}
             {/*

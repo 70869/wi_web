@@ -324,8 +324,8 @@ const ServersSection = () => {
             {/* Banner */}
             <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-6">
               {/* Background image for Coming Soon */}
-              <Image src="/assets/images/bgoffice2.png" alt="CS2 Background" fill className="object-cover blur-sm brightness-75" />
-              <div className="absolute inset-0 bg-black/70 flex items-center justify-center">
+              <Image src="/assets/images/bgoffice2.png" alt="CS2 Background" fill className="object-cover brightness-100" />
+              <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                 <span className="text-2xl md:text-3xl font-bold text-yellow-400 drop-shadow-lg">Coming Soon</span>
               </div>
             </div>
@@ -404,8 +404,8 @@ const ServersSection = () => {
                 Connect with our community and experience gaming like never before.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-primary text-lg px-8 py-4">
-                  Join Our Discord
+                <button className="btn-primary text-lg px-8 py-4" onClick={() => window.location.href = '/careers'}>
+                  Get in Touch
                 </button>
                 <button className="btn-secondary text-lg px-8 py-4">
                   View Server Status

@@ -138,12 +138,12 @@ const ContactSection = () => {
               {/* Enhanced glassmorphic background */}
               <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-text-primary mb-6">Send us a message</h3>
-                <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
+                <h3 className="text-2xl font-bold text-text-primary mb-13">Send us a message</h3>
+                <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col" aria-label="Contact form">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-text-secondary mb-2 font-medium">
-                        Name
+                        Name 
                       </label>
                       <input
                         type="text"
@@ -152,13 +152,15 @@ const ContactSection = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200"
+                        aria-required="true"
+                        aria-label="Your name"
+                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-text-secondary mb-2 font-medium">
-                        Email
+                        Email 
                       </label>
                       <input
                         type="email"
@@ -167,14 +169,16 @@ const ContactSection = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200"
+                        aria-required="true"
+                        aria-label="Your email"
+                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
                         placeholder="your@email.com"
                       />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="subject" className="block text-text-secondary mb-2 font-medium">
-                      Subject
+                      Subject 
                     </label>
                     <select
                       id="subject"
@@ -182,9 +186,11 @@ const ContactSection = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary focus:outline-none focus:border-brand-primary transition-colors duration-200"
+                      aria-required="true"
+                      aria-label="Subject"
+                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
                     >
-                      <option value="">Select a subject</option>
+                      <option value="" disabled>Select a subject</option>
                       <option value="general">General Inquiry</option>
                       <option value="server">Server Support</option>
                       <option value="community">Community</option>
@@ -194,7 +200,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <label htmlFor="message" className="block text-text-secondary mb-2 font-medium">
-                      Message
+                      Message 
                     </label>
                     <textarea
                       id="message"
@@ -202,16 +208,20 @@ const ContactSection = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      aria-required="true"
+                      aria-label="Message"
                       rows={6}
-                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200 resize-none flex-grow min-h-[120px] mb-2"
+                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200 resize-none flex-grow min-h-[120px] mb-2"
                       placeholder="Tell us about your inquiry..."
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full btn-primary text-lg py-4 mt-4 ${isSubmitting ? 'loading' : ''}`}
+                    className={`w-full btn-primary text-lg py-4 mt-4 flex items-center justify-center ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
+                    aria-busy={isSubmitting}
                   >
+                    {isSubmitting && <span className="loader mr-2"></span>}
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>

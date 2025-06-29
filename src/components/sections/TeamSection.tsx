@@ -220,7 +220,7 @@ const TeamSection = () => {
               <p className="text-text-secondary mb-8 text-lg">
                 We&apos;re always looking for passionate individuals who share our vision.
               </p>
-              <button className="btn-primary text-lg px-8 py-4">
+              <button className="btn-primary text-lg px-8 py-4" onClick={() => window.open('https://discord.gg/y6kb6a9CcG', '_blank')}>
                 Get in Touch
               </button>
             </div>

@@ -92,7 +92,7 @@ const DMCA = () => {
                       <p className="font-medium text-text-primary mb-2">Copyright Agent</p>
                       <p className="mb-2">(wired-in)</p>
                       <p className="mb-2">Email: dmca@wiredin.com</p>
-                      <p className="mb-2">Discord: https://discord.gg/wiredin</p>
+                      <p className="mb-2">Discord: https://discord.gg/y6kb6a9CcG</p>
                       <p className="text-sm text-text-tertiary mt-4">
                         Please include &quot;DMCA Notice&quot; or &quot;Counter-Notification&quot; in the subject line.
                       </p>

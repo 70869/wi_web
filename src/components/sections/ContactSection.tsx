@@ -85,7 +85,7 @@ const ContactSection = () => {
       icon: FaDiscord,
       title: 'Discord',
       description: 'Join our community',
-      link: 'https://discord.gg/wiredin',
+      link: 'https://discord.gg/y6kb6a9CcG',
       color: 'from-blue-500 to-purple-600'
     },
     {
@@ -245,7 +245,7 @@ const ContactSection = () => {
                         className="card hover-lift group block"
                       >
                         <div className="flex items-center space-x-4">
-                          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                          <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
                             <IconComponent className="text-white" />
                           </div>
                           <div className="flex-1">
@@ -304,7 +304,7 @@ const ContactSection = () => {
                       className="card hover-lift group block"
                     >
                       <div className="flex items-center space-x-4">
-                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
                           <IconComponent className="text-white" />
                         </div>
                         <div className="flex-1">

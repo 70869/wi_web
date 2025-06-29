@@ -189,7 +189,7 @@ const Careers = () => {
                     Email Application
                   </a>
                   <a
-                    href="https://discord.gg/wiredin"
+                    href="https://discord.gg/y6kb6a9CcG"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary text-lg px-8 py-4"

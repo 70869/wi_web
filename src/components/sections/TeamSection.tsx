@@ -6,6 +6,7 @@ import Image from 'next/image';
 interface SocialLinks {
   github?: string;
   discord?: string;
+  website?: string;
 }
 
 interface TeamMember {
@@ -22,8 +23,8 @@ const TeamSection = () => {
       name: 'Bong',
       role: 'Founder',
       avatar: 'https://avatars.githubusercontent.com/u/32320771?v=4',
-      description: 'I hope yall see the vision',
-      social: { github: 'https://github.com/etebong' }
+      description: 'I hope yall see the vision.',
+      social: { github: 'https://github.com/etebong', website: 'https://etebong.com' }
     },
     {
       name: 'shie',
@@ -40,10 +41,10 @@ const TeamSection = () => {
       social: { github: 'https://github.com/xxalem' }
     },
     {
-      name: 'Gavin',
-      role: 'Web Developer',
-      avatar: 'https://avatars.githubusercontent.com/u/50128259?v=4',
-      description: 'Full-stack developer and tech innovator',
+      name: 'syns',
+      role: 'lovetaps Founder',
+      avatar: 'https://cdn.discordapp.com/avatars/298731742104387595/c4b53cdb0e7379fe6a4f21bf633dce00.webp?size=1024',
+      description: 'Changed movement for everyone.',
       social: { github: 'https://github.com/gavin' }
     },
     {
@@ -145,6 +146,18 @@ const TeamSection = () => {
                       </svg>
                     </a>
                   )}
+                  {member.social.website && (
+                    <a
+                      href={member.social.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-surface-tertiary rounded-lg hover:bg-brand-primary hover:text-black transition-all duration-300"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c1.657 0 3.156.672 4.242 1.758A7.963 7.963 0 0120 12c0 1.657-.672 3.156-1.758 4.242A7.963 7.963 0 0112 20a7.963 7.963 0 01-4.242-1.758A7.963 7.963 0 014 12c0-1.657.672-3.156 1.758-4.242A7.963 7.963 0 0112 4zm0 2a6 6 0 100 12A6 6 0 0012 6zm0 2c.552 0 1 .448 1 1v2h2a1 1 0 110 2h-2v2a1 1 0 11-2 0v-2H9a1 1 0 110-2h2V9c0-.552.448-1 1-1z"/>
+                      </svg>
+                    </a>
+                  )}
                   {member.social.discord && (
                     <a
                       href={member.social.discord}
@@ -171,7 +184,7 @@ const TeamSection = () => {
               <div className="text-text-secondary">Team Members</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-2">2+</div>
+              <div className="text-4xl font-bold gradient-text mb-2">5+</div>
               <div className="text-text-secondary">Years Experience</div>
             </div>
             <div className="text-center">

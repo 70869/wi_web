@@ -13,6 +13,8 @@ interface Testimonial {
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
   const testimonials: Testimonial[] = [
     {
@@ -30,7 +32,7 @@ const TestimonialsSection = () => {
       rating: 5
     },
     {
-      name: 'inm8ates',
+      name: 'inmates',
       role: 'Probably loading in chunks',
       avatar: 'https://cdn.discordapp.com/avatars/340573382091210752/b1389e95871ff7182d8fdedfa935838c.webp?size=1024',
       content: 'Watch this.',
@@ -40,7 +42,7 @@ const TestimonialsSection = () => {
       name: 'GENUZX',
       role: 'Artist & Vision Holder',
       avatar: 'https://cdn.discordapp.com/avatars/472250684826320897/106a42dbcbd579a21364a1345e08c16a.webp?size=1024',
-      content: 'yessirr',
+      content: 'Big up the boss man, J.C. We off the red liquor, state of mind going quicker. Dont fall in line or you wont make it past the preacher, lemme know if you see the bigger picture?',
       rating: 5
     }
   ];
@@ -59,6 +61,30 @@ const TestimonialsSection = () => {
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  // Swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.changedTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.changedTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX !== null && touchEndX !== null) {
+      const distance = touchStartX - touchEndX;
+      if (distance > 50) {
+        // Swiped left
+        nextTestimonial();
+      } else if (distance < -50) {
+        // Swiped right
+        prevTestimonial();
+      }
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
   };
 
   return (
@@ -86,7 +112,12 @@ const TestimonialsSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Testimonial Card */}
-            <div className="relative rounded-3xl p-8 md:p-12 animate-fade-in overflow-hidden">
+            <div
+              className="relative rounded-3xl p-8 md:p-12 animate-fade-in overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
               {/* Enhanced glassmorphic background */}
               <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
               <div className="relative z-10">
@@ -133,26 +164,11 @@ const TestimonialsSection = () => {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-surface-secondary hover:bg-brand-primary hover:text-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              aria-label="Previous testimonial"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-surface-secondary hover:bg-brand-primary hover:text-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              aria-label="Next testimonial"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            {/* Navigation Buttons - removed for swipe controls */}
+            {/*
+            <button ...>...</button>
+            <button ...>...</button>
+            */}
           </div>
 
           {/* Dots Indicator */}

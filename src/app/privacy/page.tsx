@@ -108,7 +108,7 @@ const PrivacyPolicy = () => {
                       <p className="font-medium text-text-primary mb-2">Email:</p>
                       <p className="mb-4">contact@wiredin.com</p>
                       <p className="font-medium text-text-primary mb-2">Discord:</p>
-                      <p>https://discord.gg/wiredin</p>
+                      <p>https://discord.gg/y6kb6a9CcG</p>
                     </div>
                   </div>
                 </section>

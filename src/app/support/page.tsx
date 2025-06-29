@@ -19,7 +19,7 @@ const Support = () => {
                 For all support inquiries, please join our Discord community.
               </p>
               <a
-                href="https://discord.gg/wiredin"
+                href="https://discord.gg/y6kb6a9CcG"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-lg px-8 py-4 inline-block"

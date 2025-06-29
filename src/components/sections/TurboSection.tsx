@@ -70,11 +70,11 @@ const TurboSection = () => {
             Unlock exclusive perks and support the community with our upcoming subscription model.
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-6 md:gap-8 w-full">
           {tiers.map((tier, i) => (
             <div
               key={tier.name}
-              className={`transition-all duration-300 flex-1 min-w-[290px] max-w-md flex flex-col items-center bg-surface-secondary/80 border border-border-primary rounded-2xl shadow-lg px-8 py-10
+              className={`transition-all duration-300 w-full max-w-md mx-auto flex flex-col items-center bg-surface-secondary/80 border border-border-primary rounded-2xl shadow-lg px-6 md:px-8 py-8 md:py-10
                 ${selected === i ? 'ring-2 ring-brand-primary bg-surface-secondary/95' : 'hover:ring-2 hover:ring-brand-primary/40'}
                 cursor-pointer`}
               style={{ minHeight: 380 }}

@@ -203,14 +203,14 @@ const ContactSection = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200 resize-none mb-0 flex-grow"
+                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200 resize-none flex-grow min-h-[120px] mb-2"
                       placeholder="Tell us about your inquiry..."
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full btn-primary text-lg py-4 mt-6 ${isSubmitting ? 'loading' : ''}`}
+                    className={`w-full btn-primary text-lg py-4 mt-4 ${isSubmitting ? 'loading' : ''}`}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
@@ -242,53 +242,51 @@ const ContactSection = () => {
                         href={method.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="card hover-lift group block rounded-3xl py-4 px-6 h-full"
+                        className="group block rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg py-6 px-8 flex items-center gap-x-6 h-full transition-all duration-300 hover:bg-brand-primary/10"
                       >
-                        <div className="flex items-center space-x-4">
-                          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
-                            <IconComponent className="text-white text-5xl" />
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className="text-white text-4xl" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-1">
+                            <h4 className="text-lg font-bold text-text-primary">
+                              {method.title}
+                            </h4>
                           </div>
-                          <div className="flex-1">
-                            <div className="flex items-center justify-between mb-1">
-                              <h4 className="text-lg font-bold text-text-primary">
-                                {method.title}
-                              </h4>
+                          <p className="text-text-secondary mb-2">
+                            {method.description}
+                          </p>
+                          <div className="flex space-x-4 text-sm">
+                            <div className="flex items-center space-x-1">
+                              <span className="text-text-secondary">Members:</span>
+                              <span className="font-semibold gradient-text">
+                                {discordStats.loading ? (
+                                  <span className="animate-pulse">...</span>
+                                ) : discordStats.error ? (
+                                  "500+"
+                                ) : (
+                                  discordStats.memberCount.toLocaleString()
+                                )}
+                              </span>
                             </div>
-                            <p className="text-text-secondary mb-2">
-                              {method.description}
-                            </p>
-                            <div className="flex space-x-4 text-sm">
-                              <div className="flex items-center space-x-1">
-                                <span className="text-text-secondary">Members:</span>
-                                <span className="font-semibold gradient-text">
-                                  {discordStats.loading ? (
-                                    <span className="animate-pulse">...</span>
-                                  ) : discordStats.error ? (
-                                    "500+"
-                                  ) : (
-                                    discordStats.memberCount.toLocaleString()
-                                  )}
-                                </span>
-                              </div>
-                              <div className="flex items-center space-x-1">
-                                <span className="text-text-secondary">Online:</span>
-                                <span className="font-semibold gradient-text">
-                                  {discordStats.loading ? (
-                                    <span className="animate-pulse">...</span>
-                                  ) : discordStats.error ? (
-                                    "24/7"
-                                  ) : (
-                                    discordStats.onlineCount
-                                  )}
-                                </span>
-                              </div>
+                            <div className="flex items-center space-x-1">
+                              <span className="text-text-secondary">Online:</span>
+                              <span className="font-semibold gradient-text">
+                                {discordStats.loading ? (
+                                  <span className="animate-pulse">...</span>
+                                ) : discordStats.error ? (
+                                  "24/7"
+                                ) : (
+                                  discordStats.onlineCount
+                                )}
+                              </span>
                             </div>
                           </div>
-                          <div className="text-text-tertiary group-hover:text-brand-primary transition-colors duration-300">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </div>
+                        </div>
+                        <div className="flex items-center">
+                          <svg className="w-6 h-6 text-text-tertiary group-hover:text-brand-primary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
                         </div>
                       </a>
                     );
@@ -301,25 +299,23 @@ const ContactSection = () => {
                       href={method.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="card hover-lift group block rounded-3xl py-4 px-6 h-full"
+                      className="group block rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg py-6 px-8 flex items-center gap-x-6 h-full transition-all duration-300 hover:bg-brand-primary/10"
                     >
-                      <div className="flex items-center space-x-4">
-                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="text-white text-5xl" />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="text-lg font-bold text-text-primary mb-1">
-                            {method.title}
-                          </h4>
-                          <p className="text-text-secondary">
-                            {method.description}
-                          </p>
-                        </div>
-                        <div className="text-text-tertiary group-hover:text-brand-primary transition-colors duration-300">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="text-white text-4xl" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-text-primary mb-1">
+                          {method.title}
+                        </h4>
+                        <p className="text-text-secondary">
+                          {method.description}
+                        </p>
+                      </div>
+                      <div className="flex items-center">
+                        <svg className="w-6 h-6 text-text-tertiary group-hover:text-brand-primary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
                     </a>
                   );

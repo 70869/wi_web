@@ -20,7 +20,7 @@ const Footer = () => {
     ],
     services: [
       { name: 'Game Servers', href: '#servers' },
-      { name: 'File Hosting', href: '#hosting' },
+      { name: 'File Hosting', href: '/hosting', comingSoon: true },
       { name: 'Community', href: '/community' },
       { name: 'Support', href: '/support' }
     ],
@@ -35,7 +35,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'Discord',
-      href: 'https://discord.gg/wiredin',
+      href: 'https://discord.gg/y6kb6a9CcG',
       icon: FaDiscord
     },
     {
@@ -81,7 +81,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-text-secondary mb-6 max-w-md leading-relaxed">
-              A passionate community of gamers and tech enthusiasts from the lovetaps Steam group. 
+              From the creators of lovetaps. 
               Experience high-performance game servers and secure file hosting.
             </p>
             <div className="flex space-x-4">
@@ -126,12 +126,31 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
+                  {link.name === 'Game Servers' ? (
+                    <a
+                      href={link.href}
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      onClick={e => {
+                        e.preventDefault();
+                        const el = document.getElementById('servers');
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                    >
+                      {link.name}
+                      {link.comingSoon && (
+                        <span className="ml-2 text-xs text-yellow-400 font-semibold">(Coming Soon)</span>
+                      )}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -159,21 +178,11 @@ const Footer = () => {
         <div className="glass rounded-3xl p-8 mb-12">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-text-primary mb-4">
-              Stay Connected
+              Hold up, no newsletter?
             </h3>
             <p className="text-text-secondary mb-6 max-w-md mx-auto">
-              Get the latest updates about our servers, community events, and exclusive offers.
+              Honestly, too much of a grind... I promise I&apos;m working on it. (In the meantime, just imagine all the cool updates you&apos;d be getting here.)
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary transition-colors duration-200"
-              />
-              <button className="btn-primary whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
           </div>
         </div>
 

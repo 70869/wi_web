@@ -7,7 +7,7 @@ const Careers = () => {
     {
       title: 'Developer',
       type: 'Full-time / Part-time',
-      description: 'We\'re looking for passionate developers to help build and maintain our platform, game servers, and community tools.',
+      description: 'We&apos;re looking for passionate developers to help build and maintain our platform, game servers, and community tools.',
       requirements: [
         'Experience with JavaScript/TypeScript, React, Node.js',
         'Knowledge of game server technologies (Minecraft, CS2)',
@@ -76,7 +76,7 @@ const Careers = () => {
                 <span className="gradient-text"> Team</span>
               </h1>
               <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                We're looking for passionate individuals to help grow our community and improve our services. 
+                We&apos;re looking for passionate individuals to help grow our community and improve our services. 
                 Join us in creating the ultimate gaming experience.
               </p>
             </div>
@@ -84,44 +84,48 @@ const Careers = () => {
             {/* Job Openings */}
             <div className="space-y-8 mb-16">
               {jobOpenings.map((job, index) => (
-                <div key={index} className="glass rounded-3xl p-8">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                    <div>
-                      <h2 className="text-3xl font-bold text-text-primary mb-2">{job.title}</h2>
-                      <p className="text-brand-primary font-medium">{job.type}</p>
-                    </div>
-                    <button className="btn-primary mt-4 md:mt-0">
-                      Apply Now
-                    </button>
-                  </div>
-                  
-                  <p className="text-text-secondary mb-6 text-lg">
-                    {job.description}
-                  </p>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-bold text-text-primary mb-4">Requirements</h3>
-                      <ul className="space-y-2">
-                        {job.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="text-text-secondary flex items-start">
-                            <span className="text-brand-primary mr-2">•</span>
-                            {req}
-                          </li>
-                        ))}
-                      </ul>
+                <div key={index} className="relative rounded-3xl p-8 overflow-hidden">
+                  {/* Enhanced glassmorphic background */}
+                  <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
+                  <div className="relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                      <div>
+                        <h2 className="text-3xl font-bold text-text-primary mb-2">{job.title}</h2>
+                        <p className="text-brand-primary font-medium">{job.type}</p>
+                      </div>
+                      <button className="btn-primary mt-4 md:mt-0">
+                        Apply Now
+                      </button>
                     </div>
                     
-                    <div>
-                      <h3 className="text-xl font-bold text-text-primary mb-4">Responsibilities</h3>
-                      <ul className="space-y-2">
-                        {job.responsibilities.map((resp, respIndex) => (
-                          <li key={respIndex} className="text-text-secondary flex items-start">
-                            <span className="text-brand-primary mr-2">•</span>
-                            {resp}
-                          </li>
-                        ))}
-                      </ul>
+                    <p className="text-text-secondary mb-6 text-lg">
+                      {job.description}
+                    </p>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-xl font-bold text-text-primary mb-4">Requirements</h3>
+                        <ul className="space-y-2">
+                          {job.requirements.map((req, reqIndex) => (
+                            <li key={reqIndex} className="text-text-secondary flex items-start">
+                              <span className="text-brand-primary mr-2">•</span>
+                              {req}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="text-xl font-bold text-text-primary mb-4">Responsibilities</h3>
+                        <ul className="space-y-2">
+                          {job.responsibilities.map((resp, respIndex) => (
+                            <li key={respIndex} className="text-text-secondary flex items-start">
+                              <span className="text-brand-primary mr-2">•</span>
+                              {resp}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -129,62 +133,70 @@ const Careers = () => {
             </div>
 
             {/* Application Process */}
-            <div className="glass rounded-3xl p-8 mb-16">
-              <h2 className="text-3xl font-bold text-text-primary mb-6 text-center">How to Apply</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-black font-bold text-xl">1</span>
+            <div className="relative rounded-3xl p-8 mb-16 overflow-hidden">
+              {/* Enhanced glassmorphic background */}
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold text-text-primary mb-6 text-center">How to Apply</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-black font-bold text-xl">1</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-text-primary mb-2">Join Our Community</h3>
+                    <p className="text-text-secondary">
+                      Start by joining our Discord server and getting to know the team and community.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-text-primary mb-2">Join Our Community</h3>
-                  <p className="text-text-secondary">
-                    Start by joining our Discord server and getting to know the team and community.
-                  </p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-black font-bold text-xl">2</span>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-black font-bold text-xl">2</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-text-primary mb-2">Submit Application</h3>
+                    <p className="text-text-secondary">
+                      Send us your resume, portfolio, and a brief introduction explaining why you&apos;d like to join.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-text-primary mb-2">Submit Application</h3>
-                  <p className="text-text-secondary">
-                    Send us your resume, portfolio, and a brief introduction explaining why you'd like to join.
-                  </p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-black font-bold text-xl">3</span>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-black font-bold text-xl">3</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-text-primary mb-2">Interview Process</h3>
+                    <p className="text-text-secondary">
+                      We&apos;ll review your application and schedule a call to discuss the role and your experience.
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-text-primary mb-2">Interview Process</h3>
-                  <p className="text-text-secondary">
-                    We'll review your application and schedule a call to discuss the role and your experience.
-                  </p>
                 </div>
               </div>
             </div>
 
             {/* Contact Section */}
-            <div className="glass rounded-3xl p-8 text-center">
-              <h2 className="text-3xl font-bold text-text-primary mb-4">Ready to Apply?</h2>
-              <p className="text-text-secondary mb-6 text-lg">
-                Send your application to us or reach out through Discord to learn more about these opportunities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:careers@wiredin.com"
-                  className="btn-primary text-lg px-8 py-4"
-                >
-                  Email Application
-                </a>
-                <a
-                  href="https://discord.gg/wiredin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-lg px-8 py-4"
-                >
-                  Join Discord
-                </a>
+            <div className="relative rounded-3xl p-8 text-center overflow-hidden">
+              {/* Enhanced glassmorphic background */}
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold text-text-primary mb-4">Ready to Apply?</h2>
+                <p className="text-text-secondary mb-6 text-lg">
+                  Send your application to us or reach out through Discord to learn more about these opportunities.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="mailto:careers@wiredin.com"
+                    className="btn-primary text-lg px-8 py-4"
+                  >
+                    Email Application
+                  </a>
+                  <a
+                    href="https://discord.gg/wiredin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary text-lg px-8 py-4"
+                  >
+                    Join Discord
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -195,4 +207,10 @@ const Careers = () => {
   );
 };
 
-export default Careers; 
+export default Careers;
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+}; 

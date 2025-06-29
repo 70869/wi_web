@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { checkIsOnDemandRevalidate } from 'next/dist/server/api-utils';
 
 export default function NotFound() {
   return (
@@ -19,7 +18,7 @@ export default function NotFound() {
             Page Not Found
           </h2>
           <p className="text-xl text-text-secondary leading-relaxed">
-            Oops! It looks like you've ventured into uncharted territory. 
+            Oops! It looks like you&apos;ve ventured into uncharted territory. 
             Please, stay back lil bruh.
           </p>
         </div>
@@ -35,39 +34,43 @@ export default function NotFound() {
         </div>
 
         {/* Helpful Links */}
-        <div className="glass rounded-2xl p-8">
-          <h3 className="text-xl font-bold text-text-primary mb-4">
-            Looking for something specific? 
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-            <Link 
-              href="/#servers" 
-              className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
-            >
-              <span>🎮</span>
-              <span>Our Game Servers</span>
-            </Link>
-            <Link 
-              href="/#team" 
-              className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
-            >
-              <span>👥</span>
-              <span>Meet Our Team</span>
-            </Link>
-            <Link 
-              href="/#about" 
-              className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
-            >
-              <span>ℹ️</span>
-              <span>About (wired-in)</span>
-            </Link>
-            <Link
-              href="/#contact" 
-              className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
-            >
-              <span>📧</span>
-              <span>Get Support</span>
-            </Link>
+        <div className="relative rounded-2xl p-8 overflow-hidden">
+          {/* Enhanced glassmorphic background */}
+          <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl"></div>
+          <div className="relative z-10">
+            <h3 className="text-xl font-bold text-text-primary mb-4">
+              Looking for something specific? 
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+              <Link 
+                href="/#servers" 
+                className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
+              >
+                <span>🎮</span>
+                <span>Our Game Servers</span>
+              </Link>
+              <Link 
+                href="/#team" 
+                className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
+              >
+                <span>👥</span>
+                <span>Meet Our Team</span>
+              </Link>
+              <Link 
+                href="/#about" 
+                className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
+              >
+                <span>ℹ️</span>
+                <span>About (wired-in)</span>
+              </Link>
+              <Link
+                href="/#contact" 
+                className="text-text-secondary hover:text-brand-primary transition-colors duration-200 flex items-center space-x-2"
+              >
+                <span>📧</span>
+                <span>Get Support</span>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -79,6 +82,10 @@ export default function NotFound() {
       </div>
     </div>
   );
-} 
+}
 
-checkIsOnDemandRevalidate 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+}; 

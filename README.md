@@ -1,183 +1,153 @@
-# (wired-in) - Gaming Community & Server Hosting
+# (wired-in) - Gaming Community Platform
 
-A modern, responsive website for the (wired-in) gaming community, featuring high-performance game servers, secure file hosting, and a vibrant community platform.
+A modern, high-performance web platform for the (wired-in) gaming community, featuring game server hosting, community management, and secure file sharing services.
 
-## 🚀 Features
+## 🎮 Overview
 
-- **Modern Design**: Apple-style UX with dark theme and brand colors
-- **Responsive Layout**: Optimized for all devices and screen sizes
-- **Interactive Elements**: Smooth animations and micro-interactions
-- **Game Server Showcase**: Minecraft and CS2 server information
-- **Team Section**: Meet the passionate team behind (wired-in)
-- **Contact Form**: Easy communication with the community
-- **Testimonials**: Community feedback and reviews
-- **SEO Optimized**: Proper metadata and structured content
+(wired-in) is a comprehensive gaming platform that provides:
+- **High-performance game servers** for Minecraft and Counter-Strike 2
+- **Community management** with Discord integration
+- **Secure file hosting** and sharing capabilities
+- **Modern web interface** with Apple-inspired design principles
 
-## 🎨 Design System
+## ✨ Key Features
 
-- **Brand Colors**: 
-  - Primary: `#00ff88` (Neon Green)
-  - Secondary: `#00cc6a` (Darker Green)
-  - Accent: `#00ffaa` (Light Green)
-- **Typography**: Apple system fonts for optimal readability
-- **Animations**: Smooth transitions and hover effects
-- **Glass Morphism**: Modern backdrop blur effects
+### 🎯 Core Functionality
+- **Game Server Management** - Real-time server status and player monitoring
+- **Community Hub** - Integrated Discord community with member management
+- **File Hosting** - Secure file storage and sharing platform
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 
-## 🛠️ Tech Stack
+### 🎨 User Experience
+- **Modern UI/UX** - Apple-inspired design with glassmorphic effects
+- **Smooth Animations** - Fluid transitions and micro-interactions
+- **Dark Theme** - Eye-friendly dark mode with brand accent colors
+- **Accessibility** - WCAG compliant with keyboard navigation support
 
-- **Framework**: Next.js 14 with App Router
-- **Styling**: Tailwind CSS with custom CSS variables
-- **Language**: TypeScript for type safety
-- **Package Manager**: Bun for fast dependency management
-- **Deployment**: Ready for Vercel deployment
+### 🚀 Performance
+- **Next.js 14** - Latest React framework with App Router
+- **TypeScript** - Type-safe development with enhanced IDE support
+- **Tailwind CSS** - Utility-first styling with custom design system
+- **Bun Runtime** - Fast JavaScript runtime for development and production
 
-## 📦 Installation
+## 🛠️ Technology Stack
+
+### Frontend
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library for smooth transitions
+
+### Development Tools
+- **Bun** - Fast JavaScript runtime and package manager
+- **ESLint** - Code linting and quality assurance
+- **Prettier** - Code formatting and consistency
+- **TypeScript** - Static type checking
+
+### Deployment
+- **Vercel** - Optimized hosting platform for Next.js
+- **GitHub** - Version control and CI/CD integration
+
+## 🏗️ Project Architecture
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── globals.css        # Global styles and design tokens
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx           # Homepage component
+│   └── [routes]/          # Dynamic routes and pages
+├── components/            # Reusable React components
+│   ├── common/           # Shared utility components
+│   ├── layout/           # Layout and navigation components
+│   └── sections/         # Page-specific section components
+├── assets/               # Static assets and resources
+└── types/                # TypeScript type definitions
+```
+
+## 🚀 Quick Start
+
+### Prerequisites
+- **Node.js** 18+ or **Bun** 1.0+
+- **Git** for version control
+- **Code editor** (VS Code recommended)
+
+### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd wired-in
-   ```
 
 2. **Install dependencies**
    ```bash
+   # Using Bun (recommended)
    bun install
    ```
 
-3. **Run the development server**
+3. **Start development server**
    ```bash
    bun run dev
    ```
 
-4. **Open your browser**
+4. **Open in browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🏗️ Project Structure
+## 🎨 Design System
 
-```
-wired-in/
-├── src/
-│   ├── app/
-│   │   ├── globals.css          # Global styles and design system
-│   │   ├── layout.tsx           # Root layout with metadata
-│   │   ├── page.tsx             # Main page component
-│   │   └── not-found.tsx        # Custom 404 page
-│   ├── components/
-│   │   ├── common/              # Reusable components
-│   │   │   ├── LoadingSpinner.tsx
-│   │   │   └── ScrollToTop.tsx
-│   │   ├── layout/              # Layout components
-│   │   │   ├── Header.tsx
-│   │   │   └── Footer.tsx
-│   │   └── sections/            # Page sections
-│   │       ├── HeroSection.tsx
-│   │       ├── AboutSection.tsx
-│   │       ├── ServersSection.tsx
-│   │       ├── TeamSection.tsx
-│   │       ├── TestimonialsSection.tsx
-│   │       └── ContactSection.tsx
-│   └── assets/                  # Images and static assets
-│       └── images/
-└── public/                      # Public assets
+### Color Palette
+```css
+--brand-primary: #00ff88    /* Neon Green */
+--brand-secondary: #00cc6a  /* Dark Green */
+--brand-accent: #00ffaa     /* Light Green */
+--background: #000000       /* Pure Black */
+--surface-primary: #0a0a0a  /* Dark Gray */
+--text-primary: #ffffff     /* White */
+--text-secondary: #a0a0a0   /* Light Gray */
 ```
 
-## 🎯 Key Components
+### Typography
+- **Primary Font**: Apple system fonts cuz why tf not (SF Pro, Segoe UI, Roboto)
+- **Monospace**: SF Mono, Monaco, Cascadia Code
+- **Font Weights**: 400 (regular), 600 (semibold), 700 (bold)
+
+### Components
+- **Glassmorphic Cards** - Backdrop blur with transparency
+- **Gradient Text** - Brand color gradients for emphasis
+- **Interactive Buttons** - Hover effects and micro-animations
+- **Responsive Grid** - Flexible layouts for all screen sizes
+
+## 📱 Component Documentation
 
 ### Hero Section
-- Animated background with brand colors
-- Call-to-action buttons
-- Community statistics
-- Smooth scroll indicator
-
-### About Section
-- Mission and vision
-- Feature highlights
-- Community values
-- Interactive cards
+The main landing section featuring:
+- Animated brand title with staggered text reveal
+- Call-to-action buttons for community engagement
+- Key metrics display (members, uptime, reliability)
+- Background parallax effects
 
 ### Servers Section
-- Minecraft server showcase
-- CS2 server information
-- Server statistics
-- Performance metrics
-- API support in progress s
+Game server showcase with:
+- Real-time server status monitoring
+- Player count and capacity display
+- Server feature highlights
+- Interactive join guides and modals
 
 ### Team Section
-- Team member profiles
-- Social links
-- Role descriptions
-- Community stats
-
-### Testimonials Section
-- Auto-rotating carousel
-- Community feedback
-- Star ratings
-- User avatars
+Community team presentation:
+- Team member profiles with avatars
+- Role descriptions and social links
+- Online/offline status indicators
+- Community statistics
 
 ### Contact Section
-- Interactive contact form
-- Social media links
-- Community stats
-- Multiple contact methods
+Communication hub featuring:
+- Interactive contact form with validation
+- Multiple contact methods (Discord, email)
+- Community statistics and engagement metrics
+- Social media integration
 
-## 🚀 Deployment
+## 🔧 Development
 
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Vercel will automatically detect Next.js
-3. Deploy with default settings
-
-### Manual Deployment
+### Available Scripts
 ```bash
-# Build the project
-bun run build
-
-# Start production server
-bun run start
-```
-
-## 🎨 Customization
-
-### Colors
-Update the CSS variables in `src/app/globals.css`:
-```css
-:root {
-  --brand-primary: #00ff88;
-  --brand-secondary: #00cc6a;
-  --brand-accent: #00ffaa;
-}
-```
-
-### Content
-- Update team member information in `TeamSection.tsx`
-- Modify server details in `ServersSection.tsx`
-- Change testimonials in `TestimonialsSection.tsx`
-- Update contact information in `ContactSection.tsx`
-
-### Styling
-- Modify animations in `globals.css`
-- Update component styles using Tailwind classes
-- Add new CSS variables for consistent theming
-
-## 📱 Responsive Design
-
-The website is fully responsive with breakpoints:
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-
-## ♿ Accessibility
-
-- Semantic HTML structure
-- ARIA labels and roles
-- Keyboard navigation support
-- High contrast color scheme
-- Screen reader friendly
-
-## 🔧 Development Scripts
-
-```bash
-# Development
 bun run dev          # Start development server
 bun run build        # Build for production
 bun run start        # Start production server
@@ -185,31 +155,115 @@ bun run lint         # Run ESLint
 bun run type-check   # Run TypeScript checks
 ```
 
+### Code Quality
+- **ESLint** configuration for code consistency
+- **Prettier** formatting for clean code
+- **TypeScript** strict mode for type safety
+- **Component testing** with React Testing Library
+
+### Performance Optimization
+- **Image optimization** with Next.js Image component
+- **Code splitting** and lazy loading
+- **CSS optimization** with Tailwind's purge
+- **Bundle analysis** and size monitoring
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Connect GitHub repository to Vercel
+2. Configure build settings:
+   - **Framework Preset**: Next.js
+   - **Build Command**: `bun run build`
+   - **Output Directory**: `.next`
+3. Deploy with automatic CI/CD
+
+### Environment Variables
+```env
+NEXT_PUBLIC_DISCORD_INVITE=https://discord.gg/wiredin
+NEXT_PUBLIC_SITE_URL=https://wiredin.gg
+```
+
+### Build Optimization
+- **Static generation** for improved performance
+- **Image optimization** with WebP format
+- **CSS minification** and purging
+- **JavaScript bundling** and tree shaking
+
+## 📊 Performance Metrics
+
+
+
+### Core Web Vitals
+- **LCP**: < 2.5s
+- **FID**: < 100ms
+- **CLS**: < 0.1
+
+## 🔒 Security
+
+### Best Practices
+- **Content Security Policy** (CSP) headers
+- **HTTPS enforcement** with secure cookies
+- **Input validation** and sanitization
+- **Dependency scanning** for vulnerabilities
+
+### Data Protection
+- **GDPR compliance** with privacy controls
+- **Cookie consent** management
+- **Data encryption** in transit and at rest
+- **Regular security audits**
+
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+We welcome contributions from the community! Please follow these guidelines:
+
+### Development Process
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### Code Standards
+- Follow **TypeScript** best practices
+- Use **Tailwind CSS** for styling
+- Write **comprehensive tests**
+- Update **documentation** as needed
+
+### Commit Convention
+```
+feat: add new feature
+fix: resolve bug
+docs: update documentation
+style: formatting changes
+refactor: code restructuring
+test: add or update tests
+chore: maintenance tasks
+```
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## 🆘 Support & Community
 
-- **Discord**: Join our community at [discord.gg/wiredin](https://discord.gg/wiredin)
-- **Email**: contact@wiredin.com
-- **Steam Group**: [lovetaps](https://steamcommunity.com/groups/lovetaps)
+### Getting Help
+- **Discord**: [Join our community](https://discord.gg/wiredin)
+- **Issues**: [GitHub Issues](https://github.com/your-username/wired-in/issues)
+- **Documentation**: [Project Wiki](https://github.com/your-username/wired-in/wiki)
+
+### Community Guidelines
+- **Be respectful** and inclusive
+- **Follow Discord** server rules
+- **Report issues** responsibly
+- **Share feedback** constructively
 
 ## 🙏 Acknowledgments
 
-- **LoveTaps Steam Group** - The amazing community behind (wired-in)
-- **Next.js Team** - For the incredible framework
-- **Tailwind CSS** - For the utility-first CSS framework
-- **Apple** - Design inspiration and UX patterns
+- **Next.js team** for the amazing framework
+- **Tailwind CSS** for the utility-first approach
+- **Vercel or cloudflare** for seamless deployment
+- **Our community** for continuous support and feedback
 
 ---
 
-**Made with ❤️ by the (wired-in) Team**
+**Built with ❤️ by the (wired-in) team**

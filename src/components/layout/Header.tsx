@@ -61,6 +61,7 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Servers', href: '#servers' },
+    { name: 'Turbo', href: '#turbo' },
     { name: 'Team', href: '#team' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -102,11 +103,12 @@ const Header = () => {
               onClick={handleLogoClick}
             >
               <div className="relative w-10 h-10">
-                <Image 
-                  src="/assets/images/logo.png" 
-                  alt="(wired-in) Logo" 
-                  fill 
-                  className="object-contain rounded-xl" 
+                <Image
+                  src="/assets/images/logo.png"
+                  alt="(wired-in) Logo (favicon)"
+                  fill
+                  className="object-contain rounded-xl"
+                  priority
                 />
               </div>
               <span className="text-xl font-bold flex items-center">
@@ -119,7 +121,7 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -133,31 +135,39 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <button className="btn-primary">
+              <a
+                href="https://discord.gg/y6kb6a9CcG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
                 Join Community
-              </button>
+              </a>
             </nav>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 z-60 relative"
+              className="lg:hidden p-2 z-60 relative"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
             >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <div className="w-8 h-8 flex flex-col justify-center items-center relative">
+                {/* Top bar */}
                 <span
-                  className={`block w-5 h-0.5 bg-text-primary transition-all duration-300 ${
-                    isMobileMenuOpen ? 'rotate-45 translate-y-1' : ''
+                  className={`block absolute left-1 top-2 w-6 h-0.5 bg-text-primary rounded transition-all duration-300 ${
+                    isMobileMenuOpen ? 'rotate-45 top-4' : ''
                   }`}
                 />
+                {/* Middle bar */}
                 <span
-                  className={`block w-5 h-0.5 bg-text-primary transition-all duration-300 mt-1 ${
-                    isMobileMenuOpen ? 'opacity-0' : ''
+                  className={`block absolute left-1 top-4 w-6 h-0.5 bg-text-primary rounded transition-all duration-300 ${
+                    isMobileMenuOpen ? 'opacity-0 scale-x-0' : ''
                   }`}
                 />
+                {/* Bottom bar */}
                 <span
-                  className={`block w-5 h-0.5 bg-text-primary transition-all duration-300 mt-1 ${
-                    isMobileMenuOpen ? '-rotate-45 -translate-y-1' : ''
+                  className={`block absolute left-1 top-6 w-6 h-0.5 bg-text-primary rounded transition-all duration-300 ${
+                    isMobileMenuOpen ? '-rotate-45 top-4' : ''
                   }`}
                 />
               </div>
@@ -168,11 +178,12 @@ const Header = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
           isMobileMenuOpen 
             ? 'opacity-100 visible' 
             : 'opacity-0 invisible'
         }`}
+        style={{ pointerEvents: isMobileMenuOpen ? 'auto' : 'none' }}
       >
         {/* Backdrop */}
         <div 
@@ -183,11 +194,7 @@ const Header = () => {
         
         {/* Menu Content */}
         <div 
-          className={`mobile-menu-container relative z-50 h-full flex flex-col items-center justify-center transition-all duration-300 ${
-            isMobileMenuOpen 
-              ? 'transform translate-y-0 opacity-100' 
-              : 'transform -translate-y-4 opacity-0'
-          }`}
+          className={`mobile-menu-container relative z-50 h-full flex flex-col items-center justify-center ${isMobileMenuOpen ? 'animate-slide-down-menu' : ''} transition-all duration-300`}
         >
           <nav className="flex flex-col items-center space-y-8">
             {navItems.map((item, index) => (
@@ -199,9 +206,7 @@ const Header = () => {
                     ? 'translate-y-0 opacity-100' 
                     : 'translate-y-4 opacity-0'
                 }`}
-                style={{ 
-                  transitionDelay: isMobileMenuOpen ? `${index * 100}ms` : '0ms' 
-                }}
+                style={{ transitionDelay: isMobileMenuOpen ? `${index * 0.07 + 0.15}s` : '0s' }}
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick(item.href);
@@ -210,18 +215,15 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <button 
-              className={`btn-primary px-8 py-4 text-lg mt-4 transition-all duration-300 transform ${
-                isMobileMenuOpen 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-4 opacity-0'
-              }`}
-              style={{ 
-                transitionDelay: isMobileMenuOpen ? `${navItems.length * 100}ms` : '0ms' 
-              }}
+            <a
+              href="https://discord.gg/y6kb6a9CcG"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-8 w-48 text-2xl py-4"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Join Community
-            </button>
+            </a>
           </nav>
         </div>
       </div>

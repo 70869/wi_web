@@ -2,8 +2,6 @@ import React, { Suspense } from 'react';
 import HeroSection from '../components/sections/HeroSection';
 import AboutSection from '../components/sections/AboutSection';
 import ServersSection from '../components/sections/ServersSection';
-import TeamSection from '../components/sections/TeamSection';
-import TestimonialsSection from '../components/sections/TestimonialsSection';
 import ContactSection from '../components/sections/ContactSection';
 import Footer from '../components/layout/Footer';
 import ScrollToTop from '../components/common/ScrollToTop';
@@ -12,6 +10,7 @@ import PerformanceMonitor from '../components/common/PerformanceMonitor';
 // Lazy load non-critical sections
 const LazyTeamSection = React.lazy(() => import('../components/sections/TeamSection'));
 const LazyTestimonialsSection = React.lazy(() => import('../components/sections/TestimonialsSection'));
+const LazyTurboSection = React.lazy(() => import('../components/sections/TurboSection'));
 
 // Loading fallback component
 const SectionLoader = () => (
@@ -36,16 +35,16 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServersSection />
-      
       {/* Lazy loaded sections */}
       <Suspense fallback={<SectionLoader />}>
         <LazyTeamSection />
       </Suspense>
-      
       <Suspense fallback={<SectionLoader />}>
         <LazyTestimonialsSection />
       </Suspense>
-      
+      <Suspense fallback={<SectionLoader />}>
+        <LazyTurboSection />
+      </Suspense>
       <ContactSection />
       <Footer />
       <ScrollToTop />

@@ -13,12 +13,12 @@ const AboutSection = () => {
     {
       icon: '🔒',
       title: 'Secure File Hosting',
-      description: 'Exclusive, invite-only file hosting service with end-to-end encryption for your important files.'
+      description: 'We are (in development) with an Exclusive, invite-only file hosting service with end-to-end encryption for your important files.'
     },
     {
-      icon: '👥',
+      icon: '🗣️',
       title: 'Vibrant Community',
-      description: 'Join 500+ passionate gamers and tech enthusiasts from the LoveTaps Steam group.'
+      description: 'Join 90+ passionate gamers from all over the world. We play everything.'
     },
     {
       icon: '⚡',
@@ -46,7 +46,7 @@ const AboutSection = () => {
             <span className="gradient-text"> Motive</span>
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            (wired-in) is more than just game servers; it's a community built on passion, 
+            (wired-in) is more than just game servers; it&apos;s a community built on passion, 
             innovation, and the love of gaming technology.
           </p>
         </div>
@@ -69,7 +69,7 @@ const AboutSection = () => {
                 to meet your unique needs.
               </p>
               <p className="text-lg text-text-secondary leading-relaxed">
-                (wired-in), where we're more than just servers - we're a growing community of passionate 
+                (wired-in), where we&apos;re more than just servers - we&apos;re a growing community of passionate 
                 individuals who believe in the power of technology to bring people together.
               </p>
             </div>
@@ -82,10 +82,10 @@ const AboutSection = () => {
               <div className="relative bg-surface-secondary rounded-3xl p-0 border border-border-primary overflow-hidden shadow-xl">
                 <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center">
                   <Image
-                    src="/assets/images/bgmc2.png"
+                    src="https://media.discordapp.net/attachments/1387551558891212891/1388775267824304240/2023-06-09_17.44.16.png?ex=68623542&is=6860e3c2&hm=6f964e475c737f0957f343ce002cd2e3ded9a681e1567fbe2f4e127857ad1979&=&width=1100&height=588"
                     alt="Minecraft Cherry Blossom Background"
                     fill
-                    className="object-cover object-center w-full h-full"
+                    className="object-cover object-center"
                     priority
                   />
                 </div>
@@ -127,10 +127,10 @@ const AboutSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center group">
               <div className="text-5xl font-bold gradient-text mb-4 transition-transform duration-300 ease-out group-hover:scale-110">2+</div>
-              <div className="text-text-secondary text-lg transition-colors duration-300 ease-out group-hover:text-text-primary">Years of Excellence</div>
+              <div className="text-text-secondary text-lg transition-colors duration-300 ease-out group-hover:text-text-primary">Years of Grinding</div>
             </div>
             <div className="text-center group">
-              <div className="text-5xl font-bold gradient-text mb-4 transition-transform duration-300 ease-out group-hover:scale-110">10+</div>
+              <div className="text-5xl font-bold gradient-text mb-4 transition-transform duration-300 ease-out group-hover:scale-110">NA</div>
               <div className="text-text-secondary text-lg transition-colors duration-300 ease-out group-hover:text-text-primary">Game Servers</div>
             </div>
             <div className="text-center group">

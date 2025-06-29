@@ -35,7 +35,7 @@ const TestimonialsSection = () => {
       name: 'inmates',
       role: 'Probably loading in chunks',
       avatar: 'https://cdn.discordapp.com/avatars/340573382091210752/b1389e95871ff7182d8fdedfa935838c.webp?size=1024',
-      content: 'Watch this.',
+      content: 'Watch this... *server crashes*',
       rating: 4
     },
     {

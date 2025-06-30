@@ -364,7 +364,7 @@ const ServersSection = () => {
               </div>
               {/* Server Header */}
               <div className="flex items-center space-x-4 mb-4 relative z-20">
-                <div className="w-16 h-16 rounded-2xl bg-surface-tertiary flex items-center justify-center">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center">
                   <Image src="/assets/images/cs2.png" alt="CS2 Icon" width={48} height={48} style={{ position: 'relative', top: '4px', left: '-2px' }} />
                 </div>
                 <div>

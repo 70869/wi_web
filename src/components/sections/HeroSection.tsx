@@ -5,12 +5,55 @@ import Header from '../layout/Header';
 import Image from 'next/image';
 import { motion, MotionConfig } from 'motion/react';
 
+interface DiscordStats {
+  onlineCount: number;
+  loading: boolean;
+  error?: boolean;
+}
+
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
+  const [discordStats, setDiscordStats] = useState<DiscordStats>({
+    onlineCount: 0,
+    loading: true
+  });
 
   useEffect(() => {
     setIsClient(true);
+  }, []);
+
+  // Fetch Discord stats
+  useEffect(() => {
+    const fetchDiscordStats = async () => {
+      try {
+        const serverId = '928141195903897602';
+        const response = await fetch(`/api/discord-stats?serverId=${serverId}`);
+        
+        if (response.ok) {
+          const data = await response.json();
+          setDiscordStats({
+            onlineCount: data.onlineCount || 0,
+            loading: false
+          });
+        } else {
+          throw new Error('Failed to fetch Discord stats');
+        }
+      } catch (error) {
+        console.error('Error fetching Discord stats:', error);
+        setDiscordStats({
+          onlineCount: 24, // Fallback value
+          loading: false,
+          error: true
+        });
+      }
+    };
+
+    fetchDiscordStats();
+    // Refresh stats every 5 minutes
+    const interval = setInterval(fetchDiscordStats, 5 * 60 * 1000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -103,7 +146,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1], delay: 0.02 }}
             >
-              <button className="btn-primary text-lg px-8 py-4">
+              <button 
+                className="btn-primary text-lg px-8 py-4"
+                onClick={() => window.open('https://discord.gg/y6kb6a9CcG', '_blank')}
+              >
                 Join Our Community
               </button>
               <button
@@ -137,8 +183,14 @@ const HeroSection = () => {
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
                 transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">20+</div>
-                <div className="text-text-secondary">Active Members</div>
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
+                  {discordStats.loading ? (
+                    <span className="animate-pulse">...</span>
+                  ) : (
+                    discordStats.onlineCount
+                  )}
+                </div>
+                <div className="text-text-secondary">Users Online</div>
               </motion.div>
               <motion.div className="text-center"
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}

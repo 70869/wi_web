@@ -288,7 +288,7 @@ const ServersSection = () => {
             >
               {/* Banner */}
               <div className="relative w-full h-32 sm:h-40 md:h-48 rounded-2xl overflow-hidden mb-4 sm:mb-6 md:mb-8">
-                <Image src="/assets/images/minecraft_banner.png" alt="Minecraft Banner" fill className="object-cover" />
+                <Image src="/assets/images/mcbanner.webp" alt="Minecraft Banner" fill className="object-cover" />
               </div>
               {/* Server Header */}
               <div className="flex items-center space-x-3 sm:space-x-4 md:space-x-6 mb-3 sm:mb-4 md:mb-6">

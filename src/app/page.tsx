@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import Header from '../components/layout/Header';
 import HeroSection from '../components/sections/HeroSection';
 import AboutSection from '../components/sections/AboutSection';
 import ServersSection from '../components/sections/ServersSection';
@@ -30,24 +31,27 @@ const SectionLoader = () => (
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <PerformanceMonitor />
-      <HeroSection />
-      <AboutSection />
-      <ServersSection />
-      {/* Lazy loaded sections */}
-      <Suspense fallback={<SectionLoader />}>
-        <LazyTeamSection />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <LazyTestimonialsSection />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <LazyTurboSection />
-      </Suspense>
-      <ContactSection />
-      <Footer />
-      <ScrollToTop />
-    </main>
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <Header />
+      <main>
+        <PerformanceMonitor />
+        <HeroSection />
+        <AboutSection />
+        <ServersSection />
+        {/* Lazy loaded sections */}
+        <Suspense fallback={<SectionLoader />}>
+          <LazyTeamSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <LazyTestimonialsSection />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <LazyTurboSection />
+        </Suspense>
+        <ContactSection />
+        <Footer />
+        <ScrollToTop />
+      </main>
+    </div>
   );
 }

@@ -64,7 +64,7 @@ const TurboSection = () => {
   return (
     <MotionConfig transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}>
       <section id="turbo" className="section-padding relative bg-transparent">
-        <div className="container mx-auto px-2 md:px-6 relative z-10">
+        <div className="container mx-auto px-8 sm:px-16 md:px-24 lg:px-32 xl:px-40 2xl:px-48 relative z-10">
           <motion.div className="text-center mb-8"
             initial={{ opacity: 0, y: 2 }}
             whileInView={{ opacity: 1, y: 0 }}

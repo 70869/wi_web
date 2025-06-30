@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Header from '../layout/Header';
 import Image from 'next/image';
 import { motion, MotionConfig } from 'motion/react';
 
@@ -82,9 +81,7 @@ const HeroSection = () => {
 
   return (
     <MotionConfig transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}>
-      <section id="home" className="relative min-h-screen overflow-hidden" ref={heroRef}>
-        <Header />
-        
+      <section id="home" className="relative min-h-screen overflow-hidden pt-20 sm:pt-24" ref={heroRef}>
         {/* Hero Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
@@ -108,52 +105,52 @@ const HeroSection = () => {
         </div>
 
         {/* Main Content Container */}
-        <div className="relative z-20 flex items-center justify-center min-h-screen px-6">
+        <div className="relative z-20 flex items-center justify-center min-h-screen px-8 sm:px-16 md:px-24 lg:px-32 xl:px-40 2xl:px-48">
           <div className="text-center max-w-4xl mx-auto">
             {/* Brand Title */}
-            <motion.div className="mb-8"
+            <motion.div className="mb-8 md:mb-12 lg:mb-16"
               initial={{ opacity: 0, y: 2 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
             >
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold leading-tight mb-4 md:mb-6 lg:mb-8">
                 <span style={{ color: '#00ff88' }}>(</span>
                 <span className="text-white">wired</span>
                 <span style={{ color: '#00ff88' }}>-</span>
                 <span className="text-white">in</span>
                 <span style={{ color: '#00ff88' }}>)</span>
               </h1>
-              <div className="text-xl md:text-2xl text-text-secondary font-medium">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-text-secondary font-medium">
                 Where Gaming Meets Innovation
               </div>
             </motion.div>
 
             {/* Value Proposition */}
-            <motion.div className="mb-12"
+            <motion.div className="mb-8 md:mb-12 lg:mb-16"
               initial={{ opacity: 0, y: 2 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1], delay: 0.01 }}
             >
-              <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-4 sm:px-6 md:px-8">
                 From the creators of lovetaps, we are a passionate community of gamers and tech enthusiasts. 
                 Experience high-performance game servers, secure file hosting, and a vibrant community.
               </p>
             </motion.div>
 
             {/* Call-to-Action Buttons */}
-            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center px-4 sm:px-6 md:px-8"
               initial={{ opacity: 0, y: 2 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1], delay: 0.02 }}
             >
               <button 
-                className="btn-primary text-lg px-8 py-4"
+                className="btn-primary text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 w-full sm:w-auto min-h-[48px] md:min-h-[56px] flex items-center justify-center"
                 onClick={() => window.open('https://discord.gg/y6kb6a9CcG', '_blank')}
               >
                 Join Our Community
               </button>
               <button
-                className="btn-secondary text-lg px-8 py-4"
+                className="btn-secondary text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 w-full sm:w-auto min-h-[48px] md:min-h-[56px] flex items-center justify-center"
                 onClick={() => {
                   const el = document.getElementById('servers');
                   if (el) {
@@ -166,7 +163,7 @@ const HeroSection = () => {
             </motion.div>
 
             {/* Key Metrics */}
-            <motion.div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
+            <motion.div className="mt-12 md:mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-4xl mx-auto px-4 sm:px-6 md:px-8"
               initial="hidden"
               animate="visible"
               variants={{
@@ -183,28 +180,28 @@ const HeroSection = () => {
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
                 transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">
                   {discordStats.loading ? (
                     <span className="animate-pulse">...</span>
                   ) : (
                     discordStats.onlineCount
                   )}
                 </div>
-                <div className="text-text-secondary">Users Online</div>
+                <div className="text-sm sm:text-base md:text-lg text-text-secondary">Users Online</div>
               </motion.div>
               <motion.div className="text-center"
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
                 transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">24/7</div>
-                <div className="text-text-secondary">Server Uptime</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">24/7</div>
+                <div className="text-sm sm:text-base md:text-lg text-text-secondary">Server Uptime</div>
               </motion.div>
               <motion.div className="text-center"
                 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
                 transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">99.9%</div>
-                <div className="text-text-secondary">Reliability</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">99.9%</div>
+                <div className="text-sm sm:text-base md:text-lg text-text-secondary">Reliability</div>
               </motion.div>
             </motion.div>
           </div>

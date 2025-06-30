@@ -583,12 +583,101 @@ body {
   }
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Ensure minimum touch target size */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve button padding on mobile */
+  .btn-primary, .btn-secondary {
+    padding: 12px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Better text sizing for mobile */
+  h1 {
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    line-height: 1.3;
+  }
+  
+  /* Improve form elements on mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px 16px;
+  }
+  
+  /* Better spacing for mobile cards */
+  .card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  /* Improve mobile navigation */
+  .mobile-menu-container {
+    padding: 20px;
+  }
+  
+  /* Better mobile grid layouts */
+  .grid {
+    gap: 16px;
+  }
+  
+  /* Mobile-specific body improvements */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure header doesn't overflow */
+  header {
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Prevent any element from causing horizontal scroll */
+  * {
+    max-width: 100%;
+  }
+}
+
 /* Accessibility & Focus States */
 .focus-ring:focus {
   outline: none;
   ring: 2px;
   ring-color: var(--brand-primary);
   ring-offset: 2px;
+}
+
+/* Enhanced focus states for mobile */
+@media (max-width: 640px) {
+  .focus-ring:focus {
+    ring: 3px;
+    ring-offset: 1px;
+  }
 }
 
 /* Text Selection Styling */
@@ -655,6 +744,20 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Mobile-specific body improvements */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 /* Animation Performance Optimizations */
 .animate-fade-in,
 .animate-slide-in-left,
@@ -675,4 +778,68 @@ body {
 
 .gradient-text-animated {
   will-change: background-position;
+}
+
+/* Mobile-specific animation optimizations */
+@media (max-width: 640px) {
+  /* Reduce motion for better performance on mobile */
+  .animate-fade-in,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-slide-in-up {
+    transition-duration: 0.3s;
+  }
+  
+  /* Optimize hover effects for touch devices */
+  .hover-lift:hover,
+  .hover-scale:hover {
+    transform: none;
+  }
+}
+
+/* Global container improvements for mobile */
+.container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    max-width: 100vw !important;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure all sections respect mobile width */
+  section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Fix for any potential overflow issues */
+  .relative, .absolute {
+    max-width: 100%;
+  }
+}
+
+.testimonial-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  transition: all 0.3s;
+}
+@media (min-width: 640px) {
+  .testimonial-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+@media (min-width: 1024px) {
+  .testimonial-dot {
+    width: 10px;
+    height: 10px;
+  }
 }

@@ -76,7 +76,7 @@ const TeamSection = () => {
           <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
           <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl" />
         </div>
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-8 sm:px-16 md:px-24 lg:px-32 xl:px-40 2xl:px-48 relative z-10">
           {/* Section Header */}
           <motion.div className="text-center mb-16"
             initial={{ opacity: 0, y: 2 }}

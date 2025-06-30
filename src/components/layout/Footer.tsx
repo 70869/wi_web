@@ -58,13 +58,13 @@ const Footer = () => {
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
+      <div className="container mx-auto px-8 sm:px-16 md:px-24 lg:px-32 xl:px-40 2xl:px-48 py-12 sm:py-16 relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="flex flex-col gap-8 sm:grid sm:grid-cols-2 lg:grid-cols-5 sm:gap-8 mb-8 sm:mb-12">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="relative w-12 h-12">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-2">
+            <div className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 justify-center lg:justify-start">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12">
                 <Image 
                   src="/assets/images/logo.png" 
                   alt="(wired-in) Logo" 
@@ -72,7 +72,7 @@ const Footer = () => {
                   className="object-contain rounded-xl" 
                 />
               </div>
-              <span className="text-2xl font-bold flex items-center">
+              <span className="text-xl sm:text-2xl font-bold flex items-center">
                 <span className="text-white">(</span>
                 <span className="text-white">wired</span>
                 <span style={{ color: '#00ff88' }}>-</span>
@@ -80,11 +80,11 @@ const Footer = () => {
                 <span className="text-white">)</span>
               </span>
             </div>
-            <p className="text-text-secondary mb-6 max-w-md leading-relaxed">
+            <p className="text-sm sm:text-base text-text-secondary mb-4 sm:mb-6 max-w-md leading-relaxed">
               From the creators of lovetaps. 
               Experience high-performance game servers and secure file hosting.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center lg:justify-start space-x-4 mb-2">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
@@ -93,7 +93,7 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-surface-secondary rounded-xl hover:bg-brand-primary hover:text-black transition-all duration-300"
+                    className="p-3 bg-surface-secondary rounded-xl hover:bg-brand-primary hover:text-black transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
                     aria-label={social.name}
                   >
                     <IconComponent className="w-6 h-6" />
@@ -103,16 +103,19 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Divider for mobile */}
+          <div className="block sm:hidden border-t border-border-primary opacity-40 my-2"></div>
+
           {/* Company Links */}
-          <div>
-            <h3 className="text-lg font-bold text-text-primary mb-6">Company</h3>
-            <ul className="space-y-3">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+            <h3 className="text-base sm:text-lg font-bold text-text-primary mb-4 sm:mb-6">Company</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   {link.name === 'Our Team' ? (
                     <a
                       href={link.href}
-                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      className="text-sm sm:text-base text-text-secondary hover:text-brand-primary transition-colors duration-200"
                       onClick={e => {
                         e.preventDefault();
                         const el = document.getElementById('team');
@@ -126,7 +129,7 @@ const Footer = () => {
                   ) : link.name === 'About Us' ? (
                     <a
                       href={link.href}
-                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      className="text-sm sm:text-base text-text-secondary hover:text-brand-primary transition-colors duration-200"
                       onClick={e => {
                         e.preventDefault();
                         const el = document.getElementById('about');
@@ -140,7 +143,7 @@ const Footer = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      className="text-sm sm:text-base text-text-secondary hover:text-brand-primary transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -150,16 +153,19 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Divider for mobile */}
+          <div className="block sm:hidden border-t border-border-primary opacity-40 my-2"></div>
+
           {/* Services Links */}
-          <div>
-            <h3 className="text-lg font-bold text-text-primary mb-6">Services</h3>
-            <ul className="space-y-3">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+            <h3 className="text-base sm:text-lg font-bold text-text-primary mb-4 sm:mb-6">Services</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   {link.name === 'Game Servers' ? (
                     <a
                       href={link.href}
-                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      className="text-sm sm:text-base text-text-secondary hover:text-brand-primary transition-colors duration-200"
                       onClick={e => {
                         e.preventDefault();
                         const el = document.getElementById('servers');
@@ -173,7 +179,7 @@ const Footer = () => {
                   ) : (
                     <a
                       href={link.href}
-                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      className="text-sm sm:text-base text-text-secondary hover:text-brand-primary transition-colors duration-200"
                     >
                       {link.name}
                       {link.comingSoon && (
@@ -186,15 +192,18 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Divider for mobile */}
+          <div className="block sm:hidden border-t border-border-primary opacity-40 my-2"></div>
+
           {/* Legal Links */}
-          <div>
-            <h3 className="text-lg font-bold text-text-primary mb-6">Legal</h3>
-            <ul className="space-y-3">
+          <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
+            <h3 className="text-base sm:text-lg font-bold text-text-primary mb-4 sm:mb-6">Legal</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                    className="text-sm sm:text-base text-text-secondary hover:text-brand-primary transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -204,28 +213,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="glass rounded-3xl p-8 mb-12">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-text-primary mb-4">
-              Hold up, no newsletter?
-            </h3>
-            <p className="text-text-secondary mb-6 max-w-md mx-auto">
-              Honestly, too much of a grind... I promise I&apos;m working on it. (In the meantime, just imagine all the cool updates you&apos;d be getting here.)
-            </p>
-          </div>
-        </div>
+        {/* Divider above copyright for mobile */}
+        <div className="block sm:hidden border-t border-border-primary opacity-40 my-4"></div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border-primary pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-text-secondary text-sm mb-4 md:mb-0">
-              © {currentYear} (wired-in). All rights reserved.
-            </div>
-            <div className="flex items-center space-x-6 text-sm">
-              <span className="text-text-secondary">Made with ❤️ by the (wired-in) team</span>
-            </div>
-          </div>
+        {/* Copyright */}
+        <div className="text-xs text-text-secondary text-center mt-6 sm:mt-0 pb-2">
+          &copy; {currentYear} (wired-in). All rights reserved.
         </div>
       </div>
     </footer>

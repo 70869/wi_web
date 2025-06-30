@@ -201,7 +201,7 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`text-2xl sm:text-3xl text-text-secondary hover:text-brand-primary transition-all duration-15000 font-bold transform min-h-[44px] flex items-center justify-center w-full text-center group ${
+                    className={`text-2xl sm:text-3xl text-text-secondary hover:text-brand-primary transition-all duration-100 font-bold transform min-h-[44px] flex items-center justify-center w-full text-center group ${
                       isMobileMenuOpen 
                         ? 'translate-y-0 opacity-100' 
                         : 'translate-y-4 opacity-0'

@@ -357,7 +357,7 @@ const ServersSection = () => {
               {/* Banner */}
               <div className="relative w-full h-32 sm:h-40 md:h-48 rounded-2xl overflow-hidden mb-4 sm:mb-6 md:mb-8 z-20">
                 {/* Background image for Coming Soon */}
-                <Image src="/assets/images/bgoffice2.png" alt="CS2 Background" fill className="object-cover brightness-100" />
+                <Image src="/assets/images/bgoffice2.webp" alt="CS2 Background" fill className="object-cover brightness-100" />
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                   <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 drop-shadow-lg">Coming Soon</span>
                 </div>
@@ -365,7 +365,7 @@ const ServersSection = () => {
               {/* Server Header */}
               <div className="flex items-center space-x-3 sm:space-x-4 md:space-x-6 mb-3 sm:mb-4 md:mb-6 relative z-20">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <Image src="/assets/images/cs2.png" alt="CS2 Icon" width={32} height={32} className="sm:w-12 sm:h-12 md:w-16 md:h-16" style={{ position: 'relative', top: '2px', left: '-1px' }} />
+                  <Image src="/assets/images/cs2.webp" alt="CS2 Icon" width={32} height={32} className="sm:w-12 sm:h-12 md:w-16 md:h-16" style={{ position: 'relative', top: '2px', left: '-1px' }} />
                 </div>
                 <div className="min-w-0 flex-1">
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary">Counter-Strike 2</h3>

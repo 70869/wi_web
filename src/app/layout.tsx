@@ -36,10 +36,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preload critical resources */}
-        <link rel="preload" href="/assets/images/logo.png" as="image" />
+        <link rel="preload" href="/assets/images/logo.webp" as="image" />
         <link rel="preload" href="/assets/images/bgmc2.png" as="image" />
         <link rel="preload" href="/assets/images/minecraft_banner.png" as="image" />
-        <link rel="preload" href="/assets/images/bgofficecs2.png" as="image" />
+        <link rel="preload" href="/assets/images/bgofficecs2.webp" as="image" />
         
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://discord.gg" />

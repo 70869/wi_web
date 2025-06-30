@@ -85,7 +85,7 @@ const HeroSection = () => {
         {/* Hero Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
-            src="/assets/images/bgofficecs2.png"
+            src="/assets/images/bgofficecs2.webp"
             alt="Hero Background"
             fill
             priority

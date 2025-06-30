@@ -108,7 +108,7 @@ const Header = () => {
             >
               <div className="relative w-8 h-8 sm:w-10 sm:h-10">
                 <Image
-                  src="/assets/images/logo.png"
+                  src="/assets/images/logo.webp"
                   alt="(wired-in) Logo (favicon)"
                   fill
                   className="object-contain rounded-xl"

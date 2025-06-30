@@ -66,7 +66,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6 justify-center lg:justify-start">
               <div className="relative w-10 h-10 sm:w-12 sm:h-12">
                 <Image 
-                  src="/assets/images/logo.png" 
+                  src="/assets/images/logo.webp" 
                   alt="(wired-in) Logo" 
                   fill 
                   className="object-contain rounded-xl" 

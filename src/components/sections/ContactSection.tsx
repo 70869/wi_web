@@ -29,7 +29,7 @@ const ContactSection = () => {
   useEffect(() => {
     const fetchDiscordStats = async () => {
       try {
-        // Discord server ID for wiredin
+        // Discord server ID for wiredin 
         const serverId = '928141195903897602';
         
         const response = await fetch(`/api/discord-stats?serverId=${serverId}`);
@@ -56,7 +56,7 @@ const ContactSection = () => {
     };
 
     fetchDiscordStats();
-    // Refresh stats every 5 minutes
+    // Refresh stats every 5 minutes I might change
     const interval = setInterval(fetchDiscordStats, 5 * 60 * 1000);
     
     return () => clearInterval(interval);
@@ -269,8 +269,8 @@ const ContactSection = () => {
                           rel="noopener noreferrer"
                           className="group block rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg py-6 px-8 flex items-center gap-x-6 h-full transition-all duration-300 hover:bg-brand-primary/10"
                         >
-                          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
-                            <IconComponent className="text-white text-4xl" />
+                          <div className="w-16 h-16 rounded-2xl bg-surface-secondary flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300">
+                            <IconComponent className="text-text-primary text-4xl" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-1">
@@ -326,8 +326,8 @@ const ContactSection = () => {
                         rel="noopener noreferrer"
                         className="group block rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg py-6 px-8 flex items-center gap-x-6 h-full transition-all duration-300 hover:bg-brand-primary/10"
                       >
-                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className="text-white text-4xl" />
+                        <div className="w-16 h-16 rounded-2xl bg-surface-secondary flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent className="text-text-primary text-4xl" />
                         </div>
                         <div className="flex-1">
                           <h4 className="text-lg font-bold text-text-primary mb-1">

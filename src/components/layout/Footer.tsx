@@ -109,12 +109,42 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
+                  {link.name === 'Our Team' ? (
+                    <a
+                      href={link.href}
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      onClick={e => {
+                        e.preventDefault();
+                        const el = document.getElementById('team');
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  ) : link.name === 'About Us' ? (
+                    <a
+                      href={link.href}
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                      onClick={e => {
+                        e.preventDefault();
+                        const el = document.getElementById('about');
+                        if (el) {
+                          el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

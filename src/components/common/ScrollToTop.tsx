@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,9 +36,12 @@ const ScrollToTop: React.FC = () => {
   return (
     <>
       {isVisible && (
-        <button
+        <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-brand-primary hover:bg-brand-accent text-black rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-fade-in"
+          className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-brand-primary hover:bg-brand-accent text-black rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
           aria-label="Scroll to top"
         >
           <svg
@@ -53,7 +57,7 @@ const ScrollToTop: React.FC = () => {
               d="M5 10l7-7m0 0l7 7m-7-7v18"
             />
           </svg>
-        </button>
+        </motion.button>
       )}
     </>
   );

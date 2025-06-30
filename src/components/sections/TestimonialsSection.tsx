@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface Testimonial {
   name: string;
@@ -48,6 +48,20 @@ const TestimonialsSection = () => {
       role: 'Artist & Vision Holder',
       avatar: 'https://cdn.discordapp.com/avatars/472250684826320897/106a42dbcbd579a21364a1345e08c16a.webp?size=1024',
       content: 'Big up the boss man, J.C. We off the red liquor, state of mind going quicker. Dont fall in line or you wont make it past the preacher, lemme know if you see the bigger picture?',
+      rating: 5
+    },
+    {
+      name: 'Sany',
+      role: 'Community Member',
+      avatar: 'https://cdn.discordapp.com/avatars/381498214983139329/b8725fc780a38f95b5c319468fe4bded.webp?size=1024',
+      content: 'website looking lit',
+      rating: 4.5
+    },
+    {
+      name: 'bootybandit5523',
+      role: 'Community Member',
+      avatar: 'https://cdn.discordapp.com/avatars/481004499255820288/0c9be65364f2c5691c8b28abd44891af.webp?size=1024',
+      content: 'makes a smooth brain like me be able to enjoy mods with the boys without a hassle',
       rating: 5
     }
   ];
@@ -181,7 +195,7 @@ const TestimonialsSection = () => {
                     {/* Rating */}
                     <div className="flex justify-center space-x-1 mb-6">
                       {testimonials[currentTestimonial].rating > 0 &&
-                        [...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                        [...Array(Math.floor(testimonials[currentTestimonial].rating))].map((_, i) => (
                           <svg
                             key={i}
                             className="w-6 h-6 text-brand-primary"

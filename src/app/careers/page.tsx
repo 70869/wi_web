@@ -7,7 +7,7 @@ const Careers = () => {
     {
       title: 'Developer',
       type: 'Full-time / Part-time',
-      description: 'We&apos;re looking for passionate developers to help build and maintain our platform, game servers, and community tools.',
+      description: "We're looking for passionate developers to help build and maintain our platform, game servers, and community tools.",
       requirements: [
         'Experience with JavaScript/TypeScript, React, Node.js',
         'Knowledge of game server technologies (Minecraft, CS2)',

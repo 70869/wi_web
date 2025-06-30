@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { motion, MotionConfig } from 'motion/react';
 
 interface ServerStatus {
   online: boolean;
@@ -237,188 +238,225 @@ const ServersSection = () => {
   };
 
   return (
-    <section id="servers" className="section-padding relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-text-primary">Our</span>
-            <span className="gradient-text"> Servers</span>
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Experience gaming at its finest with our high-performance servers, 
-            designed for the ultimate gaming experience.
-          </p>
+    <MotionConfig transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}>
+      <section id="servers" className="section-padding relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl" />
         </div>
-
-        {/* Servers Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {/* Minecraft Card */}
-          <div className="card group animate-fade-in">
-            {/* Banner */}
-            <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-6">
-              <Image src="/assets/images/minecraft_banner.png" alt="Minecraft Banner" fill className="object-cover" />
-            </div>
-            {/* Server Header */}
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="w-16 h-16 rounded-2xl bg-surface-tertiary flex items-center justify-center">
-                <Image src="/assets/images/mcicon.svg" alt="Minecraft Icon" width={48} height={48} />
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <motion.div className="text-center mb-16"
+            initial={{ opacity: 0, y: 2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="text-text-primary">Our</span>
+              <span className="gradient-text"> Servers</span>
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+              Experience gaming at its finest with our high-performance servers, 
+              designed for the ultimate gaming experience.
+            </p>
+          </motion.div>
+          {/* Servers Grid */}
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.01,
+                  delayChildren: 0.005
+                }
+              }
+            }}
+          >
+            {/* Minecraft Card */}
+            <motion.div className="card group"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 }
+              }}
+              transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+            >
+              {/* Banner */}
+              <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-6">
+                <Image src="/assets/images/minecraft_banner.png" alt="Minecraft Banner" fill className="object-cover" />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-text-primary">Minecraft</h3>
-                <div className="flex items-center space-x-2">
-                  {/* Live Status */}
-                  {mcStatus.loading ? (
-                    <>
-                      <div className="w-2 h-2 rounded-full bg-gray-400 animate-pulse" />
-                      <span className="text-gray-400 font-medium animate-pulse">Checking...</span>
-                    </>
-                  ) : mcStatus.online ? (
-                    <>
-                      <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-                      <span className="text-brand-primary font-medium">Online</span>
-                      {mcStatus.players && (
-                        <span className="ml-2 text-xs text-text-secondary">{mcStatus.players.online} / {mcStatus.players.max} players</span>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                      <span className="text-red-500 font-medium">Offline</span>
-                    </>
-                  )}
+              {/* Server Header */}
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-surface-tertiary flex items-center justify-center">
+                  <Image src="/assets/images/mcicon.svg" alt="Minecraft Icon" width={48} height={48} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-text-primary">Minecraft</h3>
+                  <div className="flex items-center space-x-2">
+                    {/* Live Status */}
+                    {mcStatus.loading ? (
+                      <>
+                        <div className="w-2 h-2 rounded-full bg-gray-400 animate-pulse" />
+                        <span className="text-gray-400 font-medium animate-pulse">Checking...</span>
+                      </>
+                    ) : mcStatus.online ? (
+                      <>
+                        <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
+                        <span className="text-brand-primary font-medium">Online</span>
+                        {mcStatus.players && (
+                          <span className="ml-2 text-xs text-text-secondary">{mcStatus.players.online} / {mcStatus.players.max} players</span>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                        <span className="text-red-500 font-medium">Offline</span>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* Description */}
-            <p className="text-text-secondary mb-4 leading-relaxed">
-              All The Mods 10 server with custom plugins and a vibrant community.
-            </p>
-            {/* Features */}
-            <div className="mb-4">
-              <div className="text-text-secondary text-sm mb-2">Features</div>
-              <div className="flex flex-wrap gap-2">
-                {['Custom Plugins', 'Economy System', 'Keep Inventory', 'TST ENV'].map((feature, i) => (
-                  <span key={i} className="px-3 py-1 bg-surface-tertiary rounded-full text-xs text-text-secondary border border-border-primary">
-                    {feature}
-                  </span> 
-                ))}
-              </div>
-            </div>
-            {/* Action Button */}
-            <div className="flex gap-3">
-              <button className="btn-primary flex-1" onClick={() => setShowMinecraftGuide(true)}>
-                Join Server
-              </button>
-            </div>
-          </div>
-
-          {/* Counter-Strike 2 Card */}
-          <div className="card group animate-fade-in opacity-60 pointer-events-none relative">
-            {/* Banner */}
-            <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-6">
-              {/* Background image for Coming Soon */}
-              <Image src="/assets/images/bgoffice2.png" alt="CS2 Background" fill className="object-cover brightness-100" />
-              <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                <span className="text-2xl md:text-3xl font-bold text-yellow-400 drop-shadow-lg">Coming Soon</span>
-              </div>
-            </div>
-            {/* Server Header */}
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="w-16 h-16 rounded-2xl bg-surface-tertiary flex items-center justify-center">
-                <Image src="/assets/images/cs2.png" alt="CS2 Icon" width={48} height={48} style={{ position: 'relative', top: '1px', left: '-1px' }} />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-text-primary">Counter-Strike 2</h3>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-yellow-400" />
-                  <span className="text-yellow-400 font-medium">In Development</span>
-                </div>
-              </div>
-            </div>
-            {/* Description */}
-            <p className="text-text-secondary mb-4 leading-relaxed">
-              5v5 Community Competitive server is currently in development. Stay tuned!
-            </p>
-            {/* Features */}
-            <div className="mb-4">
-              <div className="text-text-secondary text-sm mb-2">Planned Features</div>
-              <div className="flex flex-wrap gap-2">
-                {['Custom Maps', 'Tournament Mode', 'Anti-Cheat', 'Low Latency'].map((feature, i) => (
-                  <span key={i} className="px-3 py-1 bg-surface-tertiary rounded-full text-xs text-text-secondary border border-border-primary">
-                    {feature}
-                  </span>
-                ))}
-              </div>
-            </div>
-            {/* Disabled Button */}
-            <div className="flex gap-3">
-              <button className="btn-secondary flex-1 cursor-not-allowed opacity-60" disabled>
-                Coming Soon
-              </button>
-              <button className="btn-secondary" onClick={() => alert('Counter-Strike 2: 5v5 Community Competitive server, custom maps, anti-cheat, low latency. Coming soon!')}>
-                Info
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Server Stats */}
-        <div className="animate-fade-in">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-2">99.9%</div>
-              <div className="text-text-secondary">Uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-2">&lt;20ms</div>
-              <div className="text-text-secondary">Average Latency</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-2">24/7</div>
-              <div className="text-text-secondary">Support</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-2">DDoS</div>
-              <div className="text-text-secondary">Protected</div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in">
-          <div className="relative rounded-3xl p-12 max-w-4xl mx-auto overflow-hidden">
-            {/* Enhanced glassmorphic background */}
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-text-primary mb-4">
-                Ready to Join the Action?
-              </h3>
-              <p className="text-text-secondary mb-8 text-lg">
-                Connect with our community and experience gaming like never before.
+              {/* Description */}
+              <p className="text-text-secondary mb-4 leading-relaxed">
+                All The Mods 10 server with custom plugins and a vibrant community.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-primary text-lg px-8 py-4" onClick={() => window.location.href = '/careers'}>
-                  Get in Touch
-                </button>
-                <button className="btn-secondary text-lg px-8 py-4">
-                  View Server Status
+              {/* Features */}
+              <div className="mb-4">
+                <div className="text-text-secondary text-sm mb-2">Features</div>
+                <div className="flex flex-wrap gap-2">
+                  {['Custom Plugins', 'Economy System', 'Keep Inventory', 'TST ENV'].map((feature, i) => (
+                    <span key={i} className="px-3 py-1 bg-surface-tertiary rounded-full text-xs text-text-secondary border border-border-primary">
+                      {feature}
+                    </span> 
+                  ))}
+                </div>
+              </div>
+              {/* Action Button */}
+              <div className="flex gap-3">
+                <button className="btn-primary flex-1" onClick={() => setShowMinecraftGuide(true)}>
+                  Join Server
                 </button>
               </div>
+            </motion.div>
+            {/* Counter-Strike 2 Card */}
+            <motion.div className="card group opacity-60 pointer-events-none relative overflow-hidden"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 }
+              }}
+              transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+            >
+              {/* Dark overlay over everything */}
+              <div className="absolute inset-0 bg-black/70 z-10"></div>
+              
+              {/* Banner */}
+              <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-6 z-20">
+                {/* Background image for Coming Soon */}
+                <Image src="/assets/images/bgoffice2.png" alt="CS2 Background" fill className="object-cover brightness-100" />
+                <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                  <span className="text-2xl md:text-3xl font-bold text-yellow-400 drop-shadow-lg">Coming Soon</span>
+                </div>
+              </div>
+              {/* Server Header */}
+              <div className="flex items-center space-x-4 mb-4 relative z-20">
+                <div className="w-16 h-16 rounded-2xl bg-surface-tertiary flex items-center justify-center">
+                  <Image src="/assets/images/cs2.png" alt="CS2 Icon" width={48} height={48} style={{ position: 'relative', top: '4px', left: '-2px' }} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-text-primary">Counter-Strike 2</h3>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 rounded-full bg-yellow-400" />
+                    <span className="text-yellow-400 font-medium">In Development</span>
+                  </div>
+                </div>
+              </div>
+              {/* Description */}
+              <p className="text-text-secondary mb-4 leading-relaxed relative z-20">
+                5v5 Community Competitive server is currently in development. Stay tuned!
+              </p>
+              {/* Features */}
+              <div className="mb-4 relative z-20">
+                <div className="text-text-secondary text-sm mb-2">Planned Features</div>
+                <div className="flex flex-wrap gap-2">
+                  {['Custom Maps', 'Tournament Mode', 'Anti-Cheat', 'Low Latency'].map((feature, i) => (
+                    <span key={i} className="px-3 py-1 bg-surface-tertiary rounded-full text-xs text-text-secondary border border-border-primary">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              {/* Disabled Button */}
+              <div className="flex gap-3 relative z-20">
+                <button className="btn-secondary flex-1 cursor-not-allowed opacity-60" disabled>
+                  Trust the process
+                </button>
+                <button className="btn-secondary" onClick={() => alert('Counter-Strike 2: 5v5 Community Competitive server, custom maps, anti-cheat, low latency. Coming soon!')}>
+                  Info
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+          {/* Server Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">99.9%</div>
+                <div className="text-text-secondary">Uptime</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">&lt;20ms</div>
+                <div className="text-text-secondary">Average Latency</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">24/7</div>
+                <div className="text-text-secondary">Support</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold gradient-text mb-2">DDoS</div>
+                <div className="text-text-secondary">Protected</div>
+              </div>
             </div>
-          </div>
+          </motion.div>
+          {/* CTA Section */}
+          <motion.div className="text-center mt-16"
+            initial={{ opacity: 0, y: 2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <div className="relative rounded-3xl p-12 max-w-4xl mx-auto overflow-hidden">
+              {/* Enhanced glassmorphic background */}
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold text-text-primary mb-4">
+                  Ready to Join the Action?
+                </h3>
+                <p className="text-text-secondary mb-8 text-lg">
+                  Connect with our community and experience gaming like never before.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="btn-primary text-lg px-8 py-4" onClick={() => window.open('https://discord.gg/y6kb6a9CcG', '_blank')}>
+                    Get in Touch
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-
+      </section>
       {/* Minecraft Guide Modal */}
       <MinecraftGuideModal />
-    </section>
+    </MotionConfig>
   );
 };
 

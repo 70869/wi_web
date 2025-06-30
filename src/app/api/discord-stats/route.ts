@@ -15,13 +15,23 @@ export async function GET(request: NextRequest) {
     // Discord Bot Token - you'll need to set this in your environment variables
     const botToken = process.env.DISCORD_BOT_TOKEN;
     
+    console.log('Debug: Server ID:', serverId);
+    console.log('Debug: Bot token present:', !!botToken);
+    console.log('Debug: Bot token length:', botToken?.length);
+    
     if (!botToken) {
-      return NextResponse.json(
-        { error: 'Discord bot token not configured' },
-        { status: 500 }
-      );
+      console.warn('Discord bot token not configured - returning fallback data');
+      return NextResponse.json({
+        memberCount: 500,
+        onlineCount: 24,
+        serverName: 'wiredin',
+        serverIcon: null,
+        fallback: true
+      });
     }
 
+    console.log('Debug: Attempting Discord API call...');
+    
     // Fetch server information from Discord API
     const response = await fetch(`https://discord.com/api/v10/guilds/${serverId}?with_counts=true`, {
       headers: {
@@ -30,11 +40,25 @@ export async function GET(request: NextRequest) {
       },
     });
 
+    console.log('Debug: Discord API response status:', response.status);
+    console.log('Debug: Discord API response ok:', response.ok);
+
     if (!response.ok) {
-      throw new Error(`Discord API error: ${response.status}`);
+      console.error(`Discord API error: ${response.status} - ${response.statusText}`);
+      
+      // Return fallback data instead of throwing error
+      return NextResponse.json({
+        memberCount: 500,
+        onlineCount: 24,
+        serverName: 'wiredin',
+        serverIcon: null,
+        fallback: true,
+        error: `Discord API error: ${response.status}`
+      });
     }
 
     const guildData = await response.json();
+    console.log('Debug: Discord API response data:', guildData);
 
     return NextResponse.json({
       memberCount: guildData.approximate_member_count || 0,
@@ -45,9 +69,15 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Error fetching Discord stats:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch Discord stats' },
-      { status: 500 }
-    );
+    
+    // Return fallback data instead of error response
+    return NextResponse.json({
+      memberCount: 500,
+      onlineCount: 24,
+      serverName: 'wiredin',
+      serverIcon: null,
+      fallback: true,
+      error: 'Failed to fetch Discord stats'
+    });
   }
 } 

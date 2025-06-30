@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaDiscord, FaSteam, FaEnvelope, FaYoutube } from 'react-icons/fa';
+import { motion, MotionConfig } from 'motion/react';
 
 interface DiscordStats {
   memberCount: number;
@@ -112,140 +113,211 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="text-text-primary">Get In</span>
-            <span className="gradient-text"> Touch</span>
-          </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Ready to join the get (in) community? We&apos;d love to hear from you.
-          </p>
+    <MotionConfig transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}>
+      <section id="contact" className="section-padding relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl" />
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
-          {/* Contact Form */}
-          <div className="animate-slide-in-left h-full">
-            <div className="relative rounded-3xl py-10 px-8 min-h-[450px] h-full overflow-hidden">
-              {/* Enhanced glassmorphic background */}
-              <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-text-primary mb-13">Send us a message</h3>
-                <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col" aria-label="Contact form">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <motion.div className="text-center mb-16"
+            initial={{ opacity: 0, y: 2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="text-text-primary">Get In</span>
+              <span className="gradient-text"> Touch</span>
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+              Ready to join the get (in) community? We&apos;d love to hear from you.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+            {/* Contact Form */}
+            <motion.div className="h-full"
+              initial={{ opacity: 0, x: -2 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <div className="relative rounded-3xl py-10 px-8 min-h-[450px] h-full overflow-hidden">
+                {/* Enhanced glassmorphic background */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-text-primary mb-13">Send us a message</h3>
+                  <form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col" aria-label="Contact form">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="name" className="block text-text-secondary mb-2 font-medium">
+                          Name 
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          aria-required="true"
+                          aria-label="Your name"
+                          className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
+                          placeholder="Your name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-text-secondary mb-2 font-medium">
+                          Email 
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          aria-required="true"
+                          aria-label="Your email"
+                          className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
                     <div>
-                      <label htmlFor="name" className="block text-text-secondary mb-2 font-medium">
-                        Name 
+                      <label htmlFor="subject" className="block text-text-secondary mb-2 font-medium">
+                        Subject 
                       </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                      <select
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
                         onChange={handleChange}
                         required
                         aria-required="true"
-                        aria-label="Your name"
-                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
-                        placeholder="Your name"
-                      />
+                        aria-label="Subject"
+                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
+                      >
+                        <option value="" disabled>Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="server">Server Support</option>
+                        <option value="community">Community</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="other">Other</option>
+                      </select>
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-text-secondary mb-2 font-medium">
-                        Email 
+                      <label htmlFor="message" className="block text-text-secondary mb-2 font-medium">
+                        Message 
                       </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
                         onChange={handleChange}
                         required
                         aria-required="true"
-                        aria-label="Your email"
-                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
-                        placeholder="your@email.com"
+                        aria-label="Message"
+                        rows={6}
+                        className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200 resize-none flex-grow min-h-[120px] mb-2"
+                        placeholder="Tell us about your inquiry..."
                       />
                     </div>
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-text-secondary mb-2 font-medium">
-                      Subject 
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      aria-required="true"
-                      aria-label="Subject"
-                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200"
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`w-full btn-primary text-lg py-4 mt-4 flex items-center justify-center ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
+                      aria-busy={isSubmitting}
                     >
-                      <option value="" disabled>Select a subject</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="server">Server Support</option>
-                      <option value="community">Community</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-text-secondary mb-2 font-medium">
-                      Message 
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      aria-required="true"
-                      aria-label="Message"
-                      rows={6}
-                      className="w-full px-4 py-3 bg-surface-secondary border border-border-primary rounded-xl text-text-primary placeholder-text-tertiary focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary transition-colors duration-200 resize-none flex-grow min-h-[120px] mb-2"
-                      placeholder="Tell us about your inquiry..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`w-full btn-primary text-lg py-4 mt-4 flex items-center justify-center ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}
-                    aria-busy={isSubmitting}
-                  >
-                    {isSubmitting && <span className="loader mr-2"></span>}
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
-                </form>
+                      {isSubmitting && <span className="loader mr-2"></span>}
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </button>
+                  </form>
+                </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Contact Methods */}
-          <div className="animate-slide-in-right h-full">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold text-text-primary mb-6">Connect with us</h3>
-                <p className="text-text-secondary mb-8 leading-relaxed">
-                  Join our vibrant community and stay connected with the latest updates, 
-                  server announcements, and exclusive content.
-                </p>
-              </div>
+            {/* Contact Methods */}
+            <motion.div className="h-full"
+              initial={{ opacity: 0, x: 2 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-text-primary mb-6">Connect with us</h3>
+                  <p className="text-text-secondary mb-8 leading-relaxed">
+                    Join our vibrant community and stay connected with the latest updates, 
+                    server announcements, and exclusive content.
+                  </p>
+                </div>
 
-              <div className="space-y-6">
-                {contactMethods.map((method, index) => {
-                  const IconComponent = method.icon;
-                  
-                  // Special handling for Discord card with stats
-                  if (method.title === 'Discord') {
+                <div className="space-y-6">
+                  {contactMethods.map((method, index) => {
+                    const IconComponent = method.icon;
+                    
+                    // Special handling for Discord card with stats
+                    if (method.title === 'Discord') {
+                      return (
+                        <a
+                          key={index}
+                          href={method.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group block rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg py-6 px-8 flex items-center gap-x-6 h-full transition-all duration-300 hover:bg-brand-primary/10"
+                        >
+                          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
+                            <IconComponent className="text-white text-4xl" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-1">
+                              <h4 className="text-lg font-bold text-text-primary">
+                                {method.title}
+                              </h4>
+                            </div>
+                            <p className="text-text-secondary mb-2">
+                              {method.description}
+                            </p>
+                            <div className="flex space-x-4 text-sm">
+                              <div className="flex items-center space-x-1">
+                                <span className="text-text-secondary">Members:</span>
+                                <span className="font-semibold gradient-text">
+                                  {discordStats.loading ? (
+                                    <span className="animate-pulse">...</span>
+                                  ) : discordStats.error ? (
+                                    "500+"
+                                  ) : (
+                                    discordStats.memberCount.toLocaleString()
+                                  )}
+                                </span>
+                              </div>
+                              <div className="flex items-center space-x-1">
+                                <span className="text-text-secondary">Online:</span>
+                                <span className="font-semibold gradient-text">
+                                  {discordStats.loading ? (
+                                    <span className="animate-pulse">...</span>
+                                  ) : discordStats.error ? (
+                                    "24/7"
+                                  ) : (
+                                    discordStats.onlineCount
+                                  )}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-center">
+                            <svg className="w-6 h-6 text-text-tertiary group-hover:text-brand-primary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </a>
+                      );
+                    }
+                    
+                    // Regular cards for other methods
                     return (
                       <a
                         key={index}
@@ -258,40 +330,12 @@ const ContactSection = () => {
                           <IconComponent className="text-white text-4xl" />
                         </div>
                         <div className="flex-1">
-                          <div className="flex items-center justify-between mb-1">
-                            <h4 className="text-lg font-bold text-text-primary">
-                              {method.title}
-                            </h4>
-                          </div>
-                          <p className="text-text-secondary mb-2">
+                          <h4 className="text-lg font-bold text-text-primary mb-1">
+                            {method.title}
+                          </h4>
+                          <p className="text-text-secondary">
                             {method.description}
                           </p>
-                          <div className="flex space-x-4 text-sm">
-                            <div className="flex items-center space-x-1">
-                              <span className="text-text-secondary">Members:</span>
-                              <span className="font-semibold gradient-text">
-                                {discordStats.loading ? (
-                                  <span className="animate-pulse">...</span>
-                                ) : discordStats.error ? (
-                                  "500+"
-                                ) : (
-                                  discordStats.memberCount.toLocaleString()
-                                )}
-                              </span>
-                            </div>
-                            <div className="flex items-center space-x-1">
-                              <span className="text-text-secondary">Online:</span>
-                              <span className="font-semibold gradient-text">
-                                {discordStats.loading ? (
-                                  <span className="animate-pulse">...</span>
-                                ) : discordStats.error ? (
-                                  "24/7"
-                                ) : (
-                                  discordStats.onlineCount
-                                )}
-                              </span>
-                            </div>
-                          </div>
                         </div>
                         <div className="flex items-center">
                           <svg className="w-6 h-6 text-text-tertiary group-hover:text-brand-primary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -300,42 +344,14 @@ const ContactSection = () => {
                         </div>
                       </a>
                     );
-                  }
-                  
-                  // Regular cards for other methods
-                  return (
-                    <a
-                      key={index}
-                      href={method.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group block rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg py-6 px-8 flex items-center gap-x-6 h-full transition-all duration-300 hover:bg-brand-primary/10"
-                    >
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="text-white text-4xl" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-text-primary mb-1">
-                          {method.title}
-                        </h4>
-                        <p className="text-text-secondary">
-                          {method.description}
-                        </p>
-                      </div>
-                      <div className="flex items-center">
-                        <svg className="w-6 h-6 text-text-tertiary group-hover:text-brand-primary transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </a>
-                  );
-                })}
+                  })}
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </MotionConfig>
   );
 };
 

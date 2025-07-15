@@ -94,11 +94,16 @@ const TeamSection = () => {
   // CTA fade-in on scroll
   const [ctaRef, ctaInView] = useInView() as [React.RefObject<HTMLDivElement>, boolean];
   // Card refs and inView for staggered animation
-  const cardRefs = teamMembers.map(() => useRef<HTMLDivElement>(null));
+  const cardRefs = useRef<React.RefObject<HTMLDivElement>[]>([]);
+  if (cardRefs.current.length !== teamMembers.length) {
+    cardRefs.current = Array(teamMembers.length)
+      .fill(null)
+      .map(() => React.createRef<HTMLDivElement>());
+  }
   const [cardsInView, setCardsInView] = useState(Array(teamMembers.length).fill(false));
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const observers = cardRefs.map((ref, i) => {
+    const observers = cardRefs.current.map((ref, i) => {
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -116,7 +121,7 @@ const TeamSection = () => {
       return observer;
     });
     return () => observers.forEach(observer => observer.disconnect());
-  }, [cardRefs.length]);
+  }, [teamMembers.length]);
 
   return (
     <section
@@ -158,7 +163,7 @@ const TeamSection = () => {
             return (
               <div
                 key={index}
-                ref={cardRefs[index]}
+                ref={cardRefs.current[index]}
                 className={`card group transition-opacity duration-1000 ease-out ${cardsInView[index] ? 'opacity-100' : 'opacity-0'}`}
                 style={{ transitionDelay: `${delay}ms` }}
               >
@@ -248,7 +253,13 @@ const TeamSection = () => {
                       rel="noopener noreferrer"
                       className="p-2 bg-surface-tertiary rounded-lg hover:bg-brand-primary hover:text-black transition-all duration-300 flex items-center justify-center"
                     >
-                      <img src="https://lr0dzue7q24suiks.public.blob.vercel-storage.com/assets/Volecta2-j2J6QDyjXfmcEcYeGL8rryMx8fzIFS.png" alt="Volecta" className="w-5 h-5 object-contain scale-125" />
+                      <Image
+                        src="https://lr0dzue7q24suiks.public.blob.vercel-storage.com/assets/Volecta2-j2J6QDyjXfmcEcYeGL8rryMx8fzIFS.png"
+                        alt="Volecta"
+                        width={20}
+                        height={20}
+                        className="w-5 h-5 object-contain scale-125"
+                      />
                     </a>
                   )}
                 </div>

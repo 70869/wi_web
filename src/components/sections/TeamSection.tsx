@@ -94,11 +94,9 @@ const TeamSection = () => {
   // CTA fade-in on scroll
   const [ctaRef, ctaInView] = useInView() as [React.RefObject<HTMLDivElement>, boolean];
   // Card refs and inView for staggered animation
-  const cardRefs = useRef<React.RefObject<HTMLDivElement>[]>([]);
+  const cardRefs = useRef<Array<React.RefObject<HTMLDivElement>>>([]);
   if (cardRefs.current.length !== teamMembers.length) {
-    cardRefs.current = Array(teamMembers.length)
-      .fill(null)
-      .map(() => React.createRef<HTMLDivElement>());
+    cardRefs.current = Array.from({ length: teamMembers.length }, () => React.createRef<HTMLDivElement>());
   }
   const [cardsInView, setCardsInView] = useState(Array(teamMembers.length).fill(false));
   useEffect(() => {

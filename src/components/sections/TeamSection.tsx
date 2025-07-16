@@ -94,7 +94,7 @@ const TeamSection = () => {
   // CTA fade-in on scroll
   const [ctaRef, ctaInView] = useInView() as [React.RefObject<HTMLDivElement>, boolean];
   // Card refs and inView for staggered animation
-  const cardRefs = useRef<Array<React.RefObject<HTMLDivElement>>>([]);
+  const cardRefs = useRef<React.RefObject<HTMLDivElement | null>[]>([]);
   if (cardRefs.current.length !== teamMembers.length) {
     cardRefs.current = Array.from({ length: teamMembers.length }, () => React.createRef<HTMLDivElement>());
   }
@@ -127,13 +127,11 @@ const TeamSection = () => {
       ref={sectionRef}
       className={`section-padding relative overflow-hidden transition-opacity duration-1000 ease-out ${sectionInView ? 'opacity-100' : 'opacity-0'}`}
     >
-      {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-brand-accent rounded-full blur-3xl" />
       </div>
       <div className="container mx-auto px-8 sm:px-16 md:px-24 lg:px-32 xl:px-40 2xl:px-48 relative z-10">
-        {/* Section Header */}
         <div
           ref={headerRef}
           className={`text-center mb-16 transition-opacity duration-1000 ease-out ${headerInView ? 'opacity-100' : 'opacity-0'}`}
@@ -147,16 +145,13 @@ const TeamSection = () => {
             dedicated to creating the ultimate gaming experience.
           </p>
         </div>
-        {/* Team Member Grid */}
         <div
           ref={gridRef}
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 transition-opacity duration-1000 ease-out ${gridInView ? 'opacity-100' : 'opacity-0'}`}
         >
           {teamMembers.map((member, index) => {
-            // Define offline status for team members
             const offlineMembers = ['soda', 'Gavin', 'xxalem', 'Justin'];
             const isOffline = offlineMembers.includes(member.name);
-            // Staggered delay for each card
             const delay = 100 + index * 100;
             return (
               <div
@@ -165,7 +160,6 @@ const TeamSection = () => {
                 className={`card group transition-opacity duration-1000 ease-out ${cardsInView[index] ? 'opacity-100' : 'opacity-0'}`}
                 style={{ transitionDelay: `${delay}ms` }}
               >
-                {/* Member Avatar */}
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="relative">
                     <div className="w-20 h-20 rounded-2xl overflow-hidden ring-2 ring-border-primary group-hover:ring-brand-primary transition-all duration-300">
@@ -194,11 +188,9 @@ const TeamSection = () => {
                     <p className="text-brand-primary font-medium">{member.role}</p>
                   </div>
                 </div>
-                {/* Member Description */}
                 <p className="text-text-secondary mb-6 leading-relaxed">
                   {member.description}
                 </p>
-                {/* Social Links */}
                 <div className="flex items-center gap-x-3 mt-4">
                   {member.social.github && (
                     <a
@@ -265,7 +257,6 @@ const TeamSection = () => {
             );
           })}
         </div>
-        {/* Team Statistics */}
         <div
           ref={statsRef}
           className={`transition-opacity duration-1000 ease-out ${statsInView ? 'opacity-100' : 'opacity-0'}`}
@@ -289,13 +280,11 @@ const TeamSection = () => {
             </div>
           </div>
         </div>
-        {/* Call-to-Action Section */}
         <div
           ref={ctaRef}
           className={`text-center mt-16 transition-opacity duration-1000 ease-out ${ctaInView ? 'opacity-100' : 'opacity-0'}`}
         >
           <div className="relative rounded-3xl p-12 max-w-4xl mx-auto overflow-hidden">
-            {/* Glassmorphic Background */}
             <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl"></div>
             <div className="relative z-10">
               <h3 className="text-3xl font-bold text-text-primary mb-4">

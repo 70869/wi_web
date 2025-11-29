@@ -8,12 +8,11 @@ import Footer from '../components/layout/Footer';
 import ScrollToTop from '../components/common/ScrollToTop';
 import PerformanceMonitor from '../components/common/PerformanceMonitor';
 
-// Lazy load non-critical sections
+
 const LazyTeamSection = React.lazy(() => import('../components/sections/TeamSection'));
 const LazyTestimonialsSection = React.lazy(() => import('../components/sections/TestimonialsSection'));
 const LazyTurboSection = React.lazy(() => import('../components/sections/TurboSection'));
 
-// Loading fallback component
 const SectionLoader = () => (
   <div className="section-padding relative overflow-hidden">
     <div className="container mx-auto px-6">

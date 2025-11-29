@@ -1,3 +1,4 @@
+import '../lib/polyfills';
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
@@ -40,7 +41,7 @@ export default function RootLayout({
         <link rel="preload" href="/assets/images/bgmc2.png" as="image" />
         <link rel="preload" href="/assets/images/minecraft_banner.png" as="image" />
         <link rel="preload" href="/assets/images/bgofficecs2.webp" as="image" />
-        
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://discord.gg" />
         <link rel="preconnect" href="https://steamcommunity.com" />
@@ -48,7 +49,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://avatars.githubusercontent.com" />
         <link rel="preconnect" href="https://cdn.discordapp.com" />
         <link rel="preconnect" href="https://media.discordapp.net" />
-        
+
         {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="//discord.gg" />
         <link rel="dns-prefetch" href="//steamcommunity.com" />
@@ -56,7 +57,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//avatars.githubusercontent.com" />
         <link rel="dns-prefetch" href="//cdn.discordapp.com" />
         <link rel="dns-prefetch" href="//media.discordapp.net" />
-        
+
         {/* Font optimization */}
         <link rel="preload" href="/_next/static/media/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>

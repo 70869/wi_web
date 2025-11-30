@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion, MotionConfig } from 'motion/react';
 
 const AboutSection = () => {
@@ -38,7 +37,7 @@ const AboutSection = () => {
       >
         {/* Fade-in Overlay - Top */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background via-background/80 to-transparent z-5"></div>
-        
+
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/3 right-0 w-96 h-96 bg-brand-primary rounded-full blur-3xl" />
@@ -58,7 +57,7 @@ const AboutSection = () => {
               <span className="gradient-text"> Motive</span>
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed px-4 sm:px-6 md:px-8">
-              (wired-in) is more than just game servers; it&apos;s a community built on passion, 
+              (wired-in) is more than just game servers; it&apos;s a community built on passion,
               innovation, and the love of gaming technology.
             </p>
           </motion.div>
@@ -77,22 +76,22 @@ const AboutSection = () => {
                   Bridging Gaming & Security
                 </h3>
                 <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed">
-                  Our mission is to provide high-performance game servers for titles like Minecraft and Counter-Strike 2, 
+                  Our mission is to provide high-performance game servers for titles like Minecraft and Counter-Strike 2,
                   while also offering an exclusive, invite-only file hosting service with end-to-end encryption.
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed">
-                  We strive to bridge the gap between gaming and security, enhancing your digital experience. 
-                  Our tiered subscription model offers flexibility, providing different perks and advantages 
+                  We strive to bridge the gap between gaming and security, enhancing your digital experience.
+                  Our tiered subscription model offers flexibility, providing different perks and advantages
                   to meet your unique needs.
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed">
-                  (wired-in), where we&apos;re more than just servers - we&apos;re a growing community of passionate 
+                  (wired-in), where we&apos;re more than just servers - we&apos;re a growing community of passionate
                   individuals who believe in the power of technology to bring people together.
                 </p>
               </div>
             </motion.div>
 
-            {/* Right Column - Image */}
+            {/* Right Column - Video */}
             <motion.div
               initial={{ opacity: 0, y: 2 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -102,18 +101,17 @@ const AboutSection = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-primary to-brand-accent rounded-3xl blur-2xl opacity-20" />
                 <div className="relative bg-surface-secondary rounded-3xl p-0 border border-border-primary overflow-hidden shadow-xl">
-                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center">
-                    <Image
-                      src="https://media.discordapp.net/attachments/1387551558891212891/1388775267824304240/2023-06-09_17.44.16.png?ex=68623542&is=6860e3c2&hm=6f964e475c737f0957f343ce002cd2e3ded9a681e1567fbe2f4e127857ad1979&=&width=1100&height=588"
-                      alt="Minecraft Cherry Blossom Background"
-                      fill
-                      className="object-cover object-center"
-                      priority
+                  <div className="aspect-video rounded-2xl overflow-hidden flex items-center justify-center">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/i3GCChviyrA?enablejsapi=1&origin=http://localhost:3000"
+                      title="(wired-in) Intro"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      frameBorder="0"
+                      className="w-full h-full rounded-2xl"
                     />
-                  </div>
-                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6 md:p-8 rounded-b-2xl">
-                    <div className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text">(wired-in)</div>
-                    <div className="text-sm sm:text-base md:text-lg text-text-secondary">Community</div>
                   </div>
                 </div>
               </div>
@@ -179,7 +177,7 @@ const AboutSection = () => {
               </div>
               <div className="text-center group">
                 <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-3 sm:mb-4 md:mb-6 transition-transform duration-300 ease-out group-hover:scale-110">100%</div>
-                <div className="text-base sm:text-lg md:text-xl text-text-secondary transition-colors duration-300 ease-out group-hover:text-text-primary">Community Driven</div>
+                <div className="text-base sm:text-lg md:text-xl text-text-secondary transition-colors duration-300 ease-out group-hover:text-primary">Community Driven</div>
               </div>
             </div>
           </motion.div>
@@ -189,4 +187,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection; 
+export default AboutSection;

@@ -1,4 +1,4 @@
-# (wired-in) - Gaming Community Platform
+# (wired-in)
 
 A modern, high-performance web platform for the (wired-in) gaming community, featuring game server hosting, community management, and secure file sharing services.
 

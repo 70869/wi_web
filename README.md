@@ -12,19 +12,19 @@ A modern, high-performance web platform for the (wired-in) gaming community, fea
 
 ## ✨ Key Features
 
-### 🎯 Core Functionality
+### Core Functionality
 - **Game Server Management** - Real-time server status and player monitoring
 - **Community Hub** - Integrated Discord community with member management
 - **File Hosting** - Secure file storage and sharing platform
 - **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 
-### 🎨 User Experience
+### User Experience
 - **Modern UI/UX** - Apple-inspired design with glassmorphic effects
 - **Smooth Animations** - Fluid transitions and micro-interactions
 - **Dark Theme** - Eye-friendly dark mode with brand accent colors
 - **Accessibility** - WCAG compliant with keyboard navigation support
 
-### 🚀 Performance
+###  Performance
 - **Next.js 14** - Latest React framework with App Router
 - **TypeScript** - Type-safe development with enhanced IDE support
 - **Tailwind CSS** - Utility-first styling with custom design system
@@ -34,7 +34,7 @@ A modern, high-performance web platform for the (wired-in) gaming community, fea
 
 ### Frontend
 - **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe JavaScript development
+- **TypeScript** - I think we know this one
 - **Tailwind CSS** - Utility-first CSS framework
 - **Framer Motion** - Animation library for smooth transitions
 
@@ -94,7 +94,7 @@ src/
 
 ### Color Palette
 ```css
---brand-primary: #00ff88    /* Neon Green */
+--brand-primary: #00ff88    /* (wi) Green */
 --brand-secondary: #00cc6a  /* Dark Green */
 --brand-accent: #00ffaa     /* Light Green */
 --background: #000000       /* Pure Black */
@@ -119,7 +119,7 @@ src/
 ### Hero Section
 The main landing section featuring:
 - Animated brand title with staggered text reveal
-- Call-to-action buttons for community engagement
+- CTA buttons for community engagement
 - Key metrics display (members, uptime, reliability)
 - Background parallax effects
 
@@ -191,8 +191,6 @@ NEXT_PUBLIC_SITE_URL=https://wiredin.gg
 
 ## 📊 Performance Metrics
 
-
-
 ### Core Web Vitals
 - **LCP**: < 2.5s
 - **FID**: < 100ms
@@ -216,18 +214,7 @@ NEXT_PUBLIC_SITE_URL=https://wiredin.gg
 
 We welcome contributions from the community! Please follow these guidelines:
 
-### Development Process
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### Code Standards
-- Follow **TypeScript** best practices
-- Use **Tailwind CSS** for styling
-- Write **comprehensive tests**
-- Update **documentation** as needed
+- Shie | who made the base layout of this website and the intial 1.0 Design
 
 ### Commit Convention
 ```
@@ -263,7 +250,5 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - **Tailwind CSS** for the utility-first approach
 - **Vercel or cloudflare** for seamless deployment
 - **Our community** for continuous support and feedback
-
----
 
 **Built with ❤️ by the (wired-in) team**

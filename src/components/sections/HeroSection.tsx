@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, MotionConfig } from 'motion/react';
 import { useDiscordStats } from '@/hooks/useDiscordStats';
 
 const HeroSection = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
   const discordStats = useDiscordStats('928141195903897602');
 
@@ -14,29 +13,10 @@ const HeroSection = () => {
     setIsClient(true);
   }, []);
 
-  useEffect(() => {
-    if (!isClient) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (heroRef.current) {
-        const { clientX, clientY } = e;
-        const { width, height } = heroRef.current.getBoundingClientRect();
-        const x = (clientX - width / 2) / width;
-        const y = (clientY - height / 2) / height;
-
-        heroRef.current.style.setProperty('--mouse-x', x.toString());
-        heroRef.current.style.setProperty('--mouse-y', y.toString());
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [isClient]);
-
   return (
     <MotionConfig transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}>
-      <section id="home" className="relative min-h-screen overflow-hidden pt-20 sm:pt-24" ref={heroRef}>
-        {/* Hero Background */}
+      <section id="home" className="relative min-h-screen overflow-hidden pt-20 sm:pt-24">
+        {/* Hero Background - Static for maximum performance */}
         <div className="absolute inset-0 w-full h-full z-0">
           <Image
             src="/assets/images/bgofficecs2.webp"
@@ -45,6 +25,7 @@ const HeroSection = () => {
             priority
             className="w-full h-full object-cover object-center brightness-75 blur-sm select-none pointer-events-none"
             draggable={false}
+            style={{ willChange: 'auto' }}
           />
           {/* Background Overlay */}
           <div className="absolute inset-0 bg-black/60" />
@@ -63,9 +44,9 @@ const HeroSection = () => {
           <div className="text-center max-w-4xl mx-auto">
             {/* Brand Title */}
             <motion.div className="mb-8 md:mb-12 lg:mb-16"
-              initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold leading-tight mb-4 md:mb-6 lg:mb-8">
                 <span style={{ color: '#00ff88' }}>(</span>
@@ -79,9 +60,9 @@ const HeroSection = () => {
 
             {/* Value Proposition */}
             <motion.div className="mb-8 md:mb-12 lg:mb-16"
-              initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-4 sm:px-6 md:px-8">
                 From the creators of lovetaps, we created a passionate community of gamers and tech enthusiasts.
@@ -91,9 +72,9 @@ const HeroSection = () => {
 
             {/* Call-to-Action Buttons */}
             <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center px-4 sm:px-6 md:px-8"
-              initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
               <button
                 className="btn-primary text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 w-full sm:w-auto min-h-[48px] md:min-h-[56px] flex items-center justify-center"
@@ -130,10 +111,10 @@ const HeroSection = () => {
             >
               <motion.div className="text-center"
                 variants={{
-                  hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
-                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
                 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">
                   {discordStats.loading ? (
@@ -146,20 +127,20 @@ const HeroSection = () => {
               </motion.div>
               <motion.div className="text-center"
                 variants={{
-                  hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
-                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
                 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">24/7</div>
                 <div className="text-sm sm:text-base md:text-lg text-text-secondary">Server Uptime</div>
               </motion.div>
               <motion.div className="text-center"
                 variants={{
-                  hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
-                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
                 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">99.9%</div>
                 <div className="text-sm sm:text-base md:text-lg text-text-secondary">Reliability</div>

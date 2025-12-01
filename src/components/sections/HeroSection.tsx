@@ -3,56 +3,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, MotionConfig } from 'motion/react';
-
-interface DiscordStats {
-  onlineCount: number;
-  loading: boolean;
-  error?: boolean;
-}
+import { useDiscordStats } from '@/hooks/useDiscordStats';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
-  const [discordStats, setDiscordStats] = useState<DiscordStats>({
-    onlineCount: 0,
-    loading: true
-  });
+  const discordStats = useDiscordStats('928141195903897602');
 
   useEffect(() => {
     setIsClient(true);
-  }, []);
-
-  // Fetch Discord stats
-  useEffect(() => {
-    const fetchDiscordStats = async () => {
-      try {
-        const serverId = '928141195903897602';
-        const response = await fetch(`/api/discord-stats?serverId=${serverId}`);
-        
-        if (response.ok) {
-          const data = await response.json();
-          setDiscordStats({
-            onlineCount: data.onlineCount || 0,
-            loading: false
-          });
-        } else {
-          throw new Error('Failed to fetch Discord stats');
-        }
-      } catch (error) {
-        console.error('Error fetching Discord stats:', error);
-        setDiscordStats({
-          onlineCount: 24, // Fallback value
-          loading: false,
-          error: true
-        });
-      }
-    };
-
-    fetchDiscordStats();
-    // Refresh stats every 5 minutes
-    const interval = setInterval(fetchDiscordStats, 5 * 60 * 1000);
-    
-    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -74,13 +33,8 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [isClient]);
 
-  // Parallax scroll for scroll down indicator
-  // (Removed unused scroll effect)
-
-  // Note: parallaxY and parallaxOpacity calculations removed as they were unused
-
   return (
-    <MotionConfig transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}>
+    <MotionConfig transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}>
       <section id="home" className="relative min-h-screen overflow-hidden pt-20 sm:pt-24" ref={heroRef}>
         {/* Hero Background */}
         <div className="absolute inset-0 w-full h-full z-0">
@@ -109,41 +63,39 @@ const HeroSection = () => {
           <div className="text-center max-w-4xl mx-auto">
             {/* Brand Title */}
             <motion.div className="mb-8 md:mb-12 lg:mb-16"
-              initial={{ opacity: 0, y: 2 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+              initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold leading-tight mb-4 md:mb-6 lg:mb-8">
                 <span style={{ color: '#00ff88' }}>(</span>
-                <span className="text-white">wired</span>
-                <span style={{ color: '#00ff88' }}>-</span>
-                <span className="text-white">in</span>
+                <span className="text-white">soon</span>
                 <span style={{ color: '#00ff88' }}>)</span>
               </h1>
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-text-secondary font-medium">
-                Where Gaming Meets Innovation
+                everything is going to change
               </div>
             </motion.div>
 
             {/* Value Proposition */}
             <motion.div className="mb-8 md:mb-12 lg:mb-16"
-              initial={{ opacity: 0, y: 2 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1], delay: 0.01 }}
+              initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-4 sm:px-6 md:px-8">
-                From the creators of lovetaps, we are a passionate community of gamers and tech enthusiasts. 
-                Experience high-performance game servers, secure file hosting, and a vibrant community.
+                From the creators of lovetaps, we created a passionate community of gamers and tech enthusiasts.
+                Experience high-performance servers, secure file hosting, it's for the hype.
               </p>
             </motion.div>
 
             {/* Call-to-Action Buttons */}
             <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center px-4 sm:px-6 md:px-8"
-              initial={{ opacity: 0, y: 2 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1], delay: 0.02 }}
+              initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             >
-              <button 
+              <button
                 className="btn-primary text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 w-full sm:w-auto min-h-[48px] md:min-h-[56px] flex items-center justify-center"
                 onClick={() => window.open('https://discord.gg/y6kb6a9CcG', '_blank')}
               >
@@ -170,15 +122,18 @@ const HeroSection = () => {
                 hidden: {},
                 visible: {
                   transition: {
-                    staggerChildren: 0.01,
-                    delayChildren: 0.005
+                    staggerChildren: 0.05,
+                    delayChildren: 0.3
                   }
                 }
               }}
             >
               <motion.div className="text-center"
-                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+                variants={{
+                  hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">
                   {discordStats.loading ? (
@@ -190,15 +145,21 @@ const HeroSection = () => {
                 <div className="text-sm sm:text-base md:text-lg text-text-secondary">Users Online</div>
               </motion.div>
               <motion.div className="text-center"
-                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+                variants={{
+                  hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">24/7</div>
                 <div className="text-sm sm:text-base md:text-lg text-text-secondary">Server Uptime</div>
               </motion.div>
               <motion.div className="text-center"
-                variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                transition={{ duration: 0.13, ease: [0.4, 0, 0.2, 1] }}
+                variants={{
+                  hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2 md:mb-3">99.9%</div>
                 <div className="text-sm sm:text-base md:text-lg text-text-secondary">Reliability</div>
@@ -214,4 +175,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;

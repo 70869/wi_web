@@ -1,6 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
+import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { FiArrowLeft } from 'react-icons/fi';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy - (wired-in)',
+  description: 'Read our Privacy Policy to understand how we collect, use, and protect your personal information.',
+};
 
 const PrivacyPolicy = () => {
   return (
@@ -9,6 +17,17 @@ const PrivacyPolicy = () => {
       <main className="pt-20 min-h-screen bg-background">
         <div className="container mx-auto px-6 py-16">
           <div className="max-w-4xl mx-auto">
+            {/* Back Button */}
+            <div className="mb-8">
+              <Link
+                href="/"
+                className="inline-flex items-center text-text-secondary hover:text-brand-primary transition-colors duration-200 group"
+              >
+                <FiArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform duration-200" />
+                Back to Home
+              </Link>
+            </div>
+
             {/* Header */}
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -16,7 +35,7 @@ const PrivacyPolicy = () => {
                 <span className="gradient-text"> Policy</span>
               </h1>
               <p className="text-xl text-text-secondary">
-                Last updated: {new Date().toLocaleDateString()}
+                Last updated: November 30, 2025
               </p>
             </div>
 
@@ -29,7 +48,7 @@ const PrivacyPolicy = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">1. Information We Collect</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      We collect information you provide directly to us, such as when you create an account, 
+                      We collect information you provide directly to us, such as when you create an account,
                       contact us, or participate in our community. This may include:
                     </p>
                     <ul className="list-disc list-inside space-y-3 ml-6">
@@ -60,7 +79,7 @@ const PrivacyPolicy = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">3. Information Sharing</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      We do not sell, trade, or otherwise transfer your personal information to third parties 
+                      We do not sell, trade, or otherwise transfer your personal information to third parties
                       without your consent, except in the following circumstances:
                     </p>
                     <ul className="list-disc list-inside space-y-3 ml-6">
@@ -76,8 +95,8 @@ const PrivacyPolicy = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">4. Data Security</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      We implement appropriate security measures to protect your personal information 
-                      against unauthorized access, alteration, disclosure, or destruction. However, 
+                      We implement appropriate security measures to protect your personal information
+                      against unauthorized access, alteration, disclosure, or destruction. However,
                       no method of transmission over the internet is 100% secure.
                     </p>
                   </div>
@@ -101,7 +120,7 @@ const PrivacyPolicy = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">6. Contact Us</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      If you have any questions about this Privacy Policy or our data practices, 
+                      If you have any questions about this Privacy Policy or our data practices,
                       please contact us at:
                     </p>
                     <div className="bg-surface-secondary/50 backdrop-blur-sm rounded-xl p-6 border border-white/5">
@@ -123,9 +142,3 @@ const PrivacyPolicy = () => {
 };
 
 export default PrivacyPolicy;
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-}; 

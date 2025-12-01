@@ -1,6 +1,15 @@
+```javascript
 import React from 'react';
+import Link from 'next/link';
+import { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { FiArrowLeft } from 'react-icons/fi';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service - (wired-in)',
+  description: 'Read our Terms of Service to understand the rules and regulations for using (wired-in) services.',
+};
 
 const TermsOfService = () => {
   return (
@@ -9,6 +18,17 @@ const TermsOfService = () => {
       <main className="pt-20 min-h-screen bg-background">
         <div className="container mx-auto px-6 py-16">
           <div className="max-w-4xl mx-auto">
+            {/* Back Button */}
+            <div className="mb-8">
+              <Link 
+                href="/"
+                className="inline-flex items-center text-text-secondary hover:text-brand-primary transition-colors duration-200 group"
+              >
+                <FiArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform duration-200" />
+                Back to Home
+              </Link>
+            </div>
+
             {/* Header */}
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -16,7 +36,7 @@ const TermsOfService = () => {
                 <span className="gradient-text"> Service</span>
               </h1>
               <p className="text-xl text-text-secondary">
-                Last updated: {new Date().toLocaleDateString()}
+                Last updated: November 30, 2025
               </p>
             </div>
 
@@ -150,4 +170,5 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-}; 
+};
+```

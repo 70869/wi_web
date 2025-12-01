@@ -18,14 +18,22 @@ const Header = () => {
   useEffect(() => {
     if (!isClient) return;
 
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     // Check scroll position on mount
     handleScroll();
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isClient]);
 
@@ -201,8 +209,8 @@ const Header = () => {
                     key={item.name}
                     href={item.href}
                     className={`text-2xl sm:text-3xl text-text-secondary hover:text-brand-primary transition-all duration-50 font-bold transform min-h-[44px] flex items-center justify-center w-full text-center group ${isMobileMenuOpen
-                        ? 'translate-y-0 opacity-100'
-                        : 'translate-y-4 opacity-0'
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-4 opacity-0'
                       }`}
                     style={{ transitionDelay: isMobileMenuOpen ? `${index * 0.07 + 0.15}s` : '0s', padding: '8px 0' }}
                     onClick={(e) => {
@@ -219,8 +227,8 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`btn-primary text-lg sm:text-xl min-h-[44px] flex items-center justify-center text-center rounded-xl transform mb-4 mt-4 max-w-xs w-full mx-auto relative overflow-hidden group ${isMobileMenuOpen
-                    ? 'translate-y-0 opacity-100 scale-100'
-                    : 'translate-y-8 opacity-0 scale-95'
+                  ? 'translate-y-0 opacity-100 scale-100'
+                  : 'translate-y-8 opacity-0 scale-95'
                   }`}
                 style={{
                   transitionDelay: isMobileMenuOpen ? `${navItems.length * 0.07 + 0.22}s` : '0s',

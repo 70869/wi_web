@@ -2,6 +2,7 @@ import '../lib/polyfills';
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -34,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Preload critical resources */}
         <link rel="preload" href="/assets/images/logo.webp" as="image" />
@@ -62,8 +63,10 @@ export default function RootLayout({
         <link rel="preload" href="/_next/static/media/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body>
-        {children}
-        <Analytics />
+        <ThemeProvider>
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );

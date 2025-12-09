@@ -1,0 +1,3 @@
+.next/dev/types/validator.ts(116,39): error TS2306: File 'D:/important/[1] Etebong/Project Files/Code/wi_web/src/app/terms/page.tsx' is not a module.
+src/app/terms/page.tsx(1,1): error TS2349: This expression is not callable.
+  Type 'String' has no call signatures.

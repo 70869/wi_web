@@ -1,4 +1,3 @@
-```javascript
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
@@ -20,7 +19,7 @@ const TermsOfService = () => {
           <div className="max-w-4xl mx-auto">
             {/* Back Button */}
             <div className="mb-8">
-              <Link 
+              <Link
                 href="/"
                 className="inline-flex items-center text-text-secondary hover:text-brand-primary transition-colors duration-200 group"
               >
@@ -49,8 +48,8 @@ const TermsOfService = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">1. Acceptance of Terms</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      By accessing and using (wired-in) services, you accept and agree to be bound by the terms 
-                      and provision of this agreement. If you do not agree to abide by the above, please do not 
+                      By accessing and using (wired-in) services, you accept and agree to be bound by the terms
+                      and provision of this agreement. If you do not agree to abide by the above, please do not
                       use this service.
                     </p>
                   </div>
@@ -60,7 +59,7 @@ const TermsOfService = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">2. Description of Service</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      (wired-in) provides high-performance game servers for titles such as Minecraft and 
+                      (wired-in) provides high-performance game servers for titles such as Minecraft and
                       Counter-Strike 2, along with secure file hosting services. Our services include:
                     </p>
                     <ul className="list-disc list-inside space-y-3 ml-6">
@@ -122,8 +121,8 @@ const TermsOfService = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">6. Service Availability</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      We strive to maintain 99.9% uptime for our services, but we cannot guarantee 
-                      uninterrupted access. We reserve the right to perform maintenance, updates, 
+                      We strive to maintain 99.9% uptime for our services, but we cannot guarantee
+                      uninterrupted access. We reserve the right to perform maintenance, updates,
                       or modifications that may temporarily affect service availability.
                     </p>
                   </div>
@@ -133,8 +132,8 @@ const TermsOfService = () => {
                   <h2 className="text-2xl font-bold text-text-primary mb-6">7. Termination</h2>
                   <div className="text-text-secondary space-y-4">
                     <p>
-                      We may terminate or suspend your access to our services immediately, without prior 
-                      notice, for conduct that we believe violates these Terms of Service or is harmful 
+                      We may terminate or suspend your access to our services immediately, without prior
+                      notice, for conduct that we believe violates these Terms of Service or is harmful
                       to other users, us, or third parties.
                     </p>
                   </div>
@@ -171,4 +170,3 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
 };
-```

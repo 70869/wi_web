@@ -11,21 +11,21 @@
     "dependencies": {
         "@vercel/analytics": "^1.6.1",
         "dotenv": "^17.2.3",
-        "motion": "^12.23.25",
-        "next": "^16.0.8",
-        "react": "^19.2.1",
-        "react-dom": "^19.2.1",
+        "motion": "^12.23.26",
+        "next": "^16.1.0",
+        "react": "^19.2.3",
+        "react-dom": "^19.2.3",
         "react-icons": "^5.5.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3.3.3",
-        "@tailwindcss/postcss": "^4.1.17",
-        "@types/node": "^24.10.2",
+        "@tailwindcss/postcss": "^4.1.18",
+        "@types/node": "^25.0.3",
         "@types/react": "^19.2.7",
         "@types/react-dom": "^19.2.3",
-        "eslint": "^9.39.1",
-        "eslint-config-next": "^16.0.8",
-        "tailwindcss": "^4.1.17",
+        "eslint": "^9.39.2",
+        "eslint-config-next": "^16.1.0",
+        "tailwindcss": "^4.1.18",
         "typescript": "^5.9.3"
     },
     "engines": {
